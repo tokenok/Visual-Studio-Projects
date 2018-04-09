@@ -1,0 +1,47 @@
+#include "resource.h"
+
+TOKENICO				ICON			"res\\token.ico"
+TOKENREDICO				ICON			"res\\tokenred.ico"
+
+TK						WAVE			"res\\p.wav"
+TELE					WAVE			"res\\teleport.wav"
+CAIN					WAVE			"res\\cain.wav"
+BYE						WAVE 			"res\\bye.wav"
+NOTHING					WAVE 			"res\\doesnothing.wav"
+COW1					WAVE 			"res\\cow1.wav"
+COW2					WAVE 			"res\\cow2.wav"
+MUSHROOM				WAVE 			"res\\mushroom.wav"
+MUSHROOM1				WAVE 			"res\\mushroom1.wav"
+MUSHROOM2				WAVE 			"res\\mushroom2.wav"
+MUSHROOM3				WAVE 			"res\\mushroom3.wav"
+MUSHROOM4				WAVE 			"res\\mushroom4.wav"
+MUSHROOM5				WAVE 			"res\\mushroom5.wav"
+MUSHROOM6				WAVE 			"res\\mushroom6.wav"
+MUSHROOM0				WAVE 			"res\\mushroom0.wav"
+MUSHROOM7				WAVE 			"res\\mushroom7.wav"
+RELOAD					WAVE 			"res\\RELOAD.wav"
+WTF						WAVE 			"res\\WTF.wav"
+NOTFOUND				WAVE 			"res\\notfound.wav"
+FRESHMEAT				WAVE 			"res\\FRESHMEAT.wav"
+
+IDLECURSOR				CURSOR 			"res\\idle.ani"
+PRESSCURSOR				CURSOR 			"res\\press.ani"
+TOKENCURSOR				CURSOR			"res\\tokencursor.ani"
+WAITCURSOR				CURSOR 			"res\\PENT.ani"
+
+HOTKEYBOX DIALOGEX 90, 0, 100, 50
+STYLE WS_VISIBLE | WS_POPUP | WS_SYSMENU
+CAPTION "Change Hotkey"
+FONT 8, "System"
+BEGIN
+CONTROL "", KEYCONTROL, HOTKEY_CLASS, WS_CHILD | WS_VISIBLE, 15, 10, 70, 10
+CONTROL "OK", BTN_OK, "Button", WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 32, 27, 36, 15
+END
+
+CONFIGBOX DIALOGEX 0, 0, 275, 187
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE |
+WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Configuration"
+FONT 8, "System"
+BEGIN
+END

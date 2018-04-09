@@ -1,0 +1,36 @@
+
+   SAM 2016 Assembler Listing
+
+   February 8, 2016 at 2:08 P.M.
+   SOURCE FILE: test.asm
+
+        LN    LC
+         0     0: LDA       R15,VARS
+         1     4: LDA       R14,STRS
+         2     8: WRST      +0(R14)
+         3     C: WRNL      
+         4     E: RDI       +0(R15)
+         5    12: WRST      +18(R14)
+         6    16: WRI       +0(R15)
+         7    1A: WRNL      
+         8    1C: HALT      
+         9    1E: LABEL     VARS
+        10    1E: SKIP      4
+        11    22: LABEL     STRS
+        12    22: STRING    "Enter a number:: "
+        13    34: STRING    ":"Your input:::" "
+        14    44: SKIP      34
+
+
+MACC Memory Hexadecimal Dump
+
+ ADDR |   0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+------+----------------------------------------------------------------
+    0 |  9F  90  00  1E  9F  10  00  22  D4  AE  00  00  D5  80  C8  2F
+   10 |  00  00  D4  AE  00  12  D0  2F  00  00  D5  80  F8  00  00  00
+   20 |  00  00  45  6E  74  65  72  20  61  20  6E  75  6D  62  65  72
+   30 |  3A  20  00  20  22  59  6F  75  72  20  69  6E  70  75  74  3A
+   40 |  22  20  00  20  00  00  00  00  00  00  00  00  00  00  00  00
+   50 |  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+   60 |  00  00  00  00  00  00
+

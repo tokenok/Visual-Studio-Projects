@@ -1,0 +1,9 @@
+create database urmann;
+
+use urmann;
+
+create table fares( date DATE, time TIME, depAirline VARCHAR(2), depFlightNo VARCHAR(10), retAirline VARCHAR(2), retFlightNo VARCHAR(10), fare INT, comment VARCHAR(200));
+
+LOAD DATA LOCAL INFILE '/home/urma1jos/db/fares.CSV' INTO TABLE fares FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n';
+
+select * from fares;

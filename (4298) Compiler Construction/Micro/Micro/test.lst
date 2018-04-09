@@ -1,0 +1,48 @@
+
+
+ M I C R O   C O M P I L E R   L I S T I N G
+
+             James L. Richards
+               Version 2016
+
+ Generated code is SAM assembly language for
+ the MACC2 virtual computer.
+ ___________________________________________
+
+ February 08, 2016 at 02:08 PM
+ Source file: test.mca
+
+ LINE #
+                    LDA       R15,VARS
+                    LDA       R14,STRS
+     1  begin
+                    WRST      +0(R14)
+                    WRNL      
+     2  	write("Enter a number:: ");
+                    RDI       +0(R15)
+     3  	read(num);
+                    WRST      +18(R14)
+                    WRI       +0(R15)
+                    WRNL      
+     4  	write(":"Your input:::" ", num);
+     5  end
+     6  Ì
+                    HALT      
+                    LABEL     VARS
+                    SKIP      4
+                    LABEL     STRS
+                    STRING    "Enter a number:: "
+                    STRING    ":"Your input:::" "
+                    SKIP      34
+
+
+ _____________________________________________
+ <><><><>   S Y M B O L   T A B L E   <><><><>
+
+ Relative
+ Address      Identifier
+ --------     --------------------------------
+      0       NUM
+ _____________________________________________
+
+ Normal successful compilation.

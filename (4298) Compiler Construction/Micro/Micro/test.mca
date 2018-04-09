@@ -1,0 +1,5 @@
+begin
+	write("Enter a number:: ");
+	read(num);
+	write(":"Your input:::" ", num);
+end

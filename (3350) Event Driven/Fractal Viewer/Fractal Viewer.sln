@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fractal Viewer", "Fractal Viewer\Fractal Viewer.csproj", "{CF9DED4B-CF01-47DF-8C97-1E4C34923A7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviFile", "AviFile\AviFile.csproj", "{ABB32A29-AF50-47FA-B243-5FD75A5ABA54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigNums", "BigNums\BigNums.csproj", "{C220C5A9-9B4D-4ACB-90F9-37A735B1D047}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9DED4B-CF01-47DF-8C97-1E4C34923A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9DED4B-CF01-47DF-8C97-1E4C34923A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9DED4B-CF01-47DF-8C97-1E4C34923A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9DED4B-CF01-47DF-8C97-1E4C34923A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB32A29-AF50-47FA-B243-5FD75A5ABA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB32A29-AF50-47FA-B243-5FD75A5ABA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB32A29-AF50-47FA-B243-5FD75A5ABA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB32A29-AF50-47FA-B243-5FD75A5ABA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C220C5A9-9B4D-4ACB-90F9-37A735B1D047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C220C5A9-9B4D-4ACB-90F9-37A735B1D047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C220C5A9-9B4D-4ACB-90F9-37A735B1D047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C220C5A9-9B4D-4ACB-90F9-37A735B1D047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

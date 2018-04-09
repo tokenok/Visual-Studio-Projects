@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PlugY", "..\..\..\..\Desktop\Plug Y source\PlugY\PlugY.vcxproj", "{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PlugYInstall", "..\..\..\..\Desktop\Plug Y source\PlugYInstall\PlugYInstall.vcxproj", "{F7666190-876A-4D43-BA04-82F8F3F986DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Restore|Win32 = Restore|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}.Debug|Win32.Build.0 = Debug|Win32
+		{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}.Release|Win32.ActiveCfg = Release|Win32
+		{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}.Release|Win32.Build.0 = Release|Win32
+		{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}.Restore|Win32.ActiveCfg = Release|Win32
+		{F5E47DA0-4D85-41E4-954D-29237DF8AFCB}.Restore|Win32.Build.0 = Release|Win32
+		{F7666190-876A-4D43-BA04-82F8F3F986DC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F7666190-876A-4D43-BA04-82F8F3F986DC}.Debug|Win32.Build.0 = Debug|Win32
+		{F7666190-876A-4D43-BA04-82F8F3F986DC}.Release|Win32.ActiveCfg = Release|Win32
+		{F7666190-876A-4D43-BA04-82F8F3F986DC}.Release|Win32.Build.0 = Release|Win32
+		{F7666190-876A-4D43-BA04-82F8F3F986DC}.Restore|Win32.ActiveCfg = Restore|Win32
+		{F7666190-876A-4D43-BA04-82F8F3F986DC}.Restore|Win32.Build.0 = Restore|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

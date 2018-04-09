@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<head>
+<meta charset=UTF-8>
+<title>Typing Test @ AOEU — Your typing speed in CPM and WPM</title>
+
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta property="fb:admins" content="100000423950474">
+<meta property="og:image" content="http://typing-speed-test.aoeu.eu/keyboard.jpg">
+<meta property="og:title" content="Typing Speed Test - Online Typing Test">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://typing-speed-test.aoeu.eu/">
+<meta property="fb:app_id" content="331446670260248">
+
+<link rel=icon href="/favicon.png" type="image/png">
+<!-- This way of using hreflang Doesn't work well with search engines because
+the default page uses Accept-Language, and they apparently don't really support
+that. Suggestions welcome! aoeu@aoeu.nl
+<link rel=alternate hreflang=nl href="http://typing-speed-test.aoeu.eu/?lang=nl">
+<link rel=alternate hreflang=en href="http://typing-speed-test.aoeu.eu/?lang=en">
+<link rel=alternate hreflang=x-default href="http://typing-speed-test.aoeu.eu/">
+-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+
+<!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'> -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
+<!--link rel=stylesheet type="text/css" href="/style.css"-->
+<style>
+@font-face{font-family:'Fira Mono';src:url('/fonts/FiraMono-Regular.eot');src:local('Fira Mono'),url('/fonts/FiraMono-Regular.eot') format('embedded-opentype'),url('/fonts/FiraMono-Regular.woff') format('woff'),url('/fonts/FiraMono-Regular.ttf') format('truetype');font-weight:400;font-style:normal}body{background:#f0f070;margin:0;padding:0;font-size:16px;text-align:center}body,input{font-family:"Open Sans","DejaVu Sans","Bitstream Vera Sans","Arial",sans-serif}a:link,a:visited{color:#c00;letter-spacing:1px}h1{padding-top:20px;margin-top:0;margin-bottom:20px}h1.tst{font-size:500%;font-family:'Faster One';font-weight:normal;color:#888;text-shadow:-5px 0 5px rgba(255,0,0,0.3)}h2{margin-top:1em;font-size:140%}dt{display:inline-block;margin-left:auto;margin-right:auto;font-style:italic;font-weight:600;color:#666;background:rgba(255,255,255,0.8);margin-bottom:.5ex;padding-left:1ex;padding-right:1ex;padding-top:.5ex;padding-bottom:.5ex;border-radius:10px;box-shadow:3px 3px 5px rgba(255,0,0,0.3);letter-spacing:1px}dd{text-indent:0;margin:1ex;margin-bottom:1.5em}#all-outer{padding-left:3em;padding-right:3em}#all-inner{max-width:65em;margin-left:auto;margin-right:auto;box-shadow:0 0 15px rgba(0,0,0,0.65);background:#f8f8f0;border-bottom-left-radius:10px;border-bottom-right-radius:10px;padding-bottom:1em}#words,#input{font-size:160%;text-align:center;border:0;background:transparent}#testui,.testui{margin:auto;max-width:80ex}#wordsbox{clear:both;text-align:center;font-size:120%}#result{font-size:120%}#result big{color:#444;font-size:120%;text-shadow:5px 0 5px rgba(255,0,0,0.2);font-family:'Faster One';font-weight:normal}#result big:first-child{font-size:200%}#result big.fire{color:#fff;text-shadow:0 0 17px rgba(0,0,0,0.2),4px 0 8px #fff,-1px -9px 15px #ff0,-2px 0 13px #ff8000,-1px -11px 20px red}#result big.fire:first-child{color:#fff;text-shadow:0 0 17px rgba(0,0,0,0.2),4px 0 8px #fff,-1px -10px 18px #ff0,-2px -1px 19px #ff8000,-1px -17px 25px red}#words-outer{padding:1ex;background:#fff;border-bottom:1px solid #000}#words{box-sizing:border-box;background:#fff;height:9ex;overflow:hidden;line-height:3ex;font-family:"Fira Mono","DejaVu Sans Mono","Bitstream Vera Mono","Consolas","Lucida Console",monospace}#input{display:block;width:100%;margin:auto;text-align:center;letter-spacing:2px}#input:focus{-webkit-box-shadow:0 0 10px #b8e069 inset;-moz-box-shadow:0 0 10px #b8e069 inset;box-shadow:0 0 10px #b8e069 inset;outline:none}#words > span{display:inline-block;padding:0 .25em;position:relative;margin-right:.1em}#currentword{background:#b8e069;border-radius:5px}.incorrect{color:#c00}.correct{color:blue}#currentword .correct{color:#fff}#score{background:transparent;margin:auto;padding:1ex;line-height:2ex}#border{border:1px solid #000;border-radius:1ex;background:#eee}#score{text-align:center;border-bottom:1px solid #000}#score span{display:inline-block;min-width:4ex;font-size:80%;padding:2px}#progress,#highcpm,#rawcpm,#cpm,#wpm,#timer{text-align:right;background:#fff}#score span#progress{min-width:9ex}#score select,#score input{font-size:80%}#words small{font-size:50%;line-height:normal}option{background:no-repeat;text-indent:16px}a img{border:0}pre{text-align:center;font-size:80%}.special,.shift,.key{font-weight:bold}.key{color:silver}.special{color:navy}.shift{color:maroon}.hitme{color:#000}#footer{text-align:center;margin:2em;font-size:xx-small}#dummyinput{position:absolute;top:0;left:0;opacity:0;width:1;height:1;font-size:1%}#blokding{margin:1ex}table.hist td{text-align:center}table.hist div.a{width:4.4ex}table.hist div.b{width:4.4ex;background:#b0c4de;border:1px outset navy}#recentbox{display:inline-block;position:relative;height:25px;line-height:25px;border:1px solid #000;width:20em;text-align:center;overflow:hidden;background:#fff}#recent{position:relative;top:0;height:25px}#recent > div{height:25px}@media (max-width:830px){*{box-sizing:border-box;max-width:100% !important}table{table-layout:fixed}img{max-width:100% !important;height:auto}body{margin:0;padding:0}iframe{max-width:100% !important}object{max-width:100% !important}div#all-outer{padding-left:10px;padding-right:10px}div#all-inner{max-width:100%;width:100%}h1.tst{font-size:300% !important}#testui,.testui{max-width:100% !important;width:100% !important;padding-left:5px;padding-right:5px}div#blokding{width:100%;margin-left:auto;margin-right:auto;padding-left:5px;padding-right:5px}#adsense{width:100%;overflow-x:scroll}.testui dd div{margin-left:auto !important;overflow-x:scroll;width:100% !important}}
+
+
+
+
+body { font-size: 14px !important; }
+
+h1 img { vertical-align: middle; }
+* { -webkit-font-smoothing: antialiased; }  /* fix bold */
+.fbconnected { display: none; }
+#fbscores { border: 1px solid black; border-spacing: 0.5ex; }
+#fbscores th { background: lightsteelblue; text-align: left; }
+#fbscores td:nth-child(2) { text-align: right; }
+#fbscores td:nth-child(3) { text-align: right; }
+.fbbutton { background: 
+#3b5998
+url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABSgAAAUoB6YX5ogAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD9SURBVEiJ7ZQxSkNBEIa/FyzEQoRoWms7wUMo5BR6AhtvkSYXyClS5ATWCmklbZo0QQL6nnwWeQmbpwnLJlvpwMDM7r8zO//OLGpPLT28lGqvUEvgiDxSFaqZggP733wBjIE34Bg4BW6AszViD44HaluloaMQlFrBEHiIAbYSEzxFIxOoeVeLgJJzdah+/gZOoWgChJ13C3S3gVMo+mr4F7vAqW8QLbGDNgLua7sEZsHeCcv+X8kr0Fk5sW/wAUy37C1qheWwbVB2aIougSJciK2gA9zV9hx4bgS9qu3rHycT5uDFza/hcRc4exf9J/gjCaqM8asW0M+UpAL635ltlOsF14RyAAAAAElFTkSuQmCC) 1ex center no-repeat; 
+color: white !important; text-decoration: none; font-size: 110%; padding: 10px; border: none; border-radius: 5px; cursor: pointer; padding-left: 44px; }
+.fbbutton:hover { background-color: #4b67a1 }
+a.fbbutton { font-size: 100%; letter-spacing: 1px; font-weight: bold; }
+a.tweet {
+display: inline-block;
+width: 138px;
+height: 55px;
+background: url(data:image/png;base64,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);
+}
+#intro.typing { border-right: 1px solid black; }
+#introcontainer { margin-bottom: 1em; /*height: 9ex;*/ }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+
+var fbuser;
+var haveLogin = $.Deferred();
+var _paq = [];
+var $iphone = 0;
+var $sourcewords = 
+'the name of very to through and just form in much is great it think you say ' +
+'that help he low was line for before on turn are cause with same as mean ' +
+'differ his move they right be boy at old one too have does this tell from ' +
+'sentence or set had three by want hot air but well some also what play there ' +
+'small we end can put out home other read were hand all port your large when ' +
+'spell up add use even word land how here said must an big each high she such ' +
+'which follow do act their why time ask if men will change way went about light ' +
+'many kind then off them need would house write picture like try so us these ' +
+'again her animal long point make mother thing world see near him build two self ' +
+'has earth look father more head day stand could own go page come should did ' +
+'country my found sound answer no school most grow number study who still over ' +
+'learn know plant water cover than food call sun first four people thought may ' +
+'let down keep side eye been never now last find door any between new city work ' +
+'tree part cross take since get hard place start made might live story where saw ' +
+'after far back sea little draw only left round late man run year don\'t came ' +
+'while show press every close good night me real give life our few under stop ' +
+'open ten seem simple together several next vowel white toward children war ' +
+'begin lay got against walk pattern example slow ease center paper love often ' +
+'person always money music serve those appear both road mark map book science ' +
+'letter rule until govern mile pull river cold car notice feet voice care fall ' +
+'second power group town carry fine took certain rain fly eat unit room lead ' +
+'friend cry began dark idea machine fish note mountain wait north plan once ' +
+'figure base star hear box horse noun cut field sure rest watch correct color ' +
+'able face pound wood done main beauty enough drive plain stood girl contain ' +
+'usual front young teach ready week above final ever gave red green list oh ' +
+'though quick feel develop talk sleep bird warm soon free body minute dog strong ' +
+'family special direct mind pose behind leave clear song tail measure produce ' +
+'state fact product street black inch short lot numeral nothing class course ' +
+'wind stay question wheel happen full complete force ship blue area object half ' +
+'decide rock surface order deep fire moon south island problem foot piece yet ' +
+'told busy knew test pass record farm boat top common whole gold king possible ' +
+'size plane heard age best dry hour wonder better laugh true thousand during ago ' +
+'hundred ran am check remember game step shape early yes hold hot west miss ' +
+'ground brought interest heat reach snow fast bed five bring sing sit listen ' +
+'perhaps six fill table east travel weight less language morning among speed ' +
+'typing mineral seven eight nine everything something standard distant paint'
+;
+/** @license
+ * eventsource.js
+ * Available under MIT License (MIT)
+ * https://github.com/Yaffle/EventSource/
+ */
+!function(a){"use strict";function b(){this.data={}}function c(){this.listeners=new b}function d(a){setTimeout(function(){throw a},0)}function e(a){this.type=a,this.target=void 0}function f(a,b){e.call(this,a),this.data=b.data,this.lastEventId=b.lastEventId}function x(a,b){var c=a;return c!==c&&(c=b),v>c?v:c>w?w:c}function y(a,b,c){try{"function"==typeof b&&b.call(a,c)}catch(e){d(e)}}function z(b,d){function P(){H=o,void 0!==D&&(D.abort(),D=void 0),0!==E&&(clearTimeout(E),E=0),0!==F&&(clearTimeout(F),F=0),A.readyState=o}function Q(a){var c=H===n||H===m?D.responseText:"",d=void 0,g=!1;if(H===m){var i=0,k="",F=void 0;if(j)try{i=D.status,k=D.statusText,F=D.getResponseHeader("Content-Type")}catch(Q){i=0,k="",F=void 0}else""!==a&&"error"!==a&&(i=200,k="OK",F=D.contentType);if((void 0===F||null===F)&&(F=""),0===i&&""===k&&"load"===a&&""!==c&&(i=200,k="OK",""===F)){var R=/^data\:([^,]*?)(?:;base64)?,[\S]*$/.exec(b);void 0!==R&&null!==R&&(F=R[1])}if(200===i&&u.test(F)){if(H=n,C=!0,B=h,A.readyState=n,d=new e("open"),A.dispatchEvent(d),y(A,A.onopen,d),H===o)return}else if(0!==i){var S="";S=200!==i?"EventSource's response has a status "+i+" "+k.replace(/\s+/g," ")+" that is not 200. Aborting the connection.":"EventSource's response has a Content-Type specifying an unsupported type: "+F.replace(/\s+/g," ")+". Aborting the connection.",setTimeout(function(){throw new Error(S)},0),g=!0}}if(H===n){c.length>G&&(C=!0);for(var T=G-1,U=c.length,V="\n";++T<U;)if(V=c.charAt(T),M===p&&"\n"===V)M=q;else if(M===p&&(M=q),"\r"===V||"\n"===V){if("data"===N?I.push(O):"id"===N?J=O:"event"===N?K=O:"retry"===N?(h=x(Number(O),h),B=h):"heartbeatTimeout"===N&&(v=x(Number(O),v),0!==E&&(clearTimeout(E),E=setTimeout(L,v))),O="",N="",M===q){if(0!==I.length&&(z=J,""===K&&(K="message"),d=new f(K,{data:I.join("\n"),lastEventId:J}),A.dispatchEvent(d),"message"===K&&y(A,A.onmessage,d),H===o))return;I.length=0,K=""}M="\r"===V?p:q}else M===q&&(M=r),M===r?":"===V?M=s:N+=V:M===s?(" "!==V&&(O+=V),M=t):M===t&&(O+=V);G=U}H!==n&&H!==m||!("load"===a||"error"===a||g||G>1048576||0===E&&!C)?0===E&&(C=!1,E=setTimeout(L,v)):(g?P():(H=l,D.abort(),0!==E&&(clearTimeout(E),E=0),B>16*h&&(B=16*h),B>w&&(B=w),E=setTimeout(L,B),B=2*B+1,A.readyState=m),d=new e("error"),A.dispatchEvent(d),y(A,A.onerror,d))}function R(){Q("progress")}function S(){Q("load")}function T(){Q("error")}b=b.toString();var g=i&&void 0!==d&&Boolean(d.withCredentials),h=x(1e3,0),v=x(45e3,0),z="",A=this,B=h,C=!1,D=new k,E=0,F=0,G=0,H=l,I=[],J="",K="",L=void 0,M=q,N="",O="";j&&(F=setTimeout(function U(){3===D.readyState&&Q("progress"),F=setTimeout(U,500)},0)),L=function(){if(E=0,H!==l)return Q(""),void 0;if(j&&(void 0!==D.sendAsBinary||void 0===D.onloadend)&&void 0!==a.document&&void 0!==a.document.readyState&&"complete"!==a.document.readyState)return E=setTimeout(L,4),void 0;D.onload=S,D.onerror=T,j&&(D.onabort=T,D.onreadystatechange=R),D.onprogress=R,C=!1,E=setTimeout(L,v),G=0,H=m,I.length=0,K="",J=z,O="",N="",M=q;var c=b.slice(0,5);c="data:"!==c&&"blob:"!==c?b+((-1===b.indexOf("?",0)?"?":"&")+"lastEventId="+encodeURIComponent(z)+"&r="+(Math.random()+1).toString().slice(2)):b,D.open("GET",c,!0),j&&(D.withCredentials=g,D.responseType="text",D.setRequestHeader("Accept","text/event-stream")),D.send(void 0)},c.call(this),this.close=P,this.url=b,this.readyState=m,this.withCredentials=g,this.onopen=void 0,this.onmessage=void 0,this.onerror=void 0,L()}function A(){this.CONNECTING=m,this.OPEN=n,this.CLOSED=o}b.prototype={get:function(a){return this.data[a+"~"]},set:function(a,b){this.data[a+"~"]=b},"delete":function(a){delete this.data[a+"~"]}},c.prototype={dispatchEvent:function(a){a.target=this;var b=a.type.toString(),c=this.listeners,e=c.get(b);if(void 0!==e)for(var f=e.length,g=-1,h=void 0;++g<f;){h=e[g];try{h.call(this,a)}catch(i){d(i)}}},addEventListener:function(a,b){a=a.toString();var c=this.listeners,d=c.get(a);void 0===d&&(d=[],c.set(a,d));for(var e=d.length;--e>=0;)if(d[e]===b)return;d.push(b)},removeEventListener:function(a,b){a=a.toString();var c=this.listeners,d=c.get(a);if(void 0!==d){for(var e=d.length,f=[],g=-1;++g<e;)d[g]!==b&&f.push(d[g]);0===f.length?c["delete"](a):c.set(a,f)}}},f.prototype=e.prototype;var g=a.XMLHttpRequest,h=a.XDomainRequest,i=void 0!==g&&void 0!==(new g).withCredentials,j=i,k=i?g:void 0!==h?h:void 0,l=-1,m=0,n=1,o=2,p=3,q=4,r=5,s=6,t=7,u=/^text\/event\-stream;?(\s*charset\=utf\-8)?$/i,v=1e3,w=18e6;A.prototype=c.prototype,z.prototype=new A,A.call(z);var B=function(){if(void 0!==a.EventSource)try{var b=new a.EventSource("data:text/event-stream;charset=utf-8,");return b.close(),b.withCredentials===!1&&""!==b.url}catch(c){d(c)}return!1};void 0===k||B()||(a.NativeEventSource=a.EventSource,a.EventSource=z)}(this);
+
+$sourcewords = $sourcewords.split(' ');
+
+
+// The following is public domain. Feel free to use it for your own project.
+// I'd like to see what you used it for :)
+function i($s) {
+    // String interpolation. Just eval the result.
+    var $r = "'"
+    + $s.replace(/'/g, "\\'").replace(
+        /(\$[.\w]+\[\$[.\w]+\]|(\$[.\w]+))/g, "'+$1+'"
+        // Default is non-greedy, so "?" won't work.
+    ).replace(
+        /\$\.(\w)/g, 'this.$1'
+        // Perl 6-ish $.foo for object attributes
+    ).replace(
+        /<\/\./g, "</"
+        // Can't have "</" followed by a letter in <script>, so I use "</.foo".
+    ) + "'";
+    //alert($r);
+    return $r;
+}
+
+function time() {
+    // Return the current time as a timestamp in seconds
+    return (new Date()).valueOf() / 1000;
+}
+
+function el($id) {
+    return document.getElementById($id);
+}
+
+// Provide the XMLHttpRequest class for IE 5.x-6.x:
+if (typeof XMLHttpRequest == "undefined") XMLHttpRequest = function() {
+    try { return new ActiveXObject("Msxml2.XMLHTTP.6.0") } catch(e) {}
+    try { return new ActiveXObject("Msxml2.XMLHTTP.3.0") } catch(e) {}
+    try { return new ActiveXObject("Msxml2.XMLHTTP") } catch(e) {}
+    try { return new ActiveXObject("Microsoft.XMLHTTP") } catch(e) {}
+//    throw new Error( "This browser does not support XMLHttpRequest." )
+    return null;
+};
+
+function thingWithWords($arg) {
+
+    this.opera     = navigator.userAgent.indexOf("Opera") > -1;
+
+    for ($_ in $arg) this[$_] = $arg[$_];
+
+    if (!$arg.words) this.words = new Array('foo', 'bar', 'baz', 'xyzzy');
+    if (!$arg.interval) this.interval = 500;
+
+    this.current    = 0;            // Index of the current word
+    this.iscorrect  = new Array();  // Status of all previous words
+    this.starttime  = 0;            // Timestamp of first keypress (ms)
+    this.chars      = 0;            // Number of characters typed
+    this.keypresses = 0;            // Number of keys pressed (released, really)
+    this.lastword   = false;        // Stop after_this word
+    this.wrongwords = new Array();  // For description of negative $delta
+    this.given      = new Array();  // All given words (with typos)
+    this.interval_id;               // ID to stop the interval
+    this.rawcpm;                    // $chars / $time
+    this.cpm;                       // $goodchars / $time
+    this.wpm;                       // $cpm / 5
+    this.enterused  = false;
+
+    this.do_hook = function($hook, $arg1, $arg2, $arg3, $arg4) {
+        if (!this[$hook]) return;
+        this[$hook].apply(this, new Array($arg1, $arg2, $arg3, $arg4));
+    }
+
+    this.goodchars = function () {
+        var c = 0;
+        for (var i = 0; i < this.iscorrect.length; i++)
+            if (this.iscorrect[i]) c += this.words[i].length + 1;
+        return c;
+    };
+
+    this.render = function() {
+        this.do_hook('before_render');
+
+        var $newhtml = '';
+        for (var $i = 0; $i < this.words.length; $i++) {
+            $newhtml += eval(i(
+                "<span>$.words[$i]</.span>"
+            ));
+        }
+
+        var $words_el = el('words');
+        $words_el.innerHTML = $newhtml;
+
+        // Font rendering is unpredictable and may subtly change when the word
+        // is rendered per letter instead of a word, so freeze whatever the
+        // browser has calculated!
+        $('#words span').each(function () {
+            return $(this).width( $(this).width() + "px" );
+        });
+
+        this.update_display();
+    };
+
+    this.update_display = function ($previous) {
+        this.classes($previous);
+        this.scroll();
+    };
+
+    this.classes = function ($previous) {
+        var $w = $("#words > span");
+        if ($previous !== undefined) {
+            $w[$previous].innerHTML = this.words[$previous];
+        }
+
+        for (var $i = 0; $i < this.words.length; $i++) {
+            var $class = $i == this.current ? 'currentword' : $i > this.current ? 'nextword' : this.iscorrect[$i] ? 'correct' : 'incorrect';
+            var $jqel = $($w[$i]);
+            if (! $jqel.hasClass($class)) {
+                $jqel.removeClass();
+                $jqel.addClass($class);
+                $jqel.attr("id", $class == "currentword" ? "currentword" : "");
+            }
+        }
+    }
+
+    this.scroll = function () {
+        var $words_el = el('words');
+
+        var $scrollbase_el  = el('currentword');
+        var $scroll = (
+            $scrollbase_el.offsetTop - el('currentword').offsetHeight
+        );
+
+        $scroll -= $words_el.offsetTop;
+
+        if ($scroll < 0) $scroll = 0;
+        if ($scroll > $( $words_el ).scrollTop() + 5
+         || $scroll < $( $words_el ).scrollTop() - 5)
+            $( $words_el ).stop(true, true).animate({ scrollTop: $scroll }, 500);
+
+        this.do_hook('after_render');
+    };
+
+    this.calcspeed = function() {
+        var $seconds = time() - this.starttime;
+        if (!$seconds) return;  // div by zero when timer's bad
+        if (!this.current) return;  // div by zero
+
+        this.do_hook('before_calcspeed', $seconds);
+
+        this.rawcpm = Math.floor(this.chars / $seconds * 60);
+        this.cpm    = Math.floor(this.goodchars() / $seconds * 60);
+        this.wpm    = Math.round(this.cpm / 5);
+
+        this.do_hook('after_calcspeed', $seconds);
+    }
+
+    this.advance = function(given) {
+        this.do_hook('before_advance');
+
+	this.given[this.current] = given;
+
+        var $previous = this.current;
+
+        this.current++;
+
+        // this.lastword can be set by another function, but if we're actually
+        // at *the last word*, then force it to true.
+        if (this.current >= this.words.length) this.lastword = true;
+
+        this.calcspeed();
+
+        if (this.lastword) {
+            clearInterval(this.interval_id);
+            el('input').disabled = 1;
+            el('wordsbox').innerHTML = this.report ? this.report() : "Done!";
+            this.do_hook('after_report');
+        } else {
+            this.update_display($previous);
+        }
+
+        this.do_hook('after_advance');
+    }
+
+    this.beforgiving = function ($given) {
+    }
+
+    this.keydown = function ($input_el, $event) {
+        var $value = $input_el.value;
+
+        var $keycode = $event.which ? $event.which : $event.keyCode;
+        if ($keycode == 8 && $value == "" && this.current > 0) {
+            this.current--;
+            $value = $input_el.value = this.given[this.current];
+            this.chars -= $value.replace(/^ +/, "").length;
+            this.update_display();
+        }
+    }
+
+    this.keypress = function ($input_el, $event) {
+        var $raw_given = $input_el.value,
+            $value = $raw_given.replace(/^ +/, "");
+
+        var $keycode = $event.which ? $event.which : $event.keyCode;
+        if ($keycode == 13) {
+            if (!this.enterused) {
+                // first time
+                alert("Use space bar instead of enter. It's faster. Use the 'Restart' link to start over.");
+            }
+            this.enterused = true;
+            // Enter pressed. Pretend that spacebar was pressed.
+            $input_el.value = $raw_given += " ";
+            $value += " ";
+        }
+
+        var $length = $value.length;
+
+        var $word = this.words[this.current];
+        var $h = "";
+        for (var c = 0; c < $word.length; c++) {
+            if (c >= $value.length) {
+                $h += $word[c];
+            } else if ($word[c] == $value[c]) {
+                $h += '<span class=correct>' + $word[c] + '</span>';
+            } else {
+                $h += '<span class=incorrect>' + $word[c] + '</span>';
+            }
+        }
+        $("#currentword").html($h);
+
+        this.do_hook('before_keypress', $value);
+        if (!$length) return;
+
+        this.keypresses++;
+
+/*        if (!$value.match(/[^ ]/)) {
+            // Only whitespace. Remove and ignore.
+            $input_el.value = $value.replace(/^ +/, '');
+            return;
+        }
+*/
+
+        if (!this.starttime) {
+            this.starttime = time();
+            var $this = this;  // for closure
+            this.interval_id = setInterval(
+                this.ticktock // premature optimization? :)
+                    ? function () { $this.ticktock(); }
+                    : function () { null; },
+                this.interval
+            );
+        }
+
+        var $wordandspace = $value.match(/^ *(.+? )/);
+        if (!$wordandspace) {
+
+            this.do_hook('after_keypress', $value);
+            return;
+        }
+        $wordandspace = new String($wordandspace[1]);  // coerce
+
+        $input_el.value = $value.replace(/^ *.+? +/, "");
+        this.chars += $wordandspace.length;
+
+        var $given    = $wordandspace.match(/^[^ ]+/);
+        var $expected = this.words[this.current];
+
+        if ($given == $expected) {
+            this.do_hook('on_correct_word', $given);
+            this.iscorrect[this.current] = true;
+            this.advance($raw_given);
+        } else if (this.allowwrong) {
+            this.do_hook('on_wrong_word', $given, $expected);
+            if (!this.strictwrong) {
+                // Mitigate damage when someone forgets the spacebar or presses
+                // it before_finishing a word
+                for (var $delta = -2; $delta <= 3; $delta++) {
+                    if ($delta == 0) continue;
+                    if ($given != this.words[this.current + $delta]) continue;
+
+                    if ($delta > 0) {
+                        // a-ha! user skipped $delta words
+                        for (var $i = 0; $i < $delta; $i++) {
+                            this.do_hook(
+                                'on_skipped_word', this.words[this.current]
+                            );
+                            this.iscorrect[this.current] = false;
+                            this.current++;
+                        }
+                    } else {
+                        // extra space in a word: user "skipped -1 or -2 words"
+                        if (this.iscorrect[this.current + $delta]) break;
+                        var $extra = new Array();
+                        for (; $delta < 0; $delta++) {
+                            this.current--;
+                            $extra.unshift(this.wrongwords[this.current]);
+                        }
+                        this.do_hook('on_extra_words', $extra);
+                    }
+                    this.iscorrect[this.current] = true;
+                }
+            }
+            this.advance($raw_given);
+        } else {
+            $("#currentword").html(this.words[this.current]);
+            // do nothing
+        }
+        this.do_hook('after_keypress', $value);
+    };
+
+    this.init = function() {
+        this.do_hook('before_init');
+
+        this.render();
+        this.do_hook('after_init');
+    };
+}
+
+// Public domain part ends here. Please don't copy the following.
+
+var $words = new Array();
+
+
+
+for (var $i = 0; $i < 300; $i++)
+    $words.push($sourcewords[
+        Math.floor(Math.random() * $sourcewords.length)
+    ]);
+
+var $speedtest = new thingWithWords({  // I have a thing with words ;)
+    words: $words,
+    allowwrong: true,
+    interval: 200
+});
+
+$speedtest.mistakes   = new Array();  // Descriptions of mistakes
+$speedtest.cheater    = false;        // Basic copy/paste detection
+
+$speedtest.on_wrong_word = function($given, $expected) {
+    this.mistakes.push(eval(i(
+        "Instead of \"$expected\", you typed \"$given\"."
+    )));
+    this.wrongwords[this.current] = $given;
+};
+
+$speedtest.on_skipped_word = function($word) {
+    this.mistakes.pop();
+    this.mistakes.push(eval(i("You skipped the word \"$word\".")));
+};
+
+$speedtest.on_extra_words = function($words) {
+    this.mistakes.splice(
+        this.mistakes.length - $words.length - 1,
+        $words.length + 1
+    );
+    for ($i in $words) this.mistakes.push(eval(i(
+        "You typed an extra word: \"$words[$i]\"."
+    )));
+};
+
+$speedtest.before_advance = function() {
+    if (this.lastword) el('timer').innerHTML = '0';
+}
+
+$speedtest.after_keypress = function($value) {
+    var input = el('input');
+    if (!input) return;
+    if (this.current > 0) input.setAttribute("placeholder", "");
+    if (this.current >= this.words.length) return;
+    if ($value.length > 5*this.words[this.current].length ) {
+        this.cheater = true;
+        alert(eval(i(
+            "Er... the word \"$.words[$.current]\" is not $value.length "
+            + "characters long ... :). Don't forget to press the space bar "
+            + "after each word! (You have to start over now...)"
+        )));
+        return;
+    }
+}
+
+$speedtest.ticktock = function() {
+    var $remaining = Math.ceil(60 - (time() - this.starttime));
+    if ($remaining <= 0) {
+        clearInterval(this.interval_id);
+        $remaining = 'finish word';
+        this.lastword  = true;
+    }
+    el('timer').innerHTML = $remaining;
+};
+
+$speedtest.after_calcspeed = function ($seconds) {
+    if (this.current == 0) return;
+    if ($seconds < 3 && !this.lastword) return;
+    el('rawcpm').innerHTML = this.rawcpm;
+    el('cpm'   ).innerHTML = this.cpm;
+    el('wpm'   ).innerHTML = this.wpm;
+}
+
+$speedtest.report = function () {
+    $("#dummyinput").focus();
+
+    var cpm = $speedtest.cpm;
+    var $c = cpm >= 500 ? " class=fire" : "";
+    haveLogin.done(function () { fbscore(cpm); });
+
+    var $report = eval(i(
+        "<p id=result>Your score: <big$c>$.cpm</.big> CPM "
+        + "(that is <big$c>$.wpm</.big> WPM)<div id=pct></div>"
+    ));
+
+    
+
+    var $missers     = this.cpm == this.rawcpm ? 0 : 0 + this.mistakes.length;
+    var $mistake_s   = ($missers == 1 ? 'mistake' : 'mistakes');
+    var $excl        = ($missers == 0 ? '!' : '');
+    if (this.cheater) $excl = "*";
+
+    store_score(cpm, $missers);
+    highscore();
+    debug_scores();
+    
+    var $share = eval(i("My typing test score: $.cpm CPM (that is $.wpm WPM)"));
+    var $tweet = ($share + " (via http://typing-speed-test.aoeu.eu/)").replace(/ /g, "+");  // Unfortunately, they don't appear to understand real URI encoding.
+
+    $report += eval(i(
+        "<p id=fbpost><button class=fbbutton href onclick='fbpost($.cpm, $.wpm, $.missers);return false;'>Challenge your friends on Facebook!</button></p>"));
+
+//    $.post("http://stats.aoeu.eu/mqtt", {
+//        "tst-internal/fbpost": JSON.stringify({
+//            ab: 1,
+//            error: 0,
+//            click: 0
+//        })
+//    });
+
+    $report += eval(i(
+        "<p><a href='http://www.twitter.com/home?status=$tweet' class=tweet target=_blank></a>"
+        // +"<img border=0 alt='Tweet this!' width=138 height=55 src=tweetthis.gif></a>"
+    ));
+
+    if ($missers) {
+        var $waswere     = ($missers == 1 ? 'was'     : 'were');
+
+        $report += eval(i(
+            "<p>In reality, you typed $.rawcpm CPM, but you made $missers "
+            + "$mistake_s (out of $.current words), which $waswere not counted "
+            + "in the corrected scores. <p>Your $mistake_s $waswere:"
+        ));
+
+        $report += '<ul>';
+        for (var $i in this.mistakes)
+            $report += '<li>' + this.mistakes[$i];
+        $report += '</ul>';
+    }
+    else
+        $report += eval(i(
+            "<p>Congratulations! You typed all $.current words correctly!"
+        ));
+
+    if (this.rawcpm > 300)
+        $report += '<p>I advise you to take a 2 minute break now.';
+
+    if (this.enterused) {
+        $report += '<p>By the way, you used <b>enter</b> instead of the ' +
+            '<b>space bar</b>. Try using space next time; this will probably ' +
+            'result in a greater overall typing speed.'
+    }
+
+// Nobody uses this anyway...
+//    $report += eval(i(
+//        "<p><form action='/tell-a-friend.plp' method=post target='_top'>"
+//        + "<strong>Challenge a friend to beat your speed!</.strong><br>"
+//        + "<input type=hidden name=cpm value=$.cpm>"
+//        + "<input type=hidden name=wpm value=$.wpm>"
+//        + "<table cellspacing=0 cellpadding=3 align=center>"
+//        + "<tr><td>Your name: <td><input name=sender value=''>"
+//        + "<tr><td>Your email address: <td><input name=from value=''>"
+//        + "<tr><td>Your friend's name: <td><input name=name value=''>"
+//        + "<tr><td>Your friend's email address: <td><input name=rcpt value=''>"
+//        + "</.table>"
+//        + "<input type=submit value='Preview message'>"
+//        + "</.form>"
+//    ));
+
+    //var $foo = new Image();
+//    var url = eval(i(
+//        // Yes, it's easy to fsck up my statistics. Please don't.
+//        // The "cheater" parameter is just to know how many people try.
+//        "/grab.plp?cpm=$.cpm;rawcpm=$.rawcpm;wrong=$missers;words=$.current;"
+//        + "ip=199.17.196.10;keys=$.keypresses;chars=$.chars;cheater="
+//        + (this.cheater?"1":"0") + ";iphone=$iphone;enterused="
+//        + (this.enterused?"1":"0")
+//    ));
+    $.post("http://stats.aoeu.eu/mqtt", {
+        "typing-speed-test.aoeu.eu": this.cpm + " CPM",
+        "tst-internal/details": JSON.stringify({
+            cpm: this.cpm,
+            rawcpm: this.rawcpm,
+            wrong: $missers,
+            words: this.current,
+            ip: "199.17.196.10",
+            keys: this.keypresses,
+            chars: this.chars,
+            cheater: this.cheater ? 1 : 0,
+            iphone: $iphone,
+            enterused: this.enterused ? 1 : 0
+        })
+    });
+
+//    $.get(url, function (data) {
+//	if ($("#pct").length == 0) $.get("/log.plp/nopct");  // there's a race condition, sure, but how likely is it? :-)
+//	$("#pct").html(data);
+//    });
+
+    $.get("/stats/pct" + this.cpm + ".json", function (data) {
+        var px = data / 100 * 500;
+        $("#pct").html(
+            '<p style="margin-bottom: 0.2ex">Your score beats or equals ' + data + '% of all.</p>'
+            + '<div style="width: 50px; background: white; border: 2px inset #888; width: 500px;margin: auto; text-align: left;margin-top: 0.2ex">'
+            + '<div style="background: #b8e069; border-right: 0px solid #888; width: ' + px + 'px; ">&nbsp;</div>'
+            + '</div>'
+        );
+    }, 'json');
+
+    _paq.push([ "trackLink", "http://aoeu.eu/cpm=" + this.cpm, "download" ]);
+
+    return $report;
+};
+
+$speedtest.after_report = function () {
+}
+
+var intro;
+var intro_i = 0;
+function type_intro () {
+    intro_i++;
+
+    var text = intro.substring(0, intro_i).replace(/\n/g, "<br>");
+
+    $("#intro").html( text );
+    if (intro_i < intro.length) {
+        setTimeout(type_intro, text.match(/[;,.?!>]$/) ? 300 : 50);
+    } else {
+        $("#intro").removeClass("typing");
+    }
+}
+
+$(function () {
+    $input_el = el('input');
+    $input_el.value = "";
+    $input_el.focus();
+    $speedtest.init();
+
+    if (0) setTimeout(function () {
+        if ($("#adsense:visible").length == 0) {
+            $.get("/log.plp/noadsense");  // Just statistics
+
+            // $("#blokding").load("/support.html");
+
+        }
+    }, 2000);
+
+    intro = $.trim( $("#intro").text() );
+//    setTimeout(type_intro, 100);
+
+    //highscore();
+});
+</script>
+<style>
+.cookiebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,.8);
+	border-bottom: 2px solid rgba(0,0,255,.8);
+	padding: 1em;
+	width: 100%;
+	z-index: 3000;
+	line-height: 4ex;
+}
+.cookiebar > div {
+	/* max-width: 160ex; */
+	margin: auto;
+}
+.cookies_ok {
+	color: green !important;
+        white-space: nowrap;
+}
+.cookiebar > a {
+	letter-spacing: normal !important;
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+
+<div id="fb-root"></div>
+
+<div id=all-outer>
+<div id=all-inner>
+
+<h1 class=tst>Typing Speed Test</h1>
+<div class=testui>
+<div id=introcontainer>
+<span id=intro>
+How fast are your fingers? Do the one-minute typing test to find out! Press the
+space bar after each word. At the end, you'll get your typing speed in CPM and
+WPM. Good luck!
+<div id=recenthide title="Click to hide the ticker" style="cursor:pointer">
+<p style="margin-bottom: 0">
+Most recent score:<br>
+<div id=recentbox><div id=recent></div></div>
+</div>
+</span>
+</div>
+
+
+
+
+</div> <!-- testui -->
+<div style="margin: 1em auto; width: 728px; max-height:150px; overflow: hidden">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bbb-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7765406228987634"
+     data-ad-slot="9977932896"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class=testui>
+
+
+
+
+<input id=dummyinput>
+<div id=border>
+<div id=score>
+<div style="display: none;"><span>Raw CPM:&nbsp;</span> <span id=rawcpm>?</span></div>
+<span id=highscore style="display:none"><span>Your best:</span> <span id=highcpm>?</span></span>
+<span>&nbsp;Corrected CPM:&nbsp;</span> <span id=cpm>?</span>
+<span>&nbsp;WPM:&nbsp;</span> <span id=wpm>?</span>
+<span>&nbsp;Time left:&nbsp;</span> <span id=timer>60</span>
+<span>&nbsp;<a href="/?lang=en" target="_top">Restart</a></span>
+<span>&nbsp;
+<a target="_top" href="/?lang=en">
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGzSURBVCjPTVHfS1RREJ6zuVAQgT5YPtjSi3+DVmoaK9VTD4GuEIg36UFDkGgfhBI1/wARXApagq0efBFyt6BQWXwQLAXlwiIs5aLYUiyru9177vk1zl3x4vAx8w3DfGdmDrOerkFgxoBRAAIAyb+JfEfn/7+/fyg3NVCNUcPb+bZUFmOd5uNKqL8d32fZ49squVo32KURAdEgBfBJJrPgN3TGWj9ljTZAEAo1+oQr/AnjUCrD8RFUK+A4rP9+7scaNax09Lb33dI9r1kmLqPTdekXzp3pSzaD0kthzqy+ftR15217i1lD2Y7YzeQyveBrKwkeog2ecjbU4RwJQ7WKnIMQocGH6/Yms6yvicTd7ldmKc6jUxfT8eNrM+L3mGke2S4l207laQfy5auNeX8H60trX/TdN03CRsIOFrWXgz0NBa2uzPjankcgEhru/ZzPsUIh39R0XUoZKJ0nAXdd90YY5hZTTE8+Y/ceYXoZi0Uol2liH5wjTS8EBkTKC88HPuz/Yru7O5FISyUcvix4cPXzppTkvAFgX2vTMDvBDp48oOMEHwlnhANUAJwaZC09rZ4AxTpMSCJy2AMAAAAASUVORK5CYII=" width=16 height=11 alt="EN" title="English"></a>
+
+&nbsp;
+<a target="_top" href="/?lang=nl">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAD9SURBVCjPfY7NKoVhFIXXq09S54wkCeESXIHLMpALMDI1dA3m7uUkMThFR5TevX4MPg4Kq93qabf2arfgS/7Jv04LgNNzALFhQQoNMRTIFEOlavSX66sBAMDcPUCCnCJUKaaYqnSmenqletvbMTBg8yi7+1ibQA4JKVTIkB8wHpPY2jTQFovFdDoFkARBkL/UWpvNZoPtMZ1kCb8KrZEcvAz935+0BEDD4cXJ2fHt/LVoyp0quaji0k26pIOtyc355YD756fXPl+8FV1yp3upqE4vnTTtyfoq8Digu+TtjfWxiXLJpbHVpOhIli2NL+EU6EAH+A34bUPAn77yDtkkanOCmvDlAAAAAElFTkSuQmCC" width=16 height=11 alt="NL" title="Dutch"></a>
+</span>
+</div>
+<div id=wordsbox>
+<div id=words-outer>
+<div id=words onclick="el('input').focus();"></div>
+</div>
+<input id=input onkeydown="$speedtest.keydown(this, event);" onkeyup="$speedtest.keypress(this, event);" autocomplete=off autocapitalize=none spellcheck="false" autocorrect="off" placeholder="type the words here">
+</div>
+</div>
+
+
+
+
+<p>
+<script>
+window.fbAsyncInit = function() {
+    $("#social").show();
+
+    FB.init({
+        version    : 'v2.8',
+        appId      : '331446670260248',
+        channelUrl : '//typing-speed-test.aoeu.eu/channel.html',
+        status     : true,
+        cookie     : true,
+        xfbml      : true
+    });
+
+/*
+    haveLogin.done(function () {
+        $("#fblogin").hide();
+        $(".fbconnected").show();
+
+        var haveName = $.Deferred();
+        var haveTable = $.Deferred();
+
+        FB.api("/me?fields=id,name,scores", function(response) {
+            fbuser = response;
+            $(".fbconnected #name").text(" as " + response.name);
+            haveName.resolve();
+        });
+        FB.api("/331446670260248/scores", function (r) {
+            if (!r || !r.data) return;
+            r = r.data;
+            var scores = [];
+            for (var idx in r) {
+                var tr = $("<tr/>").attr('uid', r[idx].user.id);
+                tr.append($("<td/>").text( r[idx].user.name ));
+                tr.append($("<td/>").text( r[idx].score ));
+                // tr.append($("<td/>").text( Math.round(r[idx].score / 5) ));
+                $("#fbscores").append(tr);
+                scores.push( r[idx].score );
+            }
+            if (r.length) {
+                $("#fbscores").show();
+                haveTable.resolve();
+
+                $.get("/log.plp/fbfriends?scores=" + scores.join(","));
+            }
+        });
+
+        $.when(haveTable, haveName)
+        .done(function () {
+            $("#fbscores tr[uid=" + fbuser.id + "]")
+            .css("font-weight", "bold");
+        });
+    });
+
+    FB.Event.subscribe('auth.authResponseChange', function(response) {
+        if (response.status == "connected") haveLogin.resolve();
+    });
+*/
+};
+
+
+/* function fblogin() {
+    if (!FB) return;
+    FB.login(function () { }, { scope: "publish_actions,publish_stream" });
+    $.get("/log.plp/fblogin");
+}
+function fblogout() {
+    if (!FB) return;
+    FB.logout(function() {
+        $(".fbconnected").text("You are now logged out. Refresh the page if you wish to log in again.");
+        fbuser = false;
+    });
+    $.get("/log.plp/fblogout");
+} 
+function fbscore(cpm) {
+    if (!FB || !fbuser) return;
+    if (!cpm) {
+        $.get("/log.plp/cpm=" + cpm);  // null, undefined, false, 0, what's wrong?
+        return;
+    }
+    var highscore = 0;
+    try { highscore = fbuser.scores.data[0].score; } catch (e) { }
+    if (highscore && cpm < highscore) return;
+    FB.api("/me/scores", "post", { score: cpm }, function (r) {
+        $.get("/log.plp/fbscore?cpm=" + cpm + '&error=' + !(r && !r.error));
+    });
+} */
+
+function fbpost($cpm, $wpm, $missers) {
+    var $mistake_s   = ($missers == 1 ? 'mistake' : 'mistakes');
+
+    if (!FB) return;
+//    haveLogin.done(function() {
+        /*FB.api("/me/feed", "post", { message: text }, function (r) {
+            $("#fbpost").html(
+                r && !r.error
+                ? 'Posted on your timeline:<br>"' + text + '".'
+                : "Something went wrong while posting, sorry."
+            );
+        }); */
+        FB.ui({
+            method: 'feed',
+            caption: "Beat me at typing words for one minute and share your score!",
+            picture: 'http://typing-speed-test.aoeu.eu/badges/' + $cpm + '.png',
+            name: eval(i('My typing speed: $cpm CPM ($wpm WPM). How about yours?')),
+            link: 'http://typing-speed-test.aoeu.eu/?source=fb',
+        }, function (r) {
+            if (r && !r.error) {
+                $("#fbpost").html("Posted on your timeline!");
+                // $.get("/log.plp/fbpost", { ab: $ab });
+                $.get("/log.plp/fbpost");
+            } else {
+                var message = r && r.error ? r.error.message : "Unknown error";
+                // $.get("/log.plp/fbpost", { "error": message, ab: $ab });
+                $.get("/log.plp/fbpost", { "error": message });
+            }
+	    // $.post("http://stats.aoeu.eu/mqtt", {
+	    //	"tst-internal/fbpost": JSON.stringify({
+	    //	    ab: $ab,
+	    //	    error: (r && r.error) ? 1 : 0,
+            //      click: 1
+	    //  })
+	    // });
+        });
+//    });
+//    if (haveLogin.state != "resolved") fblogin();
+}
+
+function store_score(cpm, wrong) {
+    var s = read_scores(),
+        now = new Date().toISOString();
+    s.push({ datetime: now, cpm: cpm, wrong: wrong });
+    if (!JSON || !JSON.stringify) return false;
+    if (!window.localStorage) return false;
+    localStorage["scores"] = JSON.stringify(s);
+    return !! localStorage["scores"];
+}
+
+function read_scores() {
+    var json = localStorage["scores"];
+    if (!json) return [];
+    if (!JSON || !JSON.parse) return [];
+    if (!window.localStorage) return [];
+    var s = JSON.parse(json);
+    if (typeof s != "object") return [];
+    return s;
+}
+
+function highscore() {
+    var hs, s = read_scores()
+    if (!s) return undefined;
+    if (s.length == 0) return undefined;
+    hs = s[0];
+    for (var i in s) if (s[i].cpm > hs.cpm) hs = s[i];
+    $("#highcpm").html( hs.cpm ).attr("title", hs.cpm + " CPM = " + Math.round(hs.cpm / 5) + " WPM (" + new Date(hs.datetime).toLocaleString() + ")");
+    $("#highscore").show();
+    return hs;
+}
+
+function debug_scores() {
+
+	return false;
+/*
+    // Send score list to server to see if this thing works at all. In case
+    // you're wondering, this is going to be used to show a chart of recent
+    // scores. And by the time it's ready, it'll be client side only.
+    var s = read_scores(), cpms = [];
+    if (!s) return;
+    if (!s.length) return;
+    for (var i in s) cpms.push( s[i].cpm );
+    $.get("/log.plp/scores", { cpms: cpms.join("-") });
+*/
+}
+</script>
+
+
+<table style="height: 70px;"><tr><td width=110>
+<g:plusone></g:plusone>
+<td width=600>
+<fb:like href="http://typing-speed-test.aoeu.eu/" send="false" show_faces="true" width="600" layout="button_count"></fb:like>
+</tr>
+</table>
+
+
+
+
+
+<h2>Q & A</h2>
+<dl>
+
+<dt>What should I do if my hands begin to hurt?
+<dd>Stop typing and see a doctor. Seriously.
+
+<dt style="display: none">Any other sites that I should visit?
+<dd style="display: none"><a href="honing.html?dn">This one, but only if you're a bot</a>
+
+<dt>Why are there no difficult words in this test?
+<dd>The words are selected from a list of commonly used words. Some
+typing speed tests use words with difficult spellings, but I think that's
+unfair. I want to measure typing speed, not reading skill! The lack of
+difficult words in this test also enables this site to be used as
+a typing game for kids.
+
+
+<dt>What are CPM and WPM?
+<dd>They're short for Characters Per Minute, and Words Per Minute. The "raw
+CPM" is the actual number of characters you type per minute, including all the
+mistakes. "Corrected" scores count only correctly typed words. "WPM" is just
+the corrected CPM divided by 5. That's a de facto international standard.
+
+<dt>Does speed matter?
+<dd>Only if you're not fast enough. :)
+
+<dt>Got any statistics?
+<dd>Here's a histogram of CPM scores. To view the WPM equivalents, hover your
+mouse pointer over the scores. All scores are grouped in ranges; these are at
+the bottom. Per range, the height of the corresponding bar indicates how many
+tests resulted in a score within that range. (Note: entries where the user used
+the Enter key were not counted.)<br>
+<div style="font-size: 7pt;overflow-x:scroll">
+<br><table class=hist cellspacing=0 cellpadding=0><tr><td></td><td><div class=a style='height:195px'></div>&lt;0.1<br>%<div class=b style='height:5px'></div></td><td><div class=a style='height:196px'></div>&lt;0.1<br>%<div class=b style='height:4px'></div></td><td><div class=a style='height:183px'></div>0.4<br>%<div class=b style='height:17px'></div></td><td><div class=a style='height:156px'></div>1.0<br>%<div class=b style='height:44px'></div></td><td><div class=a style='height:137px'></div>1.4<br>%<div class=b style='height:63px'></div></td><td><div class=a style='height:120px'></div>1.8<br>%<div class=b style='height:80px'></div></td><td><div class=a style='height:100px'></div>2.3<br>%<div class=b style='height:100px'></div></td><td><div class=a style='height:77px'></div>2.8<br>%<div class=b style='height:123px'></div></td><td><div class=a style='height:55px'></div>3.3<br>%<div class=b style='height:145px'></div></td><td><div class=a style='height:35px'></div>3.7<br>%<div class=b style='height:165px'></div></td><td><div class=a style='height:17px'></div>4.2<br>%<div class=b style='height:183px'></div></td><td><div class=a style='height:5px'></div>4.4<br>%<div class=b style='height:195px'></div></td><td><div class=a style='height:0px'></div>4.5<br>%<div class=b style='height:200px'></div></td><td><div class=a style='height:0px'></div>4.5<br>%<div class=b style='height:200px'></div></td><td><div class=a style='height:3px'></div>4.5<br>%<div class=b style='height:197px'></div></td><td><div class=a style='height:10px'></div>4.3<br>%<div class=b style='height:190px'></div></td><td><div class=a style='height:18px'></div>4.1<br>%<div class=b style='height:182px'></div></td><td><div class=a style='height:26px'></div>3.9<br>%<div class=b style='height:174px'></div></td><td><div class=a style='height:36px'></div>3.7<br>%<div class=b style='height:164px'></div></td><td><div class=a style='height:46px'></div>3.5<br>%<div class=b style='height:154px'></div></td><td><div class=a style='height:55px'></div>3.3<br>%<div class=b style='height:145px'></div></td><td><div class=a style='height:64px'></div>3.1<br>%<div class=b style='height:136px'></div></td><td><div class=a style='height:73px'></div>2.9<br>%<div class=b style='height:127px'></div></td><td><div class=a style='height:81px'></div>2.7<br>%<div class=b style='height:119px'></div></td><td><div class=a style='height:89px'></div>2.5<br>%<div class=b style='height:111px'></div></td><td><div class=a style='height:96px'></div>2.4<br>%<div class=b style='height:104px'></div></td><td><div class=a style='height:104px'></div>2.2<br>%<div class=b style='height:96px'></div></td><td><div class=a style='height:110px'></div>2.0<br>%<div class=b style='height:90px'></div></td><td><div class=a style='height:117px'></div>1.9<br>%<div class=b style='height:83px'></div></td><td><div class=a style='height:123px'></div>1.7<br>%<div class=b style='height:77px'></div></td><td><div class=a style='height:129px'></div>1.6<br>%<div class=b style='height:71px'></div></td><td><div class=a style='height:134px'></div>1.5<br>%<div class=b style='height:66px'></div></td><td><div class=a style='height:139px'></div>1.4<br>%<div class=b style='height:61px'></div></td><td><div class=a style='height:144px'></div>1.3<br>%<div class=b style='height:56px'></div></td><td><div class=a style='height:149px'></div>1.2<br>%<div class=b style='height:51px'></div></td><td><div class=a style='height:153px'></div>1.1<br>%<div class=b style='height:47px'></div></td><td><div class=a style='height:157px'></div>1.0<br>%<div class=b style='height:43px'></div></td><td><div class=a style='height:161px'></div>0.9<br>%<div class=b style='height:39px'></div></td><td><div class=a style='height:164px'></div>0.8<br>%<div class=b style='height:36px'></div></td><td><div class=a style='height:168px'></div>0.7<br>%<div class=b style='height:32px'></div></td><td><div class=a style='height:171px'></div>0.7<br>%<div class=b style='height:29px'></div></td><td><div class=a style='height:174px'></div>0.6<br>%<div class=b style='height:26px'></div></td><td><div class=a style='height:177px'></div>0.5<br>%<div class=b style='height:23px'></div></td><td><div class=a style='height:179px'></div>0.5<br>%<div class=b style='height:21px'></div></td><td><div class=a style='height:182px'></div>0.4<br>%<div class=b style='height:18px'></div></td><td><div class=a style='height:184px'></div>0.4<br>%<div class=b style='height:16px'></div></td><td><div class=a style='height:186px'></div>0.3<br>%<div class=b style='height:14px'></div></td><td><div class=a style='height:188px'></div>0.3<br>%<div class=b style='height:12px'></div></td><td><div class=a style='height:189px'></div>0.2<br>%<div class=b style='height:11px'></div></td><td><div class=a style='height:191px'></div>0.2<br>%<div class=b style='height:9px'></div></td><td><div class=a style='height:192px'></div>0.2<br>%<div class=b style='height:8px'></div></td><td><div class=a style='height:193px'></div>0.2<br>%<div class=b style='height:7px'></div></td><td><div class=a style='height:194px'></div>&lt;0.1<br>%<div class=b style='height:6px'></div></td><td><div class=a style='height:195px'></div>&lt;0.1<br>%<div class=b style='height:5px'></div></td><td><div class=a style='height:196px'></div>&lt;0.1<br>%<div class=b style='height:4px'></div></td><td><div class=a style='height:197px'></div>&lt;0.1<br>%<div class=b style='height:3px'></div></td><td><div class=a style='height:197px'></div>&lt;0.1<br>%<div class=b style='height:3px'></div></td><td><div class=a style='height:198px'></div>&lt;0.1<br>%<div class=b style='height:2px'></div></td><td><div class=a style='height:198px'></div>&lt;0.1<br>%<div class=b style='height:2px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td><td><div class=a style='height:200px'></div>&lt;0.1<br>%<div class=b style='height:0px'></div></td><td><div class=a style='height:200px'></div>&lt;0.1<br>%<div class=b style='height:0px'></div></td><td><div class=a style='height:200px'></div>&lt;0.1<br>%<div class=b style='height:0px'></div></td><td><div class=a style='height:199px'></div>&lt;0.1<br>%<div class=b style='height:1px'></div></td></tr><tr><td>CPM<br><br>&Sigma;%</td><td></td><td title='6+ WPM'><div style='position: relative; left: -2.4ex'>30<br><br>0</div></td><td title='8+ WPM'><div style='position: relative; left: -2.4ex'>40<br><br>0</div></td><td title='10+ WPM'><div style='position: relative; left: -2.4ex'>50<br><br>1</div></td><td title='12+ WPM'><div style='position: relative; left: -2.4ex'>60<br><br>2</div></td><td title='14+ WPM'><div style='position: relative; left: -2.4ex'>70<br><br>3</div></td><td title='16+ WPM'><div style='position: relative; left: -2.4ex'>80<br><br>5</div></td><td title='18+ WPM'><div style='position: relative; left: -2.4ex'>90<br><br>7</div></td><td title='20+ WPM'><div style='position: relative; left: -2.4ex'>100<br><br>10</div></td><td title='22+ WPM'><div style='position: relative; left: -2.4ex'>110<br><br>14</div></td><td title='24+ WPM'><div style='position: relative; left: -2.4ex'>120<br><br>17</div></td><td title='26+ WPM'><div style='position: relative; left: -2.4ex'>130<br><br>22</div></td><td title='28+ WPM'><div style='position: relative; left: -2.4ex'>140<br><br>26</div></td><td title='30+ WPM'><div style='position: relative; left: -2.4ex'>150<br><br>31</div></td><td title='32+ WPM'><div style='position: relative; left: -2.4ex'>160<br><br>35</div></td><td title='34+ WPM'><div style='position: relative; left: -2.4ex'>170<br><br>40</div></td><td title='36+ WPM'><div style='position: relative; left: -2.4ex'>180<br><br>44</div></td><td title='38+ WPM'><div style='z-index: 1; position: relative; width: 0px; left: 0.66px; height: 0px; top: -4ex; color: red;'><div style='position: relative; left: -1px; height: 8.4ex; border-left: 1px solid red;'><div style='position: absolute; bottom: 0'>&nbsp;Median:&nbsp;<span title='Median: 39 WPM'>196&nbsp;CPM</span></div></div></div><div style='position: relative; left: -2.4ex'>190<br><br>48</div></td><td title='40+ WPM'><div style='position: relative; left: -2.4ex'>200<br><br>52</div></td><td title='42+ WPM'><div style='position: relative; left: -2.4ex'>210<br><br>56</div></td><td title='44+ WPM'><div style='position: relative; left: -2.4ex'>220<br><br>59</div></td><td title='46+ WPM'><div style='position: relative; left: -2.4ex'>230<br><br>62</div></td><td title='48+ WPM'><div style='position: relative; left: -2.4ex'>240<br><br>65</div></td><td title='50+ WPM'><div style='position: relative; left: -2.4ex'>250<br><br>68</div></td><td title='52+ WPM'><div style='position: relative; left: -2.4ex'>260<br><br>71</div></td><td title='54+ WPM'><div style='position: relative; left: -2.4ex'>270<br><br>73</div></td><td title='56+ WPM'><div style='position: relative; left: -2.4ex'>280<br><br>76</div></td><td title='58+ WPM'><div style='position: relative; left: -2.4ex'>290<br><br>78</div></td><td title='60+ WPM'><div style='position: relative; left: -2.4ex'>300<br><br>80</div></td><td title='62+ WPM'><div style='position: relative; left: -2.4ex'>310<br><br>82</div></td><td title='64+ WPM'><div style='position: relative; left: -2.4ex'>320<br><br>84</div></td><td title='66+ WPM'><div style='position: relative; left: -2.4ex'>330<br><br>85</div></td><td title='68+ WPM'><div style='position: relative; left: -2.4ex'>340<br><br>87</div></td><td title='70+ WPM'><div style='position: relative; left: -2.4ex'>350<br><br>88</div></td><td title='72+ WPM'><div style='position: relative; left: -2.4ex'>360<br><br>89</div></td><td title='74+ WPM'><div style='position: relative; left: -2.4ex'>370<br><br>90</div></td><td title='76+ WPM'><div style='position: relative; left: -2.4ex'>380<br><br>92</div></td><td title='78+ WPM'><div style='position: relative; left: -2.4ex'>390<br><br>93</div></td><td title='80+ WPM'><div style='position: relative; left: -2.4ex'>400<br><br>93</div></td><td title='82+ WPM'><div style='position: relative; left: -2.4ex'>410<br><br>94</div></td><td title='84+ WPM'><div style='position: relative; left: -2.4ex'>420<br><br>95</div></td><td title='86+ WPM'><div style='position: relative; left: -2.4ex'>430<br><br>96</div></td><td title='88+ WPM'><div style='position: relative; left: -2.4ex'>440<br><br>96</div></td><td title='90+ WPM'><div style='position: relative; left: -2.4ex'>450<br><br>97</div></td><td title='92+ WPM'><div style='position: relative; left: -2.4ex'>460<br><br>97</div></td><td title='94+ WPM'><div style='position: relative; left: -2.4ex'>470<br><br>98</div></td><td title='96+ WPM'><div style='position: relative; left: -2.4ex'>480<br><br>98</div></td><td title='98+ WPM'><div style='position: relative; left: -2.4ex'>490<br><br>98</div></td><td title='100+ WPM'><div style='position: relative; left: -2.4ex'>500<br><br>99</div></td><td title='102+ WPM'><div style='position: relative; left: -2.4ex'>510<br><br>99</div></td><td title='104+ WPM'><div style='position: relative; left: -2.4ex'>520<br><br>99</div></td><td title='106+ WPM'><div style='position: relative; left: -2.4ex'>530<br><br>99</div></td><td title='108+ WPM'><div style='position: relative; left: -2.4ex'>540<br><br>99</div></td><td title='110+ WPM'><div style='position: relative; left: -2.4ex'>550<br><br>99</div></td><td title='112+ WPM'><div style='position: relative; left: -2.4ex'>560<br><br>100</div></td><td title='114+ WPM'><div style='position: relative; left: -2.4ex'>570<br><br>100</div></td><td title='116+ WPM'><div style='position: relative; left: -2.4ex'>580<br><br>100</div></td><td title='118+ WPM'><div style='position: relative; left: -2.4ex'>590<br><br>100</div></td><td title='120+ WPM'><div style='position: relative; left: -2.4ex'>600<br><br>100</div></td><td title='122+ WPM'><div style='position: relative; left: -2.4ex'>610<br><br>100</div></td><td title='124+ WPM'><div style='position: relative; left: -2.4ex'>620<br><br>100</div></td><td title='126+ WPM'><div style='position: relative; left: -2.4ex'>630<br><br>100</div></td><td title='128+ WPM'><div style='position: relative; left: -2.4ex'>640<br><br>100</div></td><td title='130+ WPM'><div style='position: relative; left: -2.4ex'>650<br><br>100</div></td><td title='132+ WPM'><div style='position: relative; left: -2.4ex'>660<br><br>100</div></td><td title='134+ WPM'><div style='position: relative; left: -2.4ex'>670<br><br>100</div></td><td title='136+ WPM'><div style='position: relative; left: -2.4ex'>680<br><br>100</div></td><td title='138+ WPM'><div style='position: relative; left: -2.4ex'>690<br><br>100</div></td><td title='140+ WPM'><div style='position: relative; left: -2.4ex'>700<br><br>100</div></td></tr></table><br>Last updated: 10 December 2016 (<i>n</i> = 32274424)
+</div>
+<p>
+After finish the test, you will get your percentile score. This indicates how
+fast you type compared to others who have taken the same test.
+
+<dt>What can I do to improve my score?
+<dd>They say that practice makes perfect. Apart from practicing, you can do a
+few things to get better at typing. Learn to touch type (force yourself to look
+at the screen, not the keys), get a better keyboard, improve your ergonomics by
+changing your display and furniture.
+
+
+
+</dl>
+</div> <!-- testui -->
+
+<div style="margin: 1em auto; width: 728px; overflow: hidden">
+<!-- yyy-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7765406228987634"
+     data-ad-slot="4197254491"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div class=testui>
+<dl>
+
+
+
+<dt>In the web address "typing-speed-test.aoeu.eu", what does AOEU stand for?
+<dd>It doesn't stand for anything. It's for the <a target="_top" href=
+"http://learn.dvorak.nl/">Dvorak keyboard layout</a>, what "ASDF" is for QWERTY
+keyboards. Switching from QWERTY to Dvorak is another way to improve comfort
+and reduce, or even avoid, typing-induced injuries. You can do that with your
+existing keyboard. <a target="_top" href= "http://learn.dvorak.nl/">
+Learning Dvorak</a> takes approximately 10 hours, even if you're already very
+familiar with QWERTY.
+
+<dt>Can I link to your site?</dt>
+<dd>Yes, please do! You can also <a target="_top" href="/iframe.plp">
+embed</a> the typing test in your site. When you link to this site or embed
+the frame, don't forget to tell your visitors your CPM or WPM score so they can
+compare their scores.
+
+<dt>Who are you and what's your score?
+<dd>Hi, I'm Juerd. I use the Dvorak keyboard layout and I usually score around
+620 CPM. My personal highscore is 674 CPM. While this is definitely faster than
+most people I know, there are (of course) people who are
+even faster - with any keyboa
