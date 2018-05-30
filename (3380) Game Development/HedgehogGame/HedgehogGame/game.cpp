@@ -1452,9 +1452,9 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 					first = false;
 					RECT frc = board.getHogRect(fromr, fromc);
 					RECT trc = board.getHogRect(tor, toc);
-					start = {frc.left, frc.top};//starting point
+					start = {(double)frc.left, (double)frc.top};//starting point
 					temp = start;//copy of starting point (used to store changes)
-					end = {trc.left, trc.top};//ending pos
+					end = {(double)trc.left, (double)trc.top};//ending pos
 
 					dist = sqrt(pow(end.x - start.x, 2) + pow(end.y - start.y, 2));//total distance from start to end
 					dirx = (end.x - start.x) / dist;//angle in x direction
@@ -1646,10 +1646,10 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 
 			//set rect for all squares on board when window size is changed
 			RECT rc = getclientrect(hwnd);
-			int h = rc.bottom / board.rows;
-			int w = rc.right / board.columns;
-			for (UINT r = 0; r < board.squares.size(); r++) {
-				for (UINT c = 0; c < board.squares[r].size(); c++) {
+			LONG h = rc.bottom / board.rows;
+			LONG w = rc.right / board.columns;
+			for (LONG r = 0; r < board.squares.size(); r++) {
+				for (LONG c = 0; c < board.squares[r].size(); c++) {
 					board.squares[r][c].rc = {c * w, r * h, (c + 1) * w, (r + 1) * h};
 				}
 			}

@@ -48,6 +48,18 @@ void Ivold(){
 	}
 	else{ std::cout << "failed" << '\n'; }
 }
+long Igetvol() {
+	long vol = -1;
+	if (ihRes == S_OK && iITunes)
+		iITunes->get_SoundVolume(&vol);
+	else { std::cout << "failed" << '\n'; }
+	return vol;
+}
+void Isetvol(long vol) {
+	if (ihRes == S_OK && iITunes) 
+		iITunes->put_SoundVolume(vol);
+	else { std::cout << "failed" << '\n'; }
+}
 std::string Igetcursong(){
 	std::wstring temp;
 	BSTR bt = 0;

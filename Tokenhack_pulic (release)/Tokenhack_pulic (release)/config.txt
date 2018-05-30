@@ -69,7 +69,7 @@ ocr no stats timeout	: 	30	*approx. # of seconds before roller will exit because
 *----------------------------------------------------------------
 volume[0x4f0e]		:	0x4f0e	*volume ranges from 0x0000 to 0xFFFF
 RAINBOW[0]		:	1	
-console[0]		:	1	
+console[1]		:	0	
 keyboardhookoutput[1]	:	0	
 show tokenhack on start[0]	:	1	
 

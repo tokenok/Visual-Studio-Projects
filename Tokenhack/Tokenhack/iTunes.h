@@ -10,6 +10,8 @@ void Inext();
 void Iprev();
 void Ivolu();
 void Ivold();
+long Igetvol();
+void Isetvol(long vol);
 std::string Igetcursong();
 std::string Igetcurartist();
 

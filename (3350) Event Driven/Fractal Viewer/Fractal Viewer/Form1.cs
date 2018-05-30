@@ -13,6 +13,8 @@ using System.Reflection;
 using System.Drawing.Imaging;
 using System.IO;
 using AviFile;
+using Microsoft.Win32.SafeHandles;
+using System.Diagnostics;
 
 namespace Fractal_Viewer {
 	public partial class Form1 : Form {
@@ -27,7 +29,7 @@ namespace Fractal_Viewer {
 		[DllImport("kernel32.dll")]
 		static extern bool AllocConsole();
 
-		[DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll")]
 		static extern IntPtr GetConsoleWindow();
 
 		[DllImport("user32.dll")]
@@ -262,7 +264,7 @@ namespace Fractal_Viewer {
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
-			AllocConsole();
+            AllocConsole();
 			ShowWindow(GetConsoleWindow(), SW_HIDE);
 			
 			RECT rcd = new RECT();
@@ -281,15 +283,15 @@ namespace Fractal_Viewer {
 
 			int w = rcd.right - (2 * cfi.dwFontSize.X);
 			int h = rcd.bottom - 30 - (2 * cfi.dwFontSize.Y);
-			
-			Console.WindowWidth = w / cfi.dwFontSize.X;
-			Console.WindowHeight = h / cfi.dwFontSize.Y;
-			Console.BufferWidth = Console.WindowWidth;
-			Console.BufferHeight = Console.WindowHeight;
 
-			//////////////////////////////////////////////////////////////////////////////////////////
+            Console.WindowWidth = w / cfi.dwFontSize.X;
+            Console.WindowHeight = h / cfi.dwFontSize.Y;
+            Console.BufferWidth = Console.WindowWidth;
+            Console.BufferHeight = Console.WindowHeight;
 
-			kbProc = new HookProc(kbproc);
+            //////////////////////////////////////////////////////////////////////////////////////////
+
+            kbProc = new HookProc(kbproc);
 			kbhook = SetWindowsHookEx(WH_KEYBOARD_LL, kbProc, (IntPtr)0, 0);
 
 			pb_julia.Parent.Controls.SetChildIndex(pb_julia, 0);
@@ -665,8 +667,8 @@ namespace Fractal_Viewer {
 					for (; count < G.maxloop; ++count) {
 						double a = r * r, b = i * i;
 						if (a + b <= 4) {
-							r = 2 * r * i + complexoff;
-							i = a - b + realoff;
+							i = 2 * r * i + complexoff;
+							r = a - b + realoff;
 						}
 						else
 							break;

@@ -5,17 +5,21 @@
 #include <time.h>
 #include <fstream>
 #include <algorithm>
+#include <functional>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <deque>
 #include <map>
+#include <unordered_map>
+#include <set>
 #include <unordered_set>
 
 #include "C:/CPPlibs/common/f/common.h"
 #include "bignum.h"
 
 typedef unsigned long long ull;
+typedef long long ll;
 
 using namespace std;
 
@@ -31,6 +35,17 @@ using namespace std;
 		cout << " (" << sfinaltime  << ")\n"; \
 	}
 
+#define SOLVE_SIGNED(a) { \
+		/*cout << "Solving " << #a << "...";*/ \
+		double time = static_cast<double>(clock()); \
+		long long result = a(); \
+		double time2 = static_cast<double>(clock()); \
+		/*for (int __a = 0; __a < 80; __a++) cout << '\r';*/ \
+		cout << "Answer for " << #a << " is: " << result; \
+		double finaltime = time2 - time; \
+		std::string sfinaltime = ((finaltime > 1000.0) ? milliseconds_to_hms((int)finaltime) : double_to_str(finaltime) + " ms"); \
+		cout << " (" << sfinaltime  << ")\n"; \
+	}
 
 ull Problem_1() {
 	ull answer = 0;
@@ -220,28 +235,30 @@ ull Problem_11() {
 
 	return answer;
 }
-
 ull Problem_12() {
-	//TODO Problem_12
 	ull answer = 0;
 
-	vector<int> primes;
-	for (UINT i = 0; primes.size() != 3000; i++) {
-		if (is_prime(i))
-			primes.push_back(i);
-	}
+	auto get_fact_count = [](ull n) {
+		ull ub = (ull)sqrt(n);
+		ull c = ub * ub == n ? 1 : 2;
 
-	ull tri = 0;
-	for (UINT i = 0;; i++) {
-		tri += i;
-		for (UINT j = 2; j < i; j++) {
-
+		for (ull i = 2; i <= ub; i++) {
+			c += n % i == 0 ? 2 : 0;
 		}
+
+		return c;
+	};
+
+
+	for (ull i = 10000;; i++) {
+		ull n = i * (i + 1) / 2;
+		
+		if (get_fact_count(n) > 500)
+			return n;
 	}
 
 	return answer;
 }
-
 ull Problem_13() {
 	vector<double> nums = {
 		37107287533902102798797998220837590246510135740250.0,
@@ -414,46 +431,11 @@ ull Problem_16() {
 
 	return answer;
 }
-
 ull Problem_17() {
-	//TODO Problem_17
-	const vector<pair<ull, string>> ones = {
-		{1,"one"}, 
-		{2,"two"},
-		{3,"three"},
-		{4,"four"},
-		{5,"five"},
-		{6,"six"},
-		{7,"seven"},
-		{8,"eight"},
-		{9,"nine"}
-	};
-
-	const vector<pair<ull, string>> tens = {
-		{10, "ten"},
-		{20, "twenty"},
-		{30, "thirty"},
-		{40, "fourty"},
-		{50, "fifty"},
-		{60, "sixty"},
-		{70, "seventy"},
-		{80, "eighty"},
-		{90, "ninety"}
-	};
-
-	const vector<pair<ull, string>> teens = {
-		{11, "eleven"},
-		{12, "twelve"},
-		{13, "thirteen"},
-		{14, "fourteen"},
-		{15, "fifteen"},
-		{16, "sixteen"},
-		{17, "seventeen"},
-		{18, "eighteen"},
-		{19, "nineteen"}
-	};
-
 	const vector<pair<ull, string>> x = {
+		{1,"one"}, {2,"two"}, {3,"three"}, {4,"four"}, {5,"five"}, {6,"six"}, {7,"seven"}, {8,"eight"},	{9,"nine"},
+		{10, "ten"}, {11, "eleven"}, {12, "twelve"}, {13, "thirteen"}, {14, "fourteen"}, {15, "fifteen"}, {16, "sixteen"}, {17, "seventeen"}, {18, "eighteen"}, {19, "nineteen"},
+		{20, "twenty"}, {30, "thirty"}, {40, "forty"}, {50, "fifty"}, {60, "sixty"}, {70, "seventy"}, {80, "eighty"}, {90, "ninety"},
 		{100, "hundred"},
 		{1000, "thousand"},
 		{1000000, "million"},
@@ -461,24 +443,30 @@ ull Problem_17() {
 		{1000000000000, "trillion"},
 		{1000000000000000, "quadrillion"},
 		{1000000000000000000, "quintillion"},
-		{1000000000000000001, "end"}
 	};
 
-	auto num_to_eng = [&](ull n) -> string {
+	function<string(ull, bool)> num_to_eng = [&](ull n, bool spaces) -> string {
 		string ret = "";
 
-		int len = (int)log10(n) + 1;
+		bool can_and = false;
 
-		for (int i = 0; i < (int)x.size(); i++) {
-			if (len >= x[i].first && len < x[i + 1].first) {
-				int f = len - (int)x[i].first;
-				if (f == 2) {//hundreds
+		for (int p = x.size() - 1; n > 0 && p >= 0; p--) {
+			int c = n / x[p].first;
+			if (c > 0) {
+				n -= c * x[p].first;
 
+				if (x[p].first >= 100) {
+					can_and = true;
+					if (c > 20)
+						ret += num_to_eng(c, spaces);
+					else
+						ret += x[c - 1].second + (spaces ? " " : "");
 				}
-				if (f == 1) {//tens
-
+				else if (can_and) {
+					can_and = false;
+					ret += (spaces ? "and " : "and");
 				}
-				cout << '\n';
+				ret += x[p].second + (spaces ? " " : "");
 			}
 		}
 
@@ -486,13 +474,12 @@ ull Problem_17() {
 	};
 
 	ull answer = 0;
-	for (int i = 20317; i < 100000; i++) {
-		answer += num_to_eng(i).length();
-	}
+
+	for (int i = 1; i <= 1000; i++) 
+		answer += num_to_eng(i, false).length();
 
 	return answer;
 }
-
 ull Problem_18() {
 	vector<vector<int>> tri = {
 		{75},
@@ -538,6 +525,42 @@ ull Problem_18() {
 	cout << tri[0][0] << '\n';*/
 
 	return tri[0][0];
+}
+ull Problem_19() {
+	ull answer = 0;
+
+	int d = 0;
+	int wd = 1;
+	int y = 1901;
+
+	while (y < 2001) {
+		bool l = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0) ? 1 : 0;
+		if (wd == 0)
+			answer++;
+		while (d < 365 + l) {
+			if (wd == 0) {
+				if (d == 31 + l ||
+					d == 59 + l ||
+					d == 90 + l ||
+					d == 120 + l ||
+					d == 151 + l ||
+					d == 181 + l ||
+					d == 212 + l ||
+					d == 243 + l ||
+					d == 273 + l ||
+					d == 304 + l ||
+					d == 334 + l) {
+					answer++;
+				}				
+			}
+			++wd %= 7;
+			d++;
+		}
+		d = 0;
+		y++;
+	}
+
+	return answer;
 }
 ull Problem_20() {
 	bignum num = 1;
@@ -1135,6 +1158,43 @@ ull Problem_22() {
 
 	return answer;
 }
+ull Problem_23() {
+	ull answer = 0;
+
+	auto get_fact_sum = [](int n) {
+		ull ub = (ull)sqrt(n);
+		ull ret = 1;
+
+		for (ull i = 2; i <= ub; i++) 
+			ret += n % i == 0 ? (i + n / i) : 0;
+
+		return ret - (ub * ub == n ? ub : 0);
+	};
+	
+	vector<int> a;
+	unordered_set<int> n;
+	for (int i = 1; i < 28123; i++) {
+		n.insert(i);
+		if (get_fact_sum(i) > i)
+			a.push_back(i);
+	}
+
+	for (int i = 0; i < (int)a.size(); i++) {
+		for (int j = 0; j < (int)a.size(); j++) {
+			int s = a[i] + a[j];
+			if (s > 28123)
+				break;
+			if (n.find(s) != n.end())
+				n.erase(s);
+		}
+	}
+
+	for (auto a : n) {
+		answer += a;
+	}
+
+	return answer;
+}
 ull Problem_24() {
 	vector<int> n = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -1163,6 +1223,23 @@ ull Problem_25() {
 
 	return answer;
 }
+ll Problem_27() {
+	ll answer = 0;
+
+	ll max = 0;
+	for (int a = -999; a < 1000; a++) {
+		for (int b = -1000; b <= 1000; b++) {
+			int n = 0;
+			while (is_prime(abs(n * n + a * n++ + b)));
+			if (n - 1 > max) {
+				max = n - 1;
+				answer = a * b;
+			}
+		}
+	}	
+
+	return answer;
+}
 ull Problem_28() {
 	ull answer = 0;
 
@@ -1172,6 +1249,25 @@ ull Problem_28() {
 	}
 
 	return answer + 1;
+}
+ull Problem_29() {
+	ull answer = 0;
+
+	vector<bignum> n;
+	n.reserve(100 * 100);
+	for (int i = 2; i <= 100; i++) {
+		for (int j = 2; j <= 100; j++) {
+			bignum ret = i;
+			for (int k = 1; k < j; k++)
+				ret *= i;
+			n.push_back(ret);
+		}
+	}
+
+	sort(n.begin(), n.end());
+	n.erase(unique(n.begin(), n.end()), n.end());
+	
+	return (ull)n.size();
 }
 ull Problem_30() {
 	ull answer = 0;
@@ -1392,6 +1488,31 @@ ull Problem_37() {
 
 	return answer;
 }
+ull Problem_38() {
+	ull answer = 0;
+
+	auto is_pan = [](string s) {
+		for (int i = 1; i <= 9; i++) 
+			if (s.find((char)(i + 48)) == string::npos) 
+				return false;
+		return true;
+	};
+
+	for (int i = 1; i < 10000; i++) {
+		string n = int_to_str(i);
+		for (int j = 2;; j++) {
+			n += int_to_str(i * j);
+			if (n.size() >= 9)
+				break;
+		}
+		if (n.size() == 9 && is_pan(n)) {
+			ull a = str_to_ull(n);
+			answer = a > answer ? a : answer;
+		}
+	}
+
+	return answer;
+}
 ull Problem_40() {
 	string d = "";
 	//d.reserve(1000000);
@@ -1401,6 +1522,255 @@ ull Problem_40() {
 	}
 
 	return (d[0] - 48) * (d[9] - 48)* (d[99] - 48)* (d[999] - 48)* (d[9999] - 48) * (d[99999] - 48)* (d[999999] - 48);
+}
+ull Problem_41() {
+	ull answer = 0;	
+
+	string s = "123456789";
+	for (int i = 0; i < 9; i++) {
+		string t = s;			
+		do {
+			int n = str_to_int(t);
+			answer = ((is_prime(n) && n > answer) ? n : answer);
+		} while (next_permutation(t.begin(), t.end()));
+		s.pop_back();
+	}
+
+	return answer;
+}
+ull Problem_42() {
+	ull answer = 0;
+
+	vector<string> w = {
+		"A","ABILITY","ABLE","ABOUT","ABOVE","ABSENCE","ABSOLUTELY","ACADEMIC","ACCEPT",
+		"ACCESS","ACCIDENT","ACCOMPANY","ACCORDING","ACCOUNT","ACHIEVE","ACHIEVEMENT","ACID","ACQUIRE",
+		"ACROSS","ACT","ACTION","ACTIVE","ACTIVITY","ACTUAL","ACTUALLY","ADD","ADDITION",
+		"ADDITIONAL","ADDRESS","ADMINISTRATION","ADMIT","ADOPT","ADULT","ADVANCE","ADVANTAGE","ADVICE",
+		"ADVISE","AFFAIR","AFFECT","AFFORD","AFRAID","AFTER","AFTERNOON","AFTERWARDS","AGAIN",
+		"AGAINST","AGE","AGENCY","AGENT","AGO","AGREE","AGREEMENT","AHEAD","AID",
+		"AIM","AIR","AIRCRAFT","ALL","ALLOW","ALMOST","ALONE","ALONG","ALREADY",
+		"ALRIGHT","ALSO","ALTERNATIVE","ALTHOUGH","ALWAYS","AMONG","AMONGST","AMOUNT","AN",
+		"ANALYSIS","ANCIENT","AND","ANIMAL","ANNOUNCE","ANNUAL","ANOTHER","ANSWER","ANY",
+		"ANYBODY","ANYONE","ANYTHING","ANYWAY","APART","APPARENT","APPARENTLY","APPEAL","APPEAR",
+		"APPEARANCE","APPLICATION","APPLY","APPOINT","APPOINTMENT","APPROACH","APPROPRIATE","APPROVE","AREA",
+		"ARGUE","ARGUMENT","ARISE","ARM","ARMY","AROUND","ARRANGE","ARRANGEMENT","ARRIVE",
+		"ART","ARTICLE","ARTIST","AS","ASK","ASPECT","ASSEMBLY","ASSESS","ASSESSMENT",
+		"ASSET","ASSOCIATE","ASSOCIATION","ASSUME","ASSUMPTION","AT","ATMOSPHERE","ATTACH","ATTACK",
+		"ATTEMPT","ATTEND","ATTENTION","ATTITUDE","ATTRACT","ATTRACTIVE","AUDIENCE","AUTHOR","AUTHORITY",
+		"AVAILABLE","AVERAGE","AVOID","AWARD","AWARE","AWAY","AYE","BABY","BACK",
+		"BACKGROUND","BAD","BAG","BALANCE","BALL","BAND","BANK","BAR","BASE",
+		"BASIC","BASIS","BATTLE","BE","BEAR","BEAT","BEAUTIFUL","BECAUSE","BECOME",
+		"BED","BEDROOM","BEFORE","BEGIN","BEGINNING","BEHAVIOUR","BEHIND","BELIEF","BELIEVE",
+		"BELONG","BELOW","BENEATH","BENEFIT","BESIDE","BEST","BETTER","BETWEEN","BEYOND",
+		"BIG","BILL","BIND","BIRD","BIRTH","BIT","BLACK","BLOCK","BLOOD",
+		"BLOODY","BLOW","BLUE","BOARD","BOAT","BODY","BONE","BOOK","BORDER",
+		"BOTH","BOTTLE","BOTTOM","BOX","BOY","BRAIN","BRANCH","BREAK","BREATH",
+		"BRIDGE","BRIEF","BRIGHT","BRING","BROAD","BROTHER","BUDGET","BUILD","BUILDING",
+		"BURN","BUS","BUSINESS","BUSY","BUT","BUY","BY","CABINET","CALL",
+		"CAMPAIGN","CAN","CANDIDATE","CAPABLE","CAPACITY","CAPITAL","CAR","CARD","CARE",
+		"CAREER","CAREFUL","CAREFULLY","CARRY","CASE","CASH","CAT","CATCH","CATEGORY",
+		"CAUSE","CELL","CENTRAL","CENTRE","CENTURY","CERTAIN","CERTAINLY","CHAIN","CHAIR",
+		"CHAIRMAN","CHALLENGE","CHANCE","CHANGE","CHANNEL","CHAPTER","CHARACTER","CHARACTERISTIC","CHARGE",
+		"CHEAP","CHECK","CHEMICAL","CHIEF","CHILD","CHOICE","CHOOSE","CHURCH","CIRCLE",
+		"CIRCUMSTANCE","CITIZEN","CITY","CIVIL","CLAIM","CLASS","CLEAN","CLEAR","CLEARLY",
+		"CLIENT","CLIMB","CLOSE","CLOSELY","CLOTHES","CLUB","COAL","CODE","COFFEE",
+		"COLD","COLLEAGUE","COLLECT","COLLECTION","COLLEGE","COLOUR","COMBINATION","COMBINE","COME",
+		"COMMENT","COMMERCIAL","COMMISSION","COMMIT","COMMITMENT","COMMITTEE","COMMON","COMMUNICATION","COMMUNITY",
+		"COMPANY","COMPARE","COMPARISON","COMPETITION","COMPLETE","COMPLETELY","COMPLEX","COMPONENT","COMPUTER",
+		"CONCENTRATE","CONCENTRATION","CONCEPT","CONCERN","CONCERNED","CONCLUDE","CONCLUSION","CONDITION","CONDUCT",
+		"CONFERENCE","CONFIDENCE","CONFIRM","CONFLICT","CONGRESS","CONNECT","CONNECTION","CONSEQUENCE","CONSERVATIVE",
+		"CONSIDER","CONSIDERABLE","CONSIDERATION","CONSIST","CONSTANT","CONSTRUCTION","CONSUMER","CONTACT","CONTAIN",
+		"CONTENT","CONTEXT","CONTINUE","CONTRACT","CONTRAST","CONTRIBUTE","CONTRIBUTION","CONTROL","CONVENTION",
+		"CONVERSATION","COPY","CORNER","CORPORATE","CORRECT","COS","COST","COULD","COUNCIL",
+		"COUNT","COUNTRY","COUNTY","COUPLE","COURSE","COURT","COVER","CREATE","CREATION",
+		"CREDIT","CRIME","CRIMINAL","CRISIS","CRITERION","CRITICAL","CRITICISM","CROSS","CROWD",
+		"CRY","CULTURAL","CULTURE","CUP","CURRENT","CURRENTLY","CURRICULUM","CUSTOMER","CUT",
+		"DAMAGE","DANGER","DANGEROUS","DARK","DATA","DATE","DAUGHTER","DAY","DEAD",
+		"DEAL","DEATH","DEBATE","DEBT","DECADE","DECIDE","DECISION","DECLARE","DEEP",
+		"DEFENCE","DEFENDANT","DEFINE","DEFINITION","DEGREE","DELIVER","DEMAND","DEMOCRATIC","DEMONSTRATE",
+		"DENY","DEPARTMENT","DEPEND","DEPUTY","DERIVE","DESCRIBE","DESCRIPTION","DESIGN","DESIRE",
+		"DESK","DESPITE","DESTROY","DETAIL","DETAILED","DETERMINE","DEVELOP","DEVELOPMENT","DEVICE",
+		"DIE","DIFFERENCE","DIFFERENT","DIFFICULT","DIFFICULTY","DINNER","DIRECT","DIRECTION","DIRECTLY",
+		"DIRECTOR","DISAPPEAR","DISCIPLINE","DISCOVER","DISCUSS","DISCUSSION","DISEASE","DISPLAY","DISTANCE",
+		"DISTINCTION","DISTRIBUTION","DISTRICT","DIVIDE","DIVISION","DO","DOCTOR","DOCUMENT","DOG",
+		"DOMESTIC","DOOR","DOUBLE","DOUBT","DOWN","DRAW","DRAWING","DREAM","DRESS",
+		"DRINK","DRIVE","DRIVER","DROP","DRUG","DRY","DUE","DURING","DUTY",
+		"EACH","EAR","EARLY","EARN","EARTH","EASILY","EAST","EASY","EAT",
+		"ECONOMIC","ECONOMY","EDGE","EDITOR","EDUCATION","EDUCATIONAL","EFFECT","EFFECTIVE","EFFECTIVELY",
+		"EFFORT","EGG","EITHER","ELDERLY","ELECTION","ELEMENT","ELSE","ELSEWHERE","EMERGE",
+		"EMPHASIS","EMPLOY","EMPLOYEE","EMPLOYER","EMPLOYMENT","EMPTY","ENABLE","ENCOURAGE","END",
+		"ENEMY","ENERGY","ENGINE","ENGINEERING","ENJOY","ENOUGH","ENSURE","ENTER","ENTERPRISE",
+		"ENTIRE","ENTIRELY","ENTITLE","ENTRY","ENVIRONMENT","ENVIRONMENTAL","EQUAL","EQUALLY","EQUIPMENT",
+		"ERROR","ESCAPE","ESPECIALLY","ESSENTIAL","ESTABLISH","ESTABLISHMENT","ESTATE","ESTIMATE","EVEN",
+		"EVENING","EVENT","EVENTUALLY","EVER","EVERY","EVERYBODY","EVERYONE","EVERYTHING","EVIDENCE",
+		"EXACTLY","EXAMINATION","EXAMINE","EXAMPLE","EXCELLENT","EXCEPT","EXCHANGE","EXECUTIVE","EXERCISE",
+		"EXHIBITION","EXIST","EXISTENCE","EXISTING","EXPECT","EXPECTATION","EXPENDITURE","EXPENSE","EXPENSIVE",
+		"EXPERIENCE","EXPERIMENT","EXPERT","EXPLAIN","EXPLANATION","EXPLORE","EXPRESS","EXPRESSION","EXTEND",
+		"EXTENT","EXTERNAL","EXTRA","EXTREMELY","EYE","FACE","FACILITY","FACT","FACTOR",
+		"FACTORY","FAIL","FAILURE","FAIR","FAIRLY","FAITH","FALL","FAMILIAR","FAMILY",
+		"FAMOUS","FAR","FARM","FARMER","FASHION","FAST","FATHER","FAVOUR","FEAR",
+		"FEATURE","FEE","FEEL","FEELING","FEMALE","FEW","FIELD","FIGHT","FIGURE",
+		"FILE","FILL","FILM","FINAL","FINALLY","FINANCE","FINANCIAL","FIND","FINDING",
+		"FINE","FINGER","FINISH","FIRE","FIRM","FIRST","FISH","FIT","FIX",
+		"FLAT","FLIGHT","FLOOR","FLOW","FLOWER","FLY","FOCUS","FOLLOW","FOLLOWING",
+		"FOOD","FOOT","FOOTBALL","FOR","FORCE","FOREIGN","FOREST","FORGET","FORM",
+		"FORMAL","FORMER","FORWARD","FOUNDATION","FREE","FREEDOM","FREQUENTLY","FRESH","FRIEND",
+		"FROM","FRONT","FRUIT","FUEL","FULL","FULLY","FUNCTION","FUND","FUNNY",
+		"FURTHER","FUTURE","GAIN","GAME","GARDEN","GAS","GATE","GATHER","GENERAL",
+		"GENERALLY","GENERATE","GENERATION","GENTLEMAN","GET","GIRL","GIVE","GLASS","GO",
+		"GOAL","GOD","GOLD","GOOD","GOVERNMENT","GRANT","GREAT","GREEN","GREY",
+		"GROUND","GROUP","GROW","GROWING","GROWTH","GUEST","GUIDE","GUN","HAIR",
+		"HALF","HALL","HAND","HANDLE","HANG","HAPPEN","HAPPY","HARD","HARDLY",
+		"HATE","HAVE","HE","HEAD","HEALTH","HEAR","HEART","HEAT","HEAVY",
+		"HELL","HELP","HENCE","HER","HERE","HERSELF","HIDE","HIGH","HIGHLY",
+		"HILL","HIM","HIMSELF","HIS","HISTORICAL","HISTORY","HIT","HOLD","HOLE",
+		"HOLIDAY","HOME","HOPE","HORSE","HOSPITAL","HOT","HOTEL","HOUR","HOUSE",
+		"HOUSEHOLD","HOUSING","HOW","HOWEVER","HUGE","HUMAN","HURT","HUSBAND","I",
+		"IDEA","IDENTIFY","IF","IGNORE","ILLUSTRATE","IMAGE","IMAGINE","IMMEDIATE","IMMEDIATELY",
+		"IMPACT","IMPLICATION","IMPLY","IMPORTANCE","IMPORTANT","IMPOSE","IMPOSSIBLE","IMPRESSION","IMPROVE",
+		"IMPROVEMENT","IN","INCIDENT","INCLUDE","INCLUDING","INCOME","INCREASE","INCREASED","INCREASINGLY",
+		"INDEED","INDEPENDENT","INDEX","INDICATE","INDIVIDUAL","INDUSTRIAL","INDUSTRY","INFLUENCE","INFORM",
+		"INFORMATION","INITIAL","INITIATIVE","INJURY","INSIDE","INSIST","INSTANCE","INSTEAD","INSTITUTE",
+		"INSTITUTION","INSTRUCTION","INSTRUMENT","INSURANCE","INTEND","INTENTION","INTEREST","INTERESTED","INTERESTING",
+		"INTERNAL","INTERNATIONAL","INTERPRETATION","INTERVIEW","INTO","INTRODUCE","INTRODUCTION","INVESTIGATE","INVESTIGATION",
+		"INVESTMENT","INVITE","INVOLVE","IRON","IS","ISLAND","ISSUE","IT","ITEM",
+		"ITS","ITSELF","JOB","JOIN","JOINT","JOURNEY","JUDGE","JUMP","JUST",
+		"JUSTICE","KEEP","KEY","KID","KILL","KIND","KING","KITCHEN","KNEE",
+		"KNOW","KNOWLEDGE","LABOUR","LACK","LADY","LAND","LANGUAGE","LARGE","LARGELY",
+		"LAST","LATE","LATER","LATTER","LAUGH","LAUNCH","LAW","LAWYER","LAY",
+		"LEAD","LEADER","LEADERSHIP","LEADING","LEAF","LEAGUE","LEAN","LEARN","LEAST",
+		"LEAVE","LEFT","LEG","LEGAL","LEGISLATION","LENGTH","LESS","LET","LETTER",
+		"LEVEL","LIABILITY","LIBERAL","LIBRARY","LIE","LIFE","LIFT","LIGHT","LIKE",
+		"LIKELY","LIMIT","LIMITED","LINE","LINK","LIP","LIST","LISTEN","LITERATURE",
+		"LITTLE","LIVE","LIVING","LOAN","LOCAL","LOCATION","LONG","LOOK","LORD",
+		"LOSE","LOSS","LOT","LOVE","LOVELY","LOW","LUNCH","MACHINE","MAGAZINE",
+		"MAIN","MAINLY","MAINTAIN","MAJOR","MAJORITY","MAKE","MALE","MAN","MANAGE",
+		"MANAGEMENT","MANAGER","MANNER","MANY","MAP","MARK","MARKET","MARRIAGE","MARRIED",
+		"MARRY","MASS","MASTER","MATCH","MATERIAL","MATTER","MAY","MAYBE","ME",
+		"MEAL","MEAN","MEANING","MEANS","MEANWHILE","MEASURE","MECHANISM","MEDIA","MEDICAL",
+		"MEET","MEETING","MEMBER","MEMBERSHIP","MEMORY","MENTAL","MENTION","MERELY","MESSAGE",
+		"METAL","METHOD","MIDDLE","MIGHT","MILE","MILITARY","MILK","MIND","MINE",
+		"MINISTER","MINISTRY","MINUTE","MISS","MISTAKE","MODEL","MODERN","MODULE","MOMENT",
+		"MONEY","MONTH","MORE","MORNING","MOST","MOTHER","MOTION","MOTOR","MOUNTAIN",
+		"MOUTH","MOVE","MOVEMENT","MUCH","MURDER","MUSEUM","MUSIC","MUST","MY",
+		"MYSELF","NAME","NARROW","NATION","NATIONAL","NATURAL","NATURE","NEAR","NEARLY",
+		"NECESSARILY","NECESSARY","NECK","NEED","NEGOTIATION","NEIGHBOUR","NEITHER","NETWORK","NEVER",
+		"NEVERTHELESS","NEW","NEWS","NEWSPAPER","NEXT","NICE","NIGHT","NO","NOBODY",
+		"NOD","NOISE","NONE","NOR","NORMAL","NORMALLY","NORTH","NORTHERN","NOSE",
+		"NOT","NOTE","NOTHING","NOTICE","NOTION","NOW","NUCLEAR","NUMBER","NURSE",
+		"OBJECT","OBJECTIVE","OBSERVATION","OBSERVE","OBTAIN","OBVIOUS","OBVIOUSLY","OCCASION","OCCUR",
+		"ODD","OF","OFF","OFFENCE","OFFER","OFFICE","OFFICER","OFFICIAL","OFTEN",
+		"OIL","OKAY","OLD","ON","ONCE","ONE","ONLY","ONTO","OPEN",
+		"OPERATE","OPERATION","OPINION","OPPORTUNITY","OPPOSITION","OPTION","OR","ORDER","ORDINARY",
+		"ORGANISATION","ORGANISE","ORGANIZATION","ORIGIN","ORIGINAL","OTHER","OTHERWISE","OUGHT","OUR",
+		"OURSELVES","OUT","OUTCOME","OUTPUT","OUTSIDE","OVER","OVERALL","OWN","OWNER",
+		"PACKAGE","PAGE","PAIN","PAINT","PAINTING","PAIR","PANEL","PAPER","PARENT",
+		"PARK","PARLIAMENT","PART","PARTICULAR","PARTICULARLY","PARTLY","PARTNER","PARTY","PASS",
+		"PASSAGE","PAST","PATH","PATIENT","PATTERN","PAY","PAYMENT","PEACE","PENSION",
+		"PEOPLE","PER","PERCENT","PERFECT","PERFORM","PERFORMANCE","PERHAPS","PERIOD","PERMANENT",
+		"PERSON","PERSONAL","PERSUADE","PHASE","PHONE","PHOTOGRAPH","PHYSICAL","PICK","PICTURE",
+		"PIECE","PLACE","PLAN","PLANNING","PLANT","PLASTIC","PLATE","PLAY","PLAYER",
+		"PLEASE","PLEASURE","PLENTY","PLUS","POCKET","POINT","POLICE","POLICY","POLITICAL",
+		"POLITICS","POOL","POOR","POPULAR","POPULATION","POSITION","POSITIVE","POSSIBILITY","POSSIBLE",
+		"POSSIBLY","POST","POTENTIAL","POUND","POWER","POWERFUL","PRACTICAL","PRACTICE","PREFER",
+		"PREPARE","PRESENCE","PRESENT","PRESIDENT","PRESS","PRESSURE","PRETTY","PREVENT","PREVIOUS",
+		"PREVIOUSLY","PRICE","PRIMARY","PRIME","PRINCIPLE","PRIORITY","PRISON","PRISONER","PRIVATE",
+		"PROBABLY","PROBLEM","PROCEDURE","PROCESS","PRODUCE","PRODUCT","PRODUCTION","PROFESSIONAL","PROFIT",
+		"PROGRAM","PROGRAMME","PROGRESS","PROJECT","PROMISE","PROMOTE","PROPER","PROPERLY","PROPERTY",
+		"PROPORTION","PROPOSE","PROPOSAL","PROSPECT","PROTECT","PROTECTION","PROVE","PROVIDE","PROVIDED",
+		"PROVISION","PUB","PUBLIC","PUBLICATION","PUBLISH","PULL","PUPIL","PURPOSE","PUSH",
+		"PUT","QUALITY","QUARTER","QUESTION","QUICK","QUICKLY","QUIET","QUITE","RACE",
+		"RADIO","RAILWAY","RAIN","RAISE","RANGE","RAPIDLY","RARE","RATE","RATHER",
+		"REACH","REACTION","READ","READER","READING","READY","REAL","REALISE","REALITY",
+		"REALIZE","REALLY","REASON","REASONABLE","RECALL","RECEIVE","RECENT","RECENTLY","RECOGNISE",
+		"RECOGNITION","RECOGNIZE","RECOMMEND","RECORD","RECOVER","RED","REDUCE","REDUCTION","REFER",
+		"REFERENCE","REFLECT","REFORM","REFUSE","REGARD","REGION","REGIONAL","REGULAR","REGULATION",
+		"REJECT","RELATE","RELATION","RELATIONSHIP","RELATIVE","RELATIVELY","RELEASE","RELEVANT","RELIEF",
+		"RELIGION","RELIGIOUS","RELY","REMAIN","REMEMBER","REMIND","REMOVE","REPEAT","REPLACE",
+		"REPLY","REPORT","REPRESENT","REPRESENTATION","REPRESENTATIVE","REQUEST","REQUIRE","REQUIREMENT","RESEARCH",
+		"RESOURCE","RESPECT","RESPOND","RESPONSE","RESPONSIBILITY","RESPONSIBLE","REST","RESTAURANT","RESULT",
+		"RETAIN","RETURN","REVEAL","REVENUE","REVIEW","REVOLUTION","RICH","RIDE","RIGHT",
+		"RING","RISE","RISK","RIVER","ROAD","ROCK","ROLE","ROLL","ROOF",
+		"ROOM","ROUND","ROUTE","ROW","ROYAL","RULE","RUN","RURAL","SAFE",
+		"SAFETY","SALE","SAME","SAMPLE","SATISFY","SAVE","SAY","SCALE","SCENE",
+		"SCHEME","SCHOOL","SCIENCE","SCIENTIFIC","SCIENTIST","SCORE","SCREEN","SEA","SEARCH",
+		"SEASON","SEAT","SECOND","SECONDARY","SECRETARY","SECTION","SECTOR","SECURE","SECURITY",
+		"SEE","SEEK","SEEM","SELECT","SELECTION","SELL","SEND","SENIOR","SENSE",
+		"SENTENCE","SEPARATE","SEQUENCE","SERIES","SERIOUS","SERIOUSLY","SERVANT","SERVE","SERVICE",
+		"SESSION","SET","SETTLE","SETTLEMENT","SEVERAL","SEVERE","SEX","SEXUAL","SHAKE",
+		"SHALL","SHAPE","SHARE","SHE","SHEET","SHIP","SHOE","SHOOT","SHOP",
+		"SHORT","SHOT","SHOULD","SHOULDER","SHOUT","SHOW","SHUT","SIDE","SIGHT",
+		"SIGN","SIGNAL","SIGNIFICANCE","SIGNIFICANT","SILENCE","SIMILAR","SIMPLE","SIMPLY","SINCE",
+		"SING","SINGLE","SIR","SISTER","SIT","SITE","SITUATION","SIZE","SKILL",
+		"SKIN","SKY","SLEEP","SLIGHTLY","SLIP","SLOW","SLOWLY","SMALL","SMILE",
+		"SO","SOCIAL","SOCIETY","SOFT","SOFTWARE","SOIL","SOLDIER","SOLICITOR","SOLUTION",
+		"SOME","SOMEBODY","SOMEONE","SOMETHING","SOMETIMES","SOMEWHAT","SOMEWHERE","SON","SONG",
+		"SOON","SORRY","SORT","SOUND","SOURCE","SOUTH","SOUTHERN","SPACE","SPEAK",
+		"SPEAKER","SPECIAL","SPECIES","SPECIFIC","SPEECH","SPEED","SPEND","SPIRIT","SPORT",
+		"SPOT","SPREAD","SPRING","STAFF","STAGE","STAND","STANDARD","STAR","START",
+		"STATE","STATEMENT","STATION","STATUS","STAY","STEAL","STEP","STICK","STILL",
+		"STOCK","STONE","STOP","STORE","STORY","STRAIGHT","STRANGE","STRATEGY","STREET",
+		"STRENGTH","STRIKE","STRONG","STRONGLY","STRUCTURE","STUDENT","STUDIO","STUDY","STUFF",
+		"STYLE","SUBJECT","SUBSTANTIAL","SUCCEED","SUCCESS","SUCCESSFUL","SUCH","SUDDENLY","SUFFER",
+		"SUFFICIENT","SUGGEST","SUGGESTION","SUITABLE","SUM","SUMMER","SUN","SUPPLY","SUPPORT",
+		"SUPPOSE","SURE","SURELY","SURFACE","SURPRISE","SURROUND","SURVEY","SURVIVE","SWITCH",
+		"SYSTEM","TABLE","TAKE","TALK","TALL","TAPE","TARGET","TASK","TAX",
+		"TEA","TEACH","TEACHER","TEACHING","TEAM","TEAR","TECHNICAL","TECHNIQUE","TECHNOLOGY",
+		"TELEPHONE","TELEVISION","TELL","TEMPERATURE","TEND","TERM","TERMS","TERRIBLE","TEST",
+		"TEXT","THAN","THANK","THANKS","THAT","THE","THEATRE","THEIR","THEM",
+		"THEME","THEMSELVES","THEN","THEORY","THERE","THEREFORE","THESE","THEY","THIN",
+		"THING","THINK","THIS","THOSE","THOUGH","THOUGHT","THREAT","THREATEN","THROUGH",
+		"THROUGHOUT","THROW","THUS","TICKET","TIME","TINY","TITLE","TO","TODAY",
+		"TOGETHER","TOMORROW","TONE","TONIGHT","TOO","TOOL","TOOTH","TOP","TOTAL",
+		"TOTALLY","TOUCH","TOUR","TOWARDS","TOWN","TRACK","TRADE","TRADITION","TRADITIONAL",
+		"TRAFFIC","TRAIN","TRAINING","TRANSFER","TRANSPORT","TRAVEL","TREAT","TREATMENT","TREATY",
+		"TREE","TREND","TRIAL","TRIP","TROOP","TROUBLE","TRUE","TRUST","TRUTH",
+		"TRY","TURN","TWICE","TYPE","TYPICAL","UNABLE","UNDER","UNDERSTAND","UNDERSTANDING",
+		"UNDERTAKE","UNEMPLOYMENT","UNFORTUNATELY","UNION","UNIT","UNITED","UNIVERSITY","UNLESS","UNLIKELY",
+		"UNTIL","UP","UPON","UPPER","URBAN","US","USE","USED","USEFUL",
+		"USER","USUAL","USUALLY","VALUE","VARIATION","VARIETY","VARIOUS","VARY","VAST",
+		"VEHICLE","VERSION","VERY","VIA","VICTIM","VICTORY","VIDEO","VIEW","VILLAGE",
+		"VIOLENCE","VISION","VISIT","VISITOR","VITAL","VOICE","VOLUME","VOTE","WAGE",
+		"WAIT","WALK","WALL","WANT","WAR","WARM","WARN","WASH","WATCH",
+		"WATER","WAVE","WAY","WE","WEAK","WEAPON","WEAR","WEATHER","WEEK",
+		"WEEKEND","WEIGHT","WELCOME","WELFARE","WELL","WEST","WESTERN","WHAT","WHATEVER",
+		"WHEN","WHERE","WHEREAS","WHETHER","WHICH","WHILE","WHILST","WHITE","WHO",
+		"WHOLE","WHOM","WHOSE","WHY","WIDE","WIDELY","WIFE","WILD","WILL",
+		"WIN","WIND","WINDOW","WINE","WING","WINNER","WINTER","WISH","WITH",
+		"WITHDRAW","WITHIN","WITHOUT","WOMAN","WONDER","WONDERFUL","WOOD","WORD","WORK",
+		"WORKER","WORKING","WORKS","WORLD","WORRY","WORTH","WOULD","WRITE","WRITER",
+		"WRITING","WRONG","YARD","YEAH","YEAR","YES","YESTERDAY","YET","YOU",
+		"YOUNG","YOUR","YOURSELF","YOUTH"
+	};
+
+	for (int i = 0; i < w.size(); i++) {
+		int n = 0;
+		for (int j = 0; j < w[i].size(); j++)
+			n += (w[i][j] - 64);
+		double res = sqrt(2.0 * (double)n + .25) - .5;
+		if ((int)res == res)
+			answer++;
+	}
+
+	return answer;
+}
+ull Problem_43() {
+	ull answer = 0;
+
+	string s = "0123456789";
+	vector<int> p = {17, 13, 11, 7, 5, 3, 2};
+	
+	do {
+		int i = 0;
+		for (i = 0; i < p.size(); i++) {
+			if (str_to_int(s.substr(s.size() - 3 - i, 3)) % p[i] != 0)
+				break;					
+		}
+		if (i == 7) 
+			answer += str_to_ull(s);
+	} while (next_permutation(s.begin(), s.end()));
+
+	return answer;
 }
 
 ull Problem_54() {
@@ -2625,6 +2995,42 @@ ull Problem_60() {
 
 	return (ull)answer;
 }
+ull Problem_61() {
+	//TODO Problem_61
+	ull answer = 0;
+
+	vector<vector<int>> v(6);
+
+	auto f = [](int c, int n) {
+		switch (c) {
+			case 3: return n * (n + 1) / 2;
+			case 4: return n * n;
+			case 5: return n * (3 * n - 1) / 2;
+			case 6: return n * (2 * n - 1);
+			case 7: return n * (5 * n - 3) / 2;
+			case 8: return n * (3 * n - 2);
+		}
+	};
+
+	for (int i = 0, c = 3; c < 9; i++) {
+		int n = f(c, i);
+		if (n > 999 && n < 10000)
+			v[c - 3].push_back(n);
+		else if (n > 9999) {
+			c++;
+			i = 0;
+		}
+	}
+	
+	for (int i = 0; i < v[0].size(); i++) {
+		vector<int> c = {0};
+		int r = v[0][i] % 100;
+
+
+	}
+
+	return answer;
+}
 ull Problem_67() {
 	vector<vector<int>> tri = {
 		{59},
@@ -2879,7 +3285,7 @@ ull Problem_81() {
 		{5304, 5499, 564, 2801, 679, 2653, 1783, 3608, 7359, 7797, 3284, 796, 3222, 437, 7185, 6135, 8571, 2778, 7488, 5746, 678, 6140, 861, 7750, 803, 9859, 9918, 2425, 3734, 2698, 9005, 4864, 9818, 6743, 2475, 132, 9486, 3825, 5472, 919, 292, 4411, 7213, 7699, 6435, 9019, 6769, 1388, 802, 2124, 1345, 8493, 9487, 8558, 7061, 8777, 8833, 2427, 2238, 5409, 4957, 8503, 3171, 7622, 5779, 6145, 2417, 5873, 5563, 5693, 9574, 9491, 1937, 7384, 4563, 6842, 5432, 2751, 3406, 7981},
 	};
 
-	for (int i = 0; i < g.size(); i++) {
+	for (int i = 0; i < (int)g.size(); i++) {
 		vector<int> t;
 		vector<int> t2;
 		for (int j = 0; j < i + 1; j++) {
@@ -2894,10 +3300,10 @@ ull Problem_81() {
 
 	vector<int> res;
 
-	for (int g = 0; g < tris.size(); g++) {
+	for (int g = 0; g < (int)tris.size(); g++) {
 		vector<vector<int>> tric = tris[g];
-		for (int h = 0; h < tris[g][tris[g].size() - 1].size(); h++) {
-			for (int i = 0; i < tris[g][tris[g].size() - 1].size(); i++)
+		for (int h = 0; h < (int)tris[g][tris[g].size() - 1].size(); h++) {
+			for (int i = 0; i < (int)tris[g][tris[g].size() - 1].size(); i++)
 				tris[g][tris[g].size() - 1][i] = i == h ? tric[tris[g].size() - 1][i] : 10000000;
 			for (int i = (int)tris[g].size() - 2; i >= 0; i--) {
 				for (UINT j = 0; j < tris[g][i].size(); j++) {
@@ -2936,7 +3342,7 @@ ull Problem_81() {
 	}
 
 	int lowest = MAXINT32;
-	for (int i = 0; i < res.size() / 2; i++) {
+	for (int i = 0; i < (int)res.size() / 2; i++) {
 		int a = res[i], b = res[(res.size() / 2) + i], c = trisc[1][trisc[1].size() - 1][i];
 		lowest = a + b - c < lowest ? a + b - c : lowest;		
 	}
@@ -2968,6 +3374,37 @@ ull Problem_243() {
 	//TODO Problem_243
 
 	ull answer = 0;
+
+	return answer;
+}
+
+ull Problem_601() {
+	//TODO Problem_601
+	ull answer = 0;
+
+	unordered_map<int, int> m;
+
+	auto streak = [&](ull n) {
+		if (m.find(n) != m.end())
+			return m[n];
+		for (ull i = n + 1, j = 2;; i++, j++) {
+			if (i % j != 0)
+				return m[n] = j - 1;
+		}
+	};
+
+	auto P = [&](ull s, ull N) {
+		ull ret = 0;
+		for (ull n = 2; n < N; n++) {
+			ret += streak(n) == s ? 1 : 0;
+		}
+		return ret;
+	};
+
+	for (ull i = 1; i <= 31; i++) {
+		answer += P(i, (ull)pow(4, i));
+		cout << i << " " << answer << '\n';
+	}
 
 	return answer;
 }
@@ -3102,7 +3539,7 @@ ull Problem_n() {
 				int sum = grid[i][j] + grid[i][j + 1] + grid[i + 1][j] + grid[i + 1][j + 1];
 				if (sum > first) {
 					if (overlap(pt, i, j)) {
-						pt[c] = {j, i + 1};
+						pt[c] = {(LONG)j, (LONG)(i + 1)};
 						cout << pt[c].x << " " << pt[c].y << '\n';
 						first = sum;
 					}
@@ -3167,7 +3604,6 @@ ull Problem_Compression_2002() {
 }
 
 int main() {	
-	SOLVE(Problem_76);
 	
 	_getch();
 	return 0;

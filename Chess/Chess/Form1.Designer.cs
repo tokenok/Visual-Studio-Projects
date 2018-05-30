@@ -29,13 +29,14 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(345, 322);
+			this.ClientSize = new System.Drawing.Size(344, 322);
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.Shown += new System.EventHandler(this.Form1_Shown);
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
 			this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
 			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
 			this.Resize += new System.EventHandler(this.Form1_Resize);
@@ -43,9 +44,8 @@
 
 		}
 
+
 		#endregion
-
-
 	}
 }
 

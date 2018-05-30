@@ -40,7 +40,7 @@ CustomEditControl edc;
 
 string g_last_converted_image_filename = "";
 
-string g_test_filename = "trish.bmp";
+string g_test_filename = "trish2.bmp";
 
 double
 	dx1 = 1.0 / 4.0,
@@ -749,7 +749,7 @@ void save_art(string output_filename, const vector<vector<pair<wchar_t, COLORREF
 	out.close();
 }
 
-void file_to_ascii(string filepath, HWND hwnd) {
+void file_to_ascii(string filepath, HWND txtbox) {
 	string extension = filepath.substr(filepath.rfind(".") + 1, filepath.size());
 
 	transform(extension.begin(), extension.end(), extension.begin(), toupper);
@@ -764,6 +764,8 @@ void file_to_ascii(string filepath, HWND hwnd) {
 	}
 
 	g_last_converted_image_filename = filepath;	
+	//Options_info* info = (Options_info*)DialogBoxParam(GetModuleHandle(0), MAKEINTRESOURCE(IDD_OPTIONS), GetParent(txtbox), OptionsProc, NULL);
+	CreateDialog(GetModuleHandle(0), MAKEINTRESOURCE(IDD_OPTIONS), GetParent(txtbox), OptionsProc, NULL);	
 }
 
 BOOL CALLBACK EnumFamCallBack(LPLOGFONT lplf, LPNEWTEXTMETRIC lpntm, DWORD FontType, LPVOID lpv) {
@@ -885,15 +887,13 @@ BOOL CALLBACK DialogProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 			//HFONT font = CreateFont(12, 0, 0, 0, FW_BOLD, 0, 0, 0, 0, 0, 0, 0, 0, L"Chiller");
 			HFONT font = CreateFont(12, 0, 0, 0, FW_BOLD, 0, 0, 0, 0, 0, 0, 0, 0, L"Consolas");
-			SetWindowFont(GetDlgItem(hwnd, IDC_CUSTOM_EDIT), font, false);
+			SetWindowFont(textbox, font, false);
 
 			RECT rc;
 			GetClientRect(hwnd, &rc);
 			SendMessage(hwnd, WM_SIZE, 0, MAKELPARAM(rc.right, rc.bottom));
 
-			file_to_ascii("C:\\Users\\Josh_2.Josh-PC\\Desktop\\test images\\" + g_test_filename, textbox);
-
-			CreateDialog(NULL, MAKEINTRESOURCE(IDD_OPTIONS), hwnd, OptionsProc);
+			file_to_ascii("C:\\Users\\Josh\\Desktop\\test images\\" + g_test_filename, textbox);
 			
 			break;
 		}
@@ -958,7 +958,7 @@ BOOL CALLBACK OptionsProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 					noalphanum.push_back(t);
 			}
 		
-			SetWindowText(GetDlgItem(hwnd, IDC_EDC_CHARACTER_SET), wtxt.c_str());
+			SetWindowText(GetDlgItem(hwnd, IDC_EDC_CHARACTER_SET), def.c_str());
 
 			break;
 		}
@@ -983,7 +983,7 @@ BOOL CALLBACK OptionsProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 					int r, g, b;
 					r = str_to_int(sr);
 					g = str_to_int(sg);
-					b = str_to_int(sb);					
+					b = str_to_int(sb);
 					int max3 = max(max(r, g), b);
 					int min3 = min(min(r, b), b);
 					if (info->mask && (max3 > 255 || min3 < 0)) {
@@ -1060,7 +1060,7 @@ BOOL CALLBACK OptionsProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 						}
 					}
 
-					//EndDialog(hwnd, (INT_PTR)info);
+				//	EndDialog(hwnd, (INT_PTR)info);
 					break;
 				}
 				case IDC_CB_MASK: {
@@ -1087,7 +1087,7 @@ BOOL CALLBACK OptionsProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 			break;
 		}
 		case WM_DESTROY:
-		/*case WM_CLOSE:*/ {
+		case WM_CLOSE: {
 			Options_info* info = new Options_info;
 			info->result = 1;
 			EndDialog(hwnd, (INT_PTR)info);
@@ -1249,7 +1249,7 @@ LRESULT CALLBACK kbHookProc(int code, WPARAM wParam, LPARAM lParam) {
 
 		if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
 			if (key->vkCode == VK_UP) {
-		//		file_to_ascii(g_last_converted_image_filename, GetDlgItem(hwnd, IDC_CUSTOM_EDIT));
+				file_to_ascii(g_last_converted_image_filename, GetDlgItem(hwnd, IDC_CUSTOM_EDIT));
 			}
 		}
 	}

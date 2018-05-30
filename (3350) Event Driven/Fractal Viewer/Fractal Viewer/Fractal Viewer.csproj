@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CF9DED4B-CF01-47DF-8C97-1E4C34923A7D}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fractal_Viewer</RootNamespace>
     <AssemblyName>Fractal Viewer</AssemblyName>
@@ -57,7 +57,7 @@
   <ItemGroup>
     <Reference Include="AviFile, Version=1.0.5962.36234, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Desktop\Test Sources\aviFileWrapperDemo_src\AviFile\obj\Debug\AviFile.dll</HintPath>
+      <HintPath>..\AviFile\bin\Debug\AviFile.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
