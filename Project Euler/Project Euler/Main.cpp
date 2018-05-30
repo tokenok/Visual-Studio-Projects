@@ -2759,7 +2759,7 @@ ull Problem_67() {
 ull Problem_76() {
 	ull answer = 0;
 
-	int N = 5;
+	int N = 100;
 
 	vector<int> n;
 	n.push_back(N);
@@ -3167,7 +3167,7 @@ ull Problem_Compression_2002() {
 }
 
 int main() {	
-	SOLVE(Problem_81);
+	SOLVE(Problem_76);
 	
 	_getch();
 	return 0;
