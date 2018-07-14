@@ -60,16 +60,15 @@ void ChangeShellIcon(UINT id) {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR args, int iCmdShow) {
-	//SHOW_CONSOLE();
+	SHOW_CONSOLE();
 
 	kbhook = SetWindowsHookEx(WH_KEYBOARD_LL, hookProc, NULL, 0);
 	mhook = SetWindowsHookEx(WH_MOUSE_LL, hookProc, NULL, 0);
 
 	DialogBoxParam(GetModuleHandle(0), MAKEINTRESOURCE(IDD_DIALOGMAIN), NULL, (DLGPROC)DialogProc, 0);
 
-	Shell_NotifyIcon(NIM_DELETE, &g_notifyIconData);
-
-	DestroyMenu(g_menu);
+	UnhookWindowsHookEx(kbhook);
+	UnhookWindowsHookEx(mhook);
 }
 
 BOOL CALLBACK DialogProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
@@ -157,6 +156,10 @@ BOOL CALLBACK DialogProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 		}
 		case WM_CLOSE:
 		case WM_DESTROY:{
+			Shell_NotifyIcon(NIM_DELETE, &g_notifyIconData);
+
+			DestroyMenu(g_menu);
+
 			EndDialog(hwnd, 0);
 			break;
 		}
@@ -261,22 +264,30 @@ bool ProcessHotkeys(const KBDLLHOOKSTRUCT &kbhs, WPARAM wParam) {
 		else if (key == HK_STOP) {
 			g_recorder.stop();
 
-			for (auto a : g_recorder.getEvents()) {
+			auto m = g_recorder.getEvents();
+
+			for (auto a : m) {
 				INPUT i = a.second;
-				if (a.second.type == KEY_EVENT) {
+				if (a.second.type == INPUT_KEYBOARD) {
 					KEYBDINPUT ki = i.ki;
-					cout << ki.wVk << " " << ki.time << '\n';
+					cout << "keyboard: " << ki.wVk << " " << ki.time << '\n';
 				}
-				else if (a.second.type == MOUSE_EVENT) {
+				else if (a.second.type == INPUT_MOUSE) {
 					MOUSEINPUT mi = i.mi;
-					cout << mi.dx << ", " << mi.dy << " " << mi.time << '\n';
+					cout << "mouse: " << mi.dx << ", " << mi.dy << " " << mi.time << '\n';
+				}
+				else {
+					cout << "other: \n";
 				}
 			}
 
 			return true;
 		}
 		else if (key == HK_RECORD) {
-			g_recorder.start();
+			if (g_recorder.isRecording())
+				g_recorder.stop();
+			else
+				g_recorder.start();
 			return true;
 		}
 		else if (key == HK_LOAD) {
@@ -307,7 +318,7 @@ LRESULT CALLBACK hookProc(int code, WPARAM wParam, LPARAM lParam) {
 				wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN ? KEYEVENTF_EXTENDEDKEY 
 				: wParam == WM_KEYUP || wParam == WM_SYSKEYUP ? KEYEVENTF_KEYUP 
 				: 0;
-			i.ki.time = clock();
+			i.ki.time = GetTickCount();
 			i.ki.dwExtraInfo = kbhs.dwExtraInfo;
 
 			g_recorder.addEvent(i.ki.time, i);
@@ -329,7 +340,7 @@ LRESULT CALLBACK hookProc(int code, WPARAM wParam, LPARAM lParam) {
 				: wParam == WM_MOUSEMOVE ? MOUSEEVENTF_MOVE
 				: wParam == WM_MOUSEWHEEL ? MOUSEEVENTF_WHEEL 
 				: 0);
-			i.mi.time = clock();
+			i.mi.time = GetTickCount();
 			i.mi.mouseData = (short)HIWORD(ms.mouseData);;
 			i.mi.dwExtraInfo = ms.dwExtraInfo;
 

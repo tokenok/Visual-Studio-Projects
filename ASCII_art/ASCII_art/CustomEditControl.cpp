@@ -278,42 +278,8 @@ LRESULT CALLBACK customeditcontrolProc(HWND hwnd, UINT message, WPARAM wParam, L
 
 			POINT caret_pt = {-1, -1};
 
-			/*if (!a->is_color) {
-				wstring line = L"";
-				for (int i = 0; i < a->text.size(); i++) {
-					line += a->text[i];
-
-					if (a->text[i] == '\n' || i == a->text.size() - 1) {
-						if (a->text[i] == '\n') line.pop_back();
-
-						SIZE size = {0, 0};
-						GetTextExtentPoint32(hDC, line.c_str(), line.length(), &size);
-
-						RECT tr = {
-							2,
-							i * line_height + 2,
-							size.cx + 2,
-							(i + 1) * line_height + 2
-						};
-
-						RECT ttr = tr;
-						ttr.top -= (vsi.nPos * line_height);
-						ttr.bottom -= (vsi.nPos * line_height);
-						RECT dummy;
-						if (IntersectRect(&dummy, &rcclient, &ttr)) {
-							SetTextColor(hDC, RGB(0, 0, 0));
-
-							int xpos = 2;
-							int ypos = i * line_height + 2 - (vsi.nPos * line_height);
-
-							ExtTextOut(hDC, 2, ypos, ETO_OPAQUE, &tr, line.c_str(), line.length(), NULL);
-						}
-
-						line = L"";
-					}
-				}
-			}
-			else {*/
+			if (a->is_color) {
+				///single character
 				for (UINT i = 0; i < a->text.size(); i++) {
 					if (a->text[i] == '\n') {
 						line_count++;
@@ -321,7 +287,7 @@ LRESULT CALLBACK customeditcontrolProc(HWND hwnd, UINT message, WPARAM wParam, L
 						continue;
 					}
 
-					if (line_count < vsi.nPos)						
+					if (line_count < vsi.nPos)
 						continue;
 
 					if (line_count > (vsi.nPos + vsi.nPage))
@@ -371,7 +337,69 @@ LRESULT CALLBACK customeditcontrolProc(HWND hwnd, UINT message, WPARAM wParam, L
 					}
 
 					lp += size.cx;
-		//		}
+				}
+			}
+			else {
+				///print whole lines
+				wstring line = L"";
+				for (UINT i = 0; i < a->text.size(); i++) {
+					if (a->text[i] == '\n') {
+						line_count++;
+
+						SIZE size;
+						GetTextExtentPoint32(hDC, line.c_str(), line.length(), &size);
+
+						RECT tr = {
+							2,
+							line_count * line_height + 2,
+							size.cx + 2,
+							(line_count + 1) * line_height + 2
+						};
+
+						RECT ttr = tr;
+						ttr.top -= (vsi.nPos * line_height);
+						ttr.bottom -= (vsi.nPos * line_height);
+						ttr.right -= hsi.nPos;
+						ttr.left -= hsi.nPos;
+
+						if ((a->sel_s >= 0 && a->sel_e >= 0)
+							&& (((a->sel_s < a->sel_e) && (i >= a->sel_s && i < a->sel_e))
+							|| ((a->sel_s >= a->sel_e) && i >= a->sel_e && i < a->sel_s))) {
+							SetBkColor(hDC, RGB(0, 255, 0));
+						}
+						else {
+							SetBkColor(hDC, RGB(255, 255, 255));
+						}
+
+						RECT dummy;
+						if (IntersectRect(&dummy, &rcclient, &ttr)) {
+							SetTextColor(hDC, a->text_colors[i]);
+
+							int xpos = 2 - hsi.nPos;
+							int ypos = line_count * line_height + 2 - (vsi.nPos * line_height);
+
+							ExtTextOut(hDC, xpos, ypos, ETO_OPAQUE, &tr, line.c_str(), line.size(), NULL);
+
+							if (i == a->caret_pos) {
+								SIZE size = {0, 0};
+								caret_pt.x = xpos + size.cx;
+								caret_pt.y = ypos;
+							}
+						}
+
+						line = L"";
+
+						continue;
+					}
+					else
+						line += a->text[i];
+
+					if (line_count < vsi.nPos)
+						continue;
+
+					if (line_count >(vsi.nPos + vsi.nPage))
+						break;
+				}
 			}
 
 			if (caret_pt.y > -1) {
@@ -877,12 +905,27 @@ skip:
 
 			return 0;
 		}
+		case WM_SYSCOMMAND: {
+			switch (wParam) {
+				case SC_MAXIMIZE: {
+					a->setScrollBounds();
+
+					RECT rcclient;
+					GetClientRect(hwnd, &rcclient);
+					InvalidateRect(hwnd, &rcclient, FALSE);
+
+					break;
+				}
+			}
+			break;
+		}
 		case WM_WINDOWPOSCHANGED: {
 			a->setScrollBounds();
 
 			RECT rcclient;
 			GetClientRect(hwnd, &rcclient);
 			InvalidateRect(hwnd, &rcclient, FALSE);
+
 			break;
 		}
 		case WM_MOUSEWHEEL:{

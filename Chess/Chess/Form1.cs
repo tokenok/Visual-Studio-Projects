@@ -12,6 +12,7 @@ using System.Windows.Forms;
 //TODO detect draw
 //TODO algebraic notation
 //TODO 50 move rule
+//TODO fix rook moved castling
 
 namespace Chess {
 	public partial class Form1 : Form {
@@ -670,6 +671,11 @@ namespace Chess {
 
 			public void Move(Board b, Point pos, Point mv) {
 				moveList.AddMove(b, pos, mv);
+
+				Console.WriteLine();
+				SquarePos fsqpos = SquarePos.getSquarePosFromIndex(pos.Y, pos.X);
+				SquarePos tsqpos = SquarePos.getSquarePosFromIndex(mv.Y, mv.X);
+				Console.WriteLine("{0}{1}{2}{3}{4}{5}", b.squares[pos.Y][pos.X].piece.GetPieceText(), fsqpos.file, fsqpos.rank, tsqpos.file, tsqpos.rank, has_moved);
 
 				if (b.squares[mv.Y][mv.X].piece.color != this.color && b.squares[mv.Y][mv.X].piece.color != PlayerColor.None) {//capture
 					Console.WriteLine("captured: " + b.squares[mv.Y][mv.X].piece.GetPieceText());

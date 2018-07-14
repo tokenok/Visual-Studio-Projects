@@ -27,7 +27,7 @@ class CustomEditControl: public BasicControl {
 
 	bool is_dragging = false;
 
-	int scroll_speed = 2;
+	int scroll_speed = 4;
 
 	int getLineCount();
 
