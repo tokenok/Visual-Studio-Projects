@@ -1176,7 +1176,7 @@ LRESULT DrawFontListView(HWND listbox, LPARAM lParam) {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR args, int iCmdShow) {
-	SHOW_CONSOLE(true, false);
+//	SHOW_CONSOLE(true, false);
 
 	namedWindow("pre processing", WINDOW_NORMAL);
 	namedWindow("post processing", WINDOW_NORMAL);

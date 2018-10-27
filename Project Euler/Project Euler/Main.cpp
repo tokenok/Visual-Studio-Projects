@@ -1513,6 +1513,7 @@ ull Problem_38() {
 
 	return answer;
 }
+
 ull Problem_40() {
 	string d = "";
 	//d.reserve(1000000);
@@ -3031,6 +3032,7 @@ ull Problem_61() {
 
 	return answer;
 }
+
 ull Problem_67() {
 	vector<vector<int>> tri = {
 		{59},
@@ -3603,8 +3605,108 @@ ull Problem_Compression_2002() {
 	return 0;
 }
 
+ull AmazonProblem_numSteps() {
+	function<int(int, vector<int>&)> num_steps = [&](int n, vector<int>& s) -> int {
+		if (n <= 1) return 1;
+
+		int total = 0;
+		for (int i = 0; i < s.size(); i++) {
+			total += num_steps(n - s[i], s);
+		}
+
+		return total;
+
+	//	return num_steps(n - 2, s) + num_steps(n - 1, s);
+	};
+
+	return num_steps(4, vector<int>{1, 3, 5});
+}
+
+ull FacebookProblem_susbets() {
+	auto add1 = [](vector<bool>& s) {
+		int c = 0;
+		vector<bool> res;
+		for (int i = s.size() - 1; i >= 0; i--) {
+			int n = s[i] + (s.size() - 1 == i ? 1 : 0);
+			int m = n % 2 + c;
+			c = (n / 2) + (m / 2);
+			m %= 2;
+			res.insert(res.begin(), (char)m);
+		}
+		if (c > 0)
+			res.insert(res.begin(), (char)c);
+		s = res;
+	};
+
+	vector<int> set = {1, 2, 3, 4, 5,6,7,8,9};
+
+	ull m = pow(2, set.size());
+
+	vector<bool> sset;
+	sset.resize(set.size());
+
+	for (ull i = 0; i < m; i++) {
+		for (ull j = 0; j < sset.size(); j++) {
+			if (sset[j] == 1)
+				cout << set[j] << ", ";
+		}
+		cout << '\n';
+
+		add1(sset);
+	}
+
+	return 0;
+}
+
+ull Problem_BarnsleyFern() {
+	srand(clock());
+
+	int w = 800, h = 600;
+
+	BYTE* img = new BYTE[w * h * 3];
+
+	struct f { 
+		double xa, xb, xc, ya, yb, yc; 
+		void calc(double x1, double y1, double*x2, double*y2) {
+			*x2 = x1 * xa + y1 * xb + xc; 
+			*y2 = x1 * ya + y1 * yb + yc;
+		}
+	};
+
+	vector<f> cfs = {
+		{0,0,0,0,.16,0},
+		{.85,.04,0,-.04,.85,1.6},
+		{.2, -.26, 0,.23,.22,1.6},
+		{-.15,.28,0,.26,.24,.44}
+	};
+
+	double xmin = -2.1820, xmax = 2.6558,
+		   ymin = 0, ymax = 9.9983;  
+
+	double x = 0, y = 0;
+
+	for (int i = 0; i < 3000000; i++) {
+		int sx = (x - xmin) / (xmax - xmin) * (w - 0) + 0;
+		int sy = (y - ymin) / (ymax - ymin) * (0 - h) + h;
+
+		COLORREF col = getRainbowColor(sy, 600);
+		int p = sy * w * 3 + sx * 3;
+		img[p + 0] = GetRValue(col);
+		img[p + 1] = GetGValue(col);
+		img[p + 2] = GetBValue(col);
+
+		int r = rand() % 100;
+		cfs[r < 1 ? 0 : r < 86 ? 1 : r < 93 ? 2 : 3].calc(x, y, &x, &y);		
+	}
+
+	array_to_bmp("fern.bmp", img, w, h);
+
+	return 0;
+}
+
 int main() {	
-	
+	SOLVE(Problem_BarnsleyFern)
+
 	_getch();
 	return 0;
 }
