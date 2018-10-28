@@ -454,32 +454,6 @@ namespace Music_Library {
 				else
 					LoadSongData(g_sd_dir, ref g_phone_data, "data.txt");
 			}
-			else if (rdio_FTP.Checked) {
-				WebClient request = new WebClient();
-				string url = "ftp://192.168.1.176:2121/storage/extSdCard/Music/" + "data.txt";
-				request.Credentials = new NetworkCredential("token", "werewere");
-
-				try {
-					byte[] newFileData = request.DownloadData(url);
-					string fileString = System.Text.Encoding.UTF8.GetString(newFileData);
-					string[] lines = fileString.Split('\n');
-					for (int i = 0; i < lines.Length; i++) {
-						if (lines[i].Length > 0) {
-							lines[i] = lines[i].Remove(lines[i].Length - 1);
-						}
-					}
-					LoadSongDataFromText(lines, ref g_phone_data);
-				}
-				catch (WebException ex) {
-					Print(ex + "\r\n");
-					Print("Could not locate phone data\r\n");
-					EnableScanButton(true);
-					return;
-				}
-				//	Print("Could not locate phone data\r\n");
-				//	EnableScanButton(true);
-				//	return;
-			}
 			else {
 				g_phone_data = backup_phone_data;
 			}
