@@ -39,6 +39,7 @@ namespace Music_Library {
 		public string g_pc_dir = @"C:\Music\Music";
 		//public string g_sd_dir = @"Z:";
 		public string g_sd_dir = @"P:\Music";
+		public string g_itunes_xml_path = @"C:\Users\Josh_2.Josh-PC\Music\iTunes\iTunes Music Library.xml";
 
 		public class entry {
 			public string dir, title, album, artist, album_artist, genre, year, track_num;
@@ -443,7 +444,7 @@ namespace Music_Library {
 
 			Print("Fetching PC data...\r\n");
 		//	LoadSongData(g_pc_dir, ref g_pc_data, "pcdata.txt");
-			FetchItunesData("C:\\Users\\Josh_2.Josh-PC\\Music\\iTunes\\iTunes Music Library.xml", ref g_pc_data, "pcdata.txt");
+			FetchItunesData(g_itunes_xml_path, ref g_pc_data, "pcdata.txt");
 
 			Print("Fetching phone data...\r\n");
 
