@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Net;
 using System.Threading;
 using System.Web;
-
+using System.Reflection;
 
 namespace Music_Library {
 	public partial class Form1 : Form {
@@ -36,10 +36,10 @@ namespace Music_Library {
 		delegate void ProgressBarSetMaximumCallback(int max);
 		delegate void ProgressBarSetValueCallback(int val);
 
-		public string g_pc_dir = @"C:\Music\Music";
+		public string g_pc_dir = "";//@"C:\Music\Music";
 		//public string g_sd_dir = @"Z:";
-		public string g_sd_dir = @"P:\Music";
-		public string g_itunes_xml_path = @"C:\Users\Josh_2.Josh-PC\Music\iTunes\iTunes Music Library.xml";
+		public string g_sd_dir = "";//@"P:\Music";
+		public string g_itunes_xml_path = "";// @"C:\Users\Josh_2.Josh-PC\Music\iTunes\iTunes Music Library.xml";
 
 		public class entry {
 			public string dir, title, album, artist, album_artist, genre, year, track_num;
@@ -62,6 +62,43 @@ namespace Music_Library {
 					m += 64;
 
 				return m;
+			}
+		}
+
+		class IniFile {
+			string Path;
+			string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+
+			[DllImport("kernel32", CharSet = CharSet.Unicode)]
+			static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
+
+			[DllImport("kernel32", CharSet = CharSet.Unicode)]
+			static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
+
+			public IniFile(string IniPath = null) {
+				Path = new FileInfo(IniPath ?? EXE + ".ini").FullName.ToString();
+			}
+
+			public string Read(string Key, string Section = null) {
+				var RetVal = new StringBuilder(255);
+				GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
+				return RetVal.ToString();
+			}
+
+			public void Write(string Key, string Value, string Section = null) {
+				WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+			}
+
+			public void DeleteKey(string Key, string Section = null) {
+				Write(Key, null, Section ?? EXE);
+			}
+
+			public void DeleteSection(string Section = null) {
+				Write(null, null, Section ?? EXE);
+			}
+
+			public bool KeyExists(string Key, string Section = null) {
+				return Read(Key, Section).Length > 0;
 			}
 		}
 
@@ -677,6 +714,40 @@ namespace Music_Library {
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
+			IniFile ini = new IniFile("MusicLibPaths.ini");
+
+			//public string g_pc_dir = @"C:\Music\Music";
+			////public string g_sd_dir = @"Z:";
+			//public string g_sd_dir = @"P:\Music";
+			//public string g_itunes_xml_path = @"C:\Users\Josh_2.Josh-PC\Music\iTunes\iTunes Music Library.xml";
+
+
+			if (!ini.KeyExists("PCLibraryDir", "Directories")) {
+				ini.Write("PCLibraryDir", "", "Directories");
+				MessageBox.Show("Missing PC library directory. Set the directory in MusicLibPaths.ini");
+			}
+			else {
+				g_pc_dir = ini.Read("PCLibraryDir", "Directories");
+			}
+			if (!ini.KeyExists("SDCardDir", "Directories")) {
+				ini.Write("SDCardDir", "", "Directories");
+				MessageBox.Show("Missing SD Card directory. Set the directory in MusicLibPaths.ini");
+			}
+			else {
+				g_sd_dir = ini.Read("SDCardDir", "Directories");
+			}
+			if (!ini.KeyExists("itunesXMLDir", "Directories")) {
+				ini.Write("itunesXMLDir", "", "Directories");
+				MessageBox.Show("Missing itunes XML directory. Set the directory in MusicLibPaths.ini");
+			}
+			else {
+				g_itunes_xml_path = ini.Read("itunesXMLDir", "Directories");
+			}
+
+			if (g_pc_dir.Length == 0 || g_sd_dir.Length == 0  || g_itunes_xml_path.Length == 0) {
+				Application.Exit();
+			}
+
 			EnableApplyButton(false);
 		}
 
