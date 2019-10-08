@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug 1.11b|Win32">
+      <Configuration>Debug 1.11b</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug 1.13d|Win32">
+      <Configuration>Debug 1.13d</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release 1.11b|Win32">
+      <Configuration>Release 1.11b</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release 1.13d|Win32">
+      <Configuration>Release 1.13d</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E2C5AAFC-5631-4849-89B2-73FD4AAEF510}</ProjectGuid>
+    <RootNamespace>D2Ex2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.13d|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.11b|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.11b|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.13d|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.11b|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.11b|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\CPPlibs\boost\boost_1_57_0;$(ProjectDir)\glide3x;$(ProjectDir)\libpng;$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <LibraryPath>$(LibraryPath);$(ProjectDir)\glide3x</LibraryPath>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.11b|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\boost_1_55_0;$(ProjectDir)\glide3x;$(ProjectDir)\libpng;$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <LibraryPath>$(LibraryPath);$(ProjectDir)\glide3x</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.13d|Win32'">
+    <OutDir>$(SolutionDir)files\1.13d\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\CPPlibs\boost\boost_1_57_0;$(ProjectDir)\glide3x;$(ProjectDir)\libpng;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath);$(ProjectDir)\glide3x</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.11b|Win32'">
+    <OutDir>$(SolutionDir)files\1.11b\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\boost_1_55_0;$(ProjectDir)\glide3x;$(ProjectDir)\libpng;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath);$(ProjectDir)\glide3x</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>VER_113D;WIN32;_DEBUG;_WINDOWS;_USRDLL;D2EX2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <CallingConvention>Cdecl</CallingConvention>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <Version>
+      </Version>
+      <ModuleDefinitionFile />
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile />
+      <SectionAlignment>
+      </SectionAlignment>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /y "$(SolutionDir)files\1.13d\D2Ex2.dll" "C:\Program Files (x86)\Diablo II - Annihilus\" &amp; "C:\Program Files (x86)\Diablo II - Annihilus\Diablo II.exe" -w</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>sed -i -r 's/^(.*) ([0-9]*)$/echo "\1" \%24((\2+1))/ge' $(MSBuildProjectDirectory)\Build.h
+taskkill /f /im Game.exe
+EXIT 0</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Updating build number...</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug 1.11b|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>VER_111B;WIN32;_DEBUG;_WINDOWS;_USRDLL;D2EX2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <Version>
+      </Version>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>
+      </Profile>
+      <SectionAlignment>
+      </SectionAlignment>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /y "$(TargetPath)" "D:\Gry\Diablo II (1.11b)\"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>sed -i -r 's/^(.*) ([0-9]*)$/echo "\1" \%24((\2+1))/ge' $(MSBuildProjectDirectory)\Build.h</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Updating build number...</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.13d|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <PreprocessorDefinitions>VER_113D;WIN32;NDEBUG;_WINDOWS;_USRDLL;D2EX2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile />
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateMapFile>false</GenerateMapFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy /y "$(SolutionDir)files\1.13d\D2Ex2.dll" "C:\Program Files (x86)\Diablo II - Annihilus\" &amp; START "" /D "C:\Program Files (x86)\Diablo II - Annihilus\D2PK" "C:\Program Files (x86)\Diablo II - Annihilus\Diablo II.exe" -w -nopickup</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release 1.11b|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <PreprocessorDefinitions>VER_111B;WIN32;NDEBUG;_WINDOWS;_USRDLL;D2EX2_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateMapFile>false</GenerateMapFile>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="D2Stubs.cpp" />
+    <ClCompile Include="ExAutoTele.cpp" />
+    <ClCompile Include="ExCheckBox.cpp" />
+    <ClCompile Include="ExChicken.cpp" />
+    <ClCompile Include="ExCube.cpp" />
+    <ClCompile Include="ExDeathMessage.cpp" />
+    <ClCompile Include="ExControlManager.cpp" />
+    <ClCompile Include="ExExtendedLevels.cpp" />
+    <ClCompile Include="ExFontManager.cpp" />
+    <ClCompile Include="ExGDI.cpp" />
+    <ClCompile Include="ExMultiRes.cpp" />
+    <ClCompile Include="Offset.cpp" />
+    <ClCompile Include="D2Ex2.cpp" />
+    <ClCompile Include="ExBuffs.cpp" />
+    <ClCompile Include="ExChat.cpp" />
+    <ClCompile Include="ExDownload.cpp" />
+    <ClCompile Include="ExEntryText.cpp" />
+    <ClCompile Include="ExEvents.cpp" />
+    <ClCompile Include="ExFriends.cpp" />
+    <ClCompile Include="ExInput.cpp" />
+    <ClCompile Include="ExLoading.cpp" />
+    <ClCompile Include="ExAutomap.cpp" />
+    <ClCompile Include="ExOOG.cpp" />
+    <ClCompile Include="ExOptions.cpp" />
+    <ClCompile Include="ExParty.cpp" />
+    <ClCompile Include="ExPrecast.cpp" />
+    <ClCompile Include="ExScreen.cpp" />
+    <ClCompile Include="ExSpectator.cpp" />
+    <ClCompile Include="ExMPQ.cpp" />
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug 1.11b|Win32'">Create</PrecompiledHeader>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'">Disabled</InlineFunctionExpansion>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Debug 1.11b|Win32'">Disabled</InlineFunctionExpansion>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release 1.13d|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release 1.11b|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ExBox.cpp" />
+    <ClCompile Include="ExButton.cpp" />
+    <ClCompile Include="ExCellFile.cpp" />
+    <ClCompile Include="ExControl.cpp" />
+    <ClCompile Include="ExEditBox.cpp" />
+    <ClCompile Include="ExImage.cpp" />
+    <ClCompile Include="ExLagometer.cpp" />
+    <ClCompile Include="ExRectangle.cpp" />
+    <ClCompile Include="ExScrollBar.cpp" />
+    <ClCompile Include="ExTextBox.cpp" />
+    <ClCompile Include="ExWindow.cpp" />
+    <ClCompile Include="CollisionMap.cpp" />
+    <ClCompile Include="ExAim.cpp" />
+    <ClCompile Include="TeleportPath.cpp" />
+    <ClCompile Include="xxhash\xxhash.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug 1.13d|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release 1.13d|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArrayEx.h" />
+    <ClInclude Include="BlizzardSmartPointer.h" />
+    <ClInclude Include="CollisionMap.h" />
+    <ClInclude Include="CommonStructs.h" />
+    <ClInclude Include="D2Ex2.h" />
+    <ClInclude Include="D2ExPointers_111B.h" />
+    <ClInclude Include="D2ExPointers_113D.h" />
+    <ClInclude Include="D2Strings.h" />
+    <ClInclude Include="D2Structs_111B.h" />
+    <ClInclude Include="D2Structs_113D.h" />
+    <ClInclude Include="ExAim.h" />
+    <ClInclude Include="ExAutoTele.h" />
+    <ClInclude Include="ExCheckBox.h" />
+    <ClInclude Include="ExChicken.h" />
+    <ClInclude Include="ExCube.h" />
+    <ClInclude Include="ExDeathMessage.h" />
+    <ClInclude Include="ExControlManager.h" />
+    <ClInclude Include="ExExtendedLevels.h" />
+    <ClInclude Include="ExFontManager.h" />
+    <ClInclude Include="ExGDI.h" />
+    <ClInclude Include="ExTexture.h" />
+    <ClInclude Include="ExMultiRes.h" />
+    <ClInclude Include="ExOpenGL.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="readerwriterqueue\atomicops.h" />
+    <ClInclude Include="readerwriterqueue\readerwriterqueue.h" />
+    <ClInclude Include="SyncObj.h" />
+    <ClInclude Include="TeleportPath.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="D2DataTables.h" />
+    <ClInclude Include="D2Stubs.h" />
+    <ClInclude Include="Offset.h" />
+    <ClInclude Include="ExBuffs.h" />
+    <ClInclude Include="ExChat.h" />
+    <ClInclude Include="ExDownload.h" />
+    <ClInclude Include="ExEntryText.h" />
+    <ClInclude Include="ExEvents.h" />
+    <ClInclude Include="ExFriends.h" />
+    <ClInclude Include="ExInput.h" />
+    <ClInclude Include="ExLoading.h" />
+    <ClInclude Include="ExAutomap.h" />
+    <ClInclude Include="ExOOG.h" />
+    <ClInclude Include="ExOptions.h" />
+    <ClInclude Include="ExParty.h" />
+    <ClInclude Include="ExPrecast.h" />
+    <ClInclude Include="ExScreen.h" />
+    <ClInclude Include="ExSpectator.h" />
+    <ClInclude Include="ExMPQ.h" />
+    <ClInclude Include="Misc.h" />
+    <ClInclude Include="stdAfx.h" />
+    <ClInclude Include="Vars.h" />
+    <ClInclude Include="ExBox.h" />
+    <ClInclude Include="ExButton.h" />
+    <ClInclude Include="ExCellFile.h" />
+    <ClInclude Include="ExControl.h" />
+    <ClInclude Include="ExEditBox.h" />
+    <ClInclude Include="ExImage.h" />
+    <ClInclude Include="ExLagometer.h" />
+    <ClInclude Include="ExRectangle.h" />
+    <ClInclude Include="ExScrollBar.h" />
+    <ClInclude Include="ExTextBox.h" />
+    <ClInclude Include="ExWindow.h" />
+    <ClInclude Include="Build.h" />
+    <ClInclude Include="xxhash\xxhash.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

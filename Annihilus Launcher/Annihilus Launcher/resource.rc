@@ -1,0 +1,44 @@
+#include "resource.h"
+
+ANI_ICON				ICON			"res//ani_icon.ico"
+
+IDLE					CURSOR 			"res\\idle.ani"
+PRESS					CURSOR 			"res\\press.ani"
+WAITCURSOR				CURSOR 			"res\\PENT.ani"
+
+
+SETTINGSDLG DIALOGEX 400, 400, 300, 250
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE |
+WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Settings"
+FONT 8, "System"
+BEGIN
+END
+
+
+1 VERSIONINFO
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEOS 0x4
+FILETYPE 0x1
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904B0"
+		{
+			VALUE "CompanyName", "Token shack ind"
+			VALUE "FileDescription", "Annihilus Launcher / Updater"
+			VALUE "ProductName", "Annihilus Launcher"
+			VALUE "FileVersion", "1.0"
+			VALUE "ProductVersion", "1.0"
+			VALUE "InternalName", "Annihilus Launcher"
+			VALUE "OriginalFilename", "Annihilus Launcher.exe"
+		}
+	}
+
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0409 0x04B0
+	}
+}
+

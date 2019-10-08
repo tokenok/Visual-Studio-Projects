@@ -1,0 +1,4 @@
+#include "resource.h"
+
+TOKENICO				ICON			"res\\token.ico"
+

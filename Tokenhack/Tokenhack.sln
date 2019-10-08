@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tokenhack", "Tokenhack\Tokenhack.vcxproj", "{4BE1084C-7F42-474B-B265-B9BDB888B359}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tokenhackdll", "Tokenhackdll\Tokenhackdll.vcxproj", "{28488AD0-AA94-4DCC-B094-CE7D47274847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BE1084C-7F42-474B-B265-B9BDB888B359}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4BE1084C-7F42-474B-B265-B9BDB888B359}.Debug|Win32.Build.0 = Debug|Win32
+		{4BE1084C-7F42-474B-B265-B9BDB888B359}.Release|Win32.ActiveCfg = Release|Win32
+		{4BE1084C-7F42-474B-B265-B9BDB888B359}.Release|Win32.Build.0 = Release|Win32
+		{28488AD0-AA94-4DCC-B094-CE7D47274847}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28488AD0-AA94-4DCC-B094-CE7D47274847}.Debug|Win32.Build.0 = Debug|Win32
+		{28488AD0-AA94-4DCC-B094-CE7D47274847}.Release|Win32.ActiveCfg = Release|Win32
+		{28488AD0-AA94-4DCC-B094-CE7D47274847}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

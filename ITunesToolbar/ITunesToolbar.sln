@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ITunesToolbar", "ITunesToolbar\ITunesToolbar.vcxproj", "{3029D094-BC28-46F9-B4C5-2A0E8CF38181}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Debug|x64.ActiveCfg = Debug|x64
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Debug|x64.Build.0 = Debug|x64
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Debug|x86.ActiveCfg = Debug|Win32
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Debug|x86.Build.0 = Debug|Win32
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Release|x64.ActiveCfg = Release|x64
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Release|x64.Build.0 = Release|x64
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Release|x86.ActiveCfg = Release|Win32
+		{3029D094-BC28-46F9-B4C5-2A0E8CF38181}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77E8193B-9DA1-47FE-9604-1DF9C216D3E6}
+	EndGlobalSection
+EndGlobal

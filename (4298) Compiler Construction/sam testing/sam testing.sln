@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "macc testing", "macc testing\macc testing.vcxproj", "{CC82675C-0695-41D3-AFF4-1C42B96D0545}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sam testing", "sam testing\sam testing.vcxproj", "{5D8ECDA8-F354-4D58-B6C9-D61FAD74CB20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC82675C-0695-41D3-AFF4-1C42B96D0545}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CC82675C-0695-41D3-AFF4-1C42B96D0545}.Debug|Win32.Build.0 = Debug|Win32
+		{CC82675C-0695-41D3-AFF4-1C42B96D0545}.Release|Win32.ActiveCfg = Release|Win32
+		{CC82675C-0695-41D3-AFF4-1C42B96D0545}.Release|Win32.Build.0 = Release|Win32
+		{5D8ECDA8-F354-4D58-B6C9-D61FAD74CB20}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5D8ECDA8-F354-4D58-B6C9-D61FAD74CB20}.Debug|Win32.Build.0 = Debug|Win32
+		{5D8ECDA8-F354-4D58-B6C9-D61FAD74CB20}.Release|Win32.ActiveCfg = Release|Win32
+		{5D8ECDA8-F354-4D58-B6C9-D61FAD74CB20}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

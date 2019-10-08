@@ -1,0 +1,6 @@
+NBC predict: virginica. actual: versicolor. setosa chance: 3.1835e-137. versicolor chance:0.000674988. virginica chance: 0.00502432.
+NBC predict: virginica. actual: versicolor. setosa chance: 3.04088e-130. versicolor chance:0.000604424. virginica chance: 0.00228638.
+NBC predict: versicolor. actual: virginica. setosa chance: 7.85004e-124. versicolor chance:0.00197365. virginica chance: 6.0931e-005.
+NBC predict: versicolor. actual: virginica. setosa chance: 2.22709e-110. versicolor chance:0.000718386. virginica chance: 2.06582e-005.
+NBC predict: versicolor. actual: virginica. setosa chance: 5.89573e-149. versicolor chance:0.000778673. virginica chance: 0.000457784.
+NBC predict: versicolor. actual: virginica. setosa chance: 2.30943e-128. versicolor chance:0.0049856. virginica chance: 0.00153053.
