@@ -1,0 +1,266 @@
+!Armor
+@Body Armor
+The Husk of Kaalut,huka,0
+Knarst's Ribcage,knrc,0
+Cow Queen's Hide,coq3,0
+Elder of Tristram,cai2,0
+@Helms
+Moon of R'lyeh,ctpe,0
+Cow Queen's Horns,coq2,0
+Crown of the High Heavens,tyr1,0
+The Horseman's Head,pmkn,0
+Devil's Bargain,twi3,0
+@Belts
+Scourgelord's Girdle,lic1,0
+Heaven's Champion,tyr3,0
+@Boots
+Cow Queen's Hooves,coq1,0
+Treads of Valusia,trva,0
+The Shrieking Lich ,shrl,0
+Death's Advance,lic3,0
+@Shields
+Dragon's Bulwark,drbu,0
+Emblem of the Edyrem,uld4,0
+@Gloves
+Purifying Flame,pufl,0
+Divinity,tyr2,0
+Hysteria,twi2,0
+!Misc
+@Other
+The Dark Wanderer,cai1,0
+Horadric Jewel,cai3,0
+Nephalem's Birthright,uld3,0
+Runic Arrows,aqv2,0
+Hellfire Arrows,aqv3,0
+Razorspine Bolts,cqv2,0
+Hallowed Bolts,cqv3,0
+Scroll of Weapon Upgrade,scwu,0
+Scroll of Armor Upgrade,scau,0
+Scroll of Rune Upgrade,scru,0
+Scroll of Rune Downgrade,scrd,0
+Sroll of Reroll,rrsc,0
+Lucky Small Charm,cm4,0
+Orb of Alchemy,orba,0
+Diablo's Soulstone,dias,0
+Orb of Transmogrification,orbt,0
+Basket of Organs,baog,0
+Divine Amethyst,gdv,0
+Divine Topaz,gdy,0
+Divine Sapphire,gdb,0
+Divine Emerald,gdg,0
+Divine Ruby,gdr,0
+Divine Diamond,gdw,0
+Divine Skull,dskz,0
+Key to the Courts of Justice,cojk,0
+Trick or Treat Bag,tktr,0
+Candy Bar,hac1,0
+Spooky Ghost,hac2,0
+Jack O' Lantern,hac3,0
+Candy Corn,hac4,0
+Infernal Pearl,inpe,0
+The Cow King's Heart,kiht,0
+The Cow King's Horn,kihn,0
+The Cow King's Brain,kibr,0
+The Cow King's Eye,kiey,0
+The Cow King's Tail,kita,0
+Azathoth's Heart,azht,0
+Azathoth's Eye,azey,0
+Azathoth's Brain,azbr,0
+@Dyes
+White Dye,dy1,0
+Black Dye,dy2,0
+Blue Dye,dy3,0
+Gold Dye,dy4,0
+Green Dye,dy5,0
+Orange Dye,dy6,0
+Purple Dye,dy7,0
+Red Dye,dy8,0
+Bleach,blc,0
+@Nvs
+nv Blue Glow,eff1,0
+nv Baal Shield,eff2,0
+nv Red Shock,eff3,0
+nv Dark Tyrael Wings,eff4,0
+nv Big Shock,eff5,0
+nv Valkyrie Glow,eff6,0
+nv Green Glow,eff7,0
+nv Small Shock,eff8,0
+nv Noob Saibot,eff9,0
+nv Pacman,ef10,0
+nv Pikachu,ef11,0
+nv Meph,ef12,0
+nv Frozen Solid,ef13,0
+nv Squelch,ef14,0
+nv Frozen Wings,ef15,0
+nv Angel Wings,ef16,0
+nv Demon Wings,ef17,0
+nv Iridescent Wings,ef18,0
+nv Conquerer of Crucible,ef19,0	
+nv Warped,ef20,0
+@Enchanting
+Scroll of Faster Cast Rate,enc1,0
+Scroll of Faster Run Walk,enc2,0
+Scroll of Faster Hit Recovery,enc3,0
+Scroll of Increased Attack Speed,enc4,0
+Scroll of Attack Rating,enc5,0
+Scroll of Maximum Life,enc6,0
+Scroll of Maximum Mana,enc7,0
+Scroll of Ease,enc8,0
+Scroll of Thawing,enc9,0
+Scroll of Fire Damage,en10,0
+Scroll of Cold Damage,en11,0
+Scroll of Lightning Damage,en12,0
+Scroll of Poison Damage,en13,0
+Scroll of Trap Damage,en14,0
+Scroll of Strength,en15,0
+Scroll of Crushing Blow,en16,0
+Scroll of Deadly Strike,en17,0
+Scroll of Open Wounds,en18,0
+Scroll of Luck,en19,0
+Scroll of Enlightenment,en20,0
+Scroll of the Amazon,en21,0
+Scroll of the Assassin,en22,0
+Scroll of the Barbarian,en23,0
+Scroll of the Druid,en24,0
+Scroll of the Necromancer,en25,0
+Scroll of the Paladin,en26,0
+Scroll of the Sorceress,en27,0
+Scroll of Skill,en28,0
+Scroll of Damage Reduction,en29,0
+Scroll of Blood,en30,0
+Scroll of the Valkyrie,en31,0
+Scroll of the Golems,en32,0
+Scroll of Massive Life,en33,0
+Scroll of Massive Mana,en34,0
+Scroll of Frostfire,en35,0
+Scroll of the Old One,en36,0
+Scroll of Cleaving,en37,0
+Scroll of Magic Damage,en38,0
+Scroll of the Horadrim,en39,0
+Book of Enchantments,scbk,0
+@Monster items (unobtainable)
+Cthulhu Amulet,ctam,0
+Altar Amulet,pam5,0
+Cow Queen Amulet,cow1,0
+Dead King Amulet,pam6,0
+Knarst's Amulet,knam,0
+Puzzle Amulet 1,pam1,0
+Puzzle Amulet 2,pam2,0
+Puzzle Amulet 3,pam3,0
+Puzzle Amulet 4,pam4,0
+@Dreamlands
+Jewel of the Dragonslayer,jedr,0
+Othuyeg's Eyeball,otey,0
+Puzzle Box,puz1,0
+Puzzle Box,puz2,0
+Puzzle Box,puz3,0
+Puzzle Box,puz4,0
+Key to Rlyeh,kery,0
+Key of Madness,mke1,0
+Key of Nightmares,mke2,0
+Key of Horror,mke3,0
+Key of Insanity,mke4,0
+Madness Caster,s1r1,0
+Nightmare Caster,s1r2,0
+Horror Caster,s1am,0
+Madness Physical,s2r1,0
+Nightmare Physical,s2r2,0
+Horror Physical,s2am,0
+@Crucible
+Crucible Admission Level 1,cru1,0
+Crucible Admission Level 2,cru2,0
+Crucible Admission Level 3,cru3,0
+Crucible Admission Level 4,cru4,0
+Crucible Admission Level 5,cru5,0
+Crucible Admission Level 6,cru6,0
+Crucible Admission Level 7,cru7,0
+Crucible Admission Level 8,cru8,0
+Crucible Admission Level 9,cru9,0
+Crucible Admission Level 10,cr10,0
+Crucible Admission Level 11,cr11,0
+Crucible Admission Level 12,cr12,0
+Crucible Admission Level 13,cr13,0
+Crucible Admission Level 14,cr14,0
+Crucible Admission Level 15,cr15,0
+Crucible Admission Level 16,cr16,0
+Crucible Admission Level 17,cr17,0
+Crucible Admission Level 18,cr18,0
+Crucible Admission Level 19,cr19,0
+Crucible Admission Level 20,cr20,0
+Key to The Crucible Level 2,crk2,0
+Key to The Crucible Level 3,crk3,0
+Key to The Crucible Level 4,crk4,0
+Key to The Crucible Level 5,crk5,0
+Key to The Crucible Level 6,crk6,0
+Key to The Crucible Level 7,crk7,0
+Key to The Crucible Level 8,crk8,0
+Key to The Crucible Level 9,crk9,0
+Key to The Crucible Level 10,ck10,0
+Key to The Crucible Level 11,ck11,0
+Key to The Crucible Level 12,ck12,0
+Key to The Crucible Level 13,ck13,0
+Key to The Crucible Level 14,ck14,0
+Key to The Crucible Level 15,ck15,0
+Key to The Crucible Level 16,ck16,0
+Key to The Crucible Level 17,ck17,0
+Key to The Crucible Level 18,ck18,0
+Key to The Crucible Level 19,ck19,0
+Key to The Crucible Level 20,ck20,0
+@Inferno
+Infernal Key,ikey,0
+Infernal Chest (ring),inc1,0
+Infernal Chest (amulet),inc2,0
+Infernal Chest (rune),inc3,0
+Infernal Chest (???),inc4,0
+Unlocked Infernal Chest,inc5,0
+Green Worldstone Fragment,wsf1,0
+Yellow Worldstone Fragment,wsf2,0
+Blue Worldstone Fragment,wsf3,0
+Red Worldstone Fragment,wsf4,0
+Gold Worldstone Fragment,wsf5,0
+Green Worldstone Crystal,wsc1,0
+Yellow Worldstone Crystal,wsc2,0
+Blue Worldstone Crystal,wsc3,0
+Red Worldstone Crystal,wsc4,0
+Gold Worldstone Crystal,wsc5,0
+Pale Worldstone Crystal,wsc6,0
+Prime Charm 1 (Amazon),aby1,0
+Prime Charm 2 (Assassin),aby2,0
+Prime Charm 3 (Barbarian),aby3,0
+Prime Charm 4 (Druid),aby4,0
+Prime Charm 5 (Necromancer),aby5,0
+Prime Charm 6 (Paladin),aby6,0
+Prime Charm 7 (Sorceress),aby7,0
+Book of the Abyss,aby8,0
+Belial's Tome,aby9,0
+Cache of R'lyeh,cct1,0
+Key of the Old Ones,okey,0
+!Weapon
+@Sorceress Orbs
+Short Circuit,shci,0
+Flaming Pearl,chi1,0
+@Swords
+Frostmourne,rnbl,0
+Ssshaa's Primordial Fang,sfan,0
+Eldruin,anbl,0
+Thunderfury,uld1,0
+@Daggers
+The Plaguebringer,lic2,0
+@Bows
+Frostfire,frbo,0
+Acid Injector,acij,0
+Buckshot,chi2,0
+@Assassin Katars
+Trickster's Mischief,trms,0
+@Wands
+Goka Uln,goul,0
+@Scepters
+Heaven's Fury,hefu,0
+Khalim's Hope,uld2,0
+@Javelins
+Gae Bolg,gabo,0
+The Twins Anger,twi1,0
+@Polearms
+Insanity Physical,s2we,0
+@Staves
+Insanity Caster,s1we,0

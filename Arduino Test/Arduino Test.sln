@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arduino Test", "Arduino Test\Arduino Test.vcxproj", "{F395F179-5696-4698-900E-CA35EE320BA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Debug|x64.ActiveCfg = Debug|x64
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Debug|x64.Build.0 = Debug|x64
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Debug|x86.ActiveCfg = Debug|Win32
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Debug|x86.Build.0 = Debug|Win32
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Release|x64.ActiveCfg = Release|x64
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Release|x64.Build.0 = Release|x64
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Release|x86.ActiveCfg = Release|Win32
+		{F395F179-5696-4698-900E-CA35EE320BA7}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D47E366E-EB1C-48AB-9DC2-11CAAF9C61CB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,692 @@
+!Armor
+@Barbarian Helms
+Jawbone Cap,ba1,1
+Jawbone Visor,ba6,2
+Carnage Helm,bab,3
+Fanged Helm,ba2,1
+Lion Helm,ba7,2
+Fury Visor,bac,3
+Horned Helm,ba3,1
+Rage Mask,ba8,2
+Destroyer Helm,bad,3
+Assualt Helmet,ba4,1
+Savage Helmet,ba9,2
+Conqueror Crown,bae,3
+Avenger Guard,ba5,1
+Slayer Guard,baa,2
+Guardian Crown,baf,3
+@Belts
+Sash,lbl,1
+Demonhide Sash,zlb,2
+Spiderweb Sash,ulc,3
+Light Belt,vbl,1
+Sharkskin Belt,zvb,2
+Vampirefang Blt,uvc,3
+Belt,mbl,1
+Mesh Belt,zmb,2
+Mithril Coil,umc,3
+Heavy Belt,tbl,1
+Battle Belt,ztb,2
+Troll Belt,utc,3
+Plated Belt,hbl,1
+War Belt,zhb,2
+Colossus Girdle,uhc,3
+@Body Armor
+Quilted Armor,qui,1
+Ghost Armor,xui,2
+Dusk Shroud,uui,3
+Leather Armor,lea,1
+Serpentskin,xea,2
+Wyrmhide,uea,3
+Hard Leather,hla,1
+Demonhide Armor,xla,2
+Scarab Husk,ula,3
+Studded Leather,stu,1
+Trellised Armor,xtu,2
+Wire Fleece,utu,3
+Ring Mail,rng,1
+Linked Mail,xng,2
+Diamond Mail,ung,3
+Scale Mail,scl,1
+Tigulated Mail,xcl,2
+Loricated Mail,ucl,3
+Chain Mail,chn,1
+Mesh Armor,xhn,2
+Boneweave,uhn,3
+Breast Plate,brs,1
+Cuirass,xrs,2
+Great Hauberk,urs,3
+Splint Mail,spl,1
+Russet Armor,xpl,2
+Balrog Skin,upl,3
+Plate Mail,plt,1
+Templar Coat,xlt,2
+Hellforge Plate,ult,3
+Field Plate,fld,1
+Sharktooth,xld,2
+Kraken Shell,uld,3
+Gothic Plate,gth,1
+Embossed Plate,xth,2
+Lacquered Plate,uth,3
+Full Plate Mail,ful,1
+Chaos Armor,xul,2
+Shadow Plate,uul,3
+Ancient Armor,aar,1
+Ornate Armor,xar,2
+Sacred Armor,uar,3
+Light Plate,ltp,1
+Mage Plate,xtp,2
+Archon Plate,utp,3
+@Boots
+Boots,lbt,1
+Demonhide Boots,xlb,2
+Wyrmhide Boots,ulb,3
+Heavy Boots,vbt,1
+Sharkskin Boots,xvb,2
+Scarabshell Boots,uvb,3
+Chain Boots,mbt,1
+Mesh Boots,xmb,2
+Boneweave Boots,umb,3
+Light Plate,tbt,1
+Battle Boots,xtb,2
+Mirrored Boots,utb,3
+Greaves,hbt,1
+War Boots,xhb,2
+Myrmidon Greave,uhb,3
+@Druid Pelts
+Wolf Head,dr1,1
+Alpha Helm,dr6,2
+Blood Spirit,drb,3
+Hawk Helm,dr2,1
+Griffon Headress,dr7,2
+Sun Spirit,drc,3
+Antlers,dr3,1
+Hunter's Guise,dr8,2
+Earth Spirit,drd,3
+Falcon Mask,dr4,1
+Sacred Feathers,dr9,2
+Sky Spirit,dre,3
+Spirit Mask,dr5,1
+Totemic Mask,dra,2
+Dream Spirit,drf,3
+@Gloves
+Leather Gloves,lgl,1
+Demonhide Gloves,xlg,2
+Bramble Mitts,ulg,3
+Heavy Gloves,vgl,1
+Sharkskin Gloves,xvg,2
+Vampirebone Gloves,uvg,3
+Chain Gloves,mgl,1
+Heavy Bracers,xmg,2
+Vambraces,umg,3
+Light Gauntlets,tgl,1
+Battle Gauntlet,xtg,2
+Crusader Gauntlets,utg,3
+Gauntlets,hgl,1
+War Gauntlets,xhg,2
+Ogre Gauntlets,uhg,3
+@Helms
+Cap,cap,1
+War Hat,xap,2
+Shako,uap,3
+Skull Cap,skp,1
+Sallet,xkp,2
+Hydraskull,ukp,3
+Helm,hlm,1
+Casque,xlm,2
+Armet,ulm,3
+Full Helm,fhl,1
+Basinet,xhl,2
+Giant Conch,uhl,3
+Great Helm,ghm,1
+Winged Helm,xhm,2
+Spired Helm,uhm,3
+Crown,crn,1
+Grand Crown,xrn,2
+Corona,urn,3
+Mask,msk,1
+Death Mask,xsk,2
+Demonhead,usk,3
+Bone Helm,bhm,1
+Grim Helm,xh9,2
+Bone Visage,uh9,3
+Circlet,ci0,1
+Coronet,ci1,1
+Tiara,ci2,2
+Diadem,ci3,3
+@Necromancer Shrunken Heads
+Preserved Head,ne1,1
+Mummified Trphy,ne6,2
+Minion Skull,neb,3
+Zombie Head,ne2,1
+Fetish Trophy,ne7,2
+Hellspawn Skull,neg,3
+Unraveller Head,ne3,1
+Sexton Trophy,ne8,2
+Overseer Skull,ned,3
+Gargoyle Head,ne4,1
+Cantor Trophy,ne9,2
+Succubae Skull,nee,3
+Demon Head,ne5,1
+Heirophant Trphy,nea,2
+Bloodlord Skull,nef,3
+@Paladin Shields
+Targe,pa1,1
+Akaran Targe,pa6,2
+Sacred Targe,pab,3
+Rondache,pa2,1
+Akaran Rondache,pa7,2
+Sacred Rondache,pac,3
+Heraldic Shield,pa3,1
+Protector Shld,pa8,2
+Ancient Shield,pad,3
+Aerin Shield,pa4,1
+Guilded Shield,pa9,2
+Zakarum Shield,pae,3
+Crown Shield,pa5,1
+Royal Shield,paa,2
+Vortex Shield,paf,3
+@Shields
+Buckler,buc,1
+Defender,xuc,2
+Heater,uuc,3
+Small Shield,sml,1
+Round Shield,xml,2
+Luna,uml,3
+Large Shield,lrg,1
+Scutum,xrg,2
+Hyperion,urg,3
+Kite Shield,kit,1
+Dragon Shield,xit,2
+Monarch,uit,3
+Tower Shield,tow,1
+Pavise,xow,2
+Aegis,uow,3
+Gothic Shield,gts,1
+Ancient Shield,xts,2
+Ward,uts,3
+Bone Shield,bsh,1
+Grim Shield,xsh,2
+Troll Nest,ush,3
+Spiked Shield,spk,1
+Barbed Shield,xpk,2
+Blade Barrier,upk,3
+!Misc
+@Gems
+Chipped Amethyst,gcv,0
+Flawed Amethyst,gfv,0
+Amethyst,gsv,0
+Flawless Amethyst,gzv,0
+Perfect Amethyst,gpv,0
+Chipped Topaz,gcy,0
+Flawed Topaz,gfy,0
+Topaz,gsy,0
+Flawless Topaz,gly,0
+Perfect Topaz,gpy,0
+Chipped Saphire,gcb,0
+Flawed Saphire,gfb,0
+Saphire,gsb,0
+Flawless Saphire,glb,0
+Perfect Saphire,gpb,0
+Chipped Emerald,gcg,0
+Flawed Emerald,gfg,0
+Emerald,gsg,0
+Flawless Emerald,glg,0
+Perfect Emerald,gpg,0
+Chipped Ruby,gcr,0
+Flawed Ruby,gfr,0
+Ruby,gsr,0
+Flawless Ruby,glr,0
+Perfect Ruby,gpr,0
+Chipped Diamond,gcw,0
+Flawed Diamond,gfw,0
+Diamond,gsw,0
+Flawless Diamond,glw,0
+Perfect Diamond,gpw,0
+Chipped Skull,skc,0
+Flawed Skull,skf,0
+Skull,sku,0
+Flawless Skull,skl,0
+Perfect Skull,skz,0
+@Not Used
+Heart,hrt,0
+Brain,brz,0
+Jawbone,jaw,0
+Eye,eyz,0
+Horn,hrn,0
+Tail,tal,0
+Flag,flg,0
+Fang,fng,0
+Quill,qll,0
+Soul,sol,0
+Scalp,scz,0
+Spleen,spe,0
+@Other
+ring,rin,0
+amulet,amu,0
+viperamulet,vip,0
+Town Portal Book,tbk,0
+Identify Book,ibk,0
+Torch,tch,0
+Scroll,0sc,0
+Scroll of Town Portal,tsc,0
+Scroll of Identify,isc,0
+Arrows,aqv,0
+Bolts,cqv,0
+herb,hrb,0
+Jewel,jew,0
+Charm Small,cm1,0
+Charm Medium,cm2,0
+Charm Large,cm3,0
+Player Ear,ear,0
+Skeleton Key,key,0
+Mephisto Key,luv,0
+@Potion
+Healing Potion,hpo,0
+Mana Potion,mpo,0
+Full Healing Potion,hpf,0
+Full Mana Potion,mpf,0
+Stamina Potion,vps,0
+Antidote Potion,yps,0
+Rejuv Potion,rvs,0
+Full Rejuv Potion,rvl,0
+Thawing Potion,wms,0
+Lesser Healing Potion,hp1,0
+Light Healing Potion,hp2,0
+Healing Potion,hp3,0
+Strong Healing Potion,hp4,0
+Greater Healing Potion,hp5,0
+Lesser Mana Potion,mp1,0
+Light Mana Potion,mp2,0
+Mana Potion,mp3,0
+Strong Mana Potion,mp4,0
+Greater Mana Potion,mp5,0
+elixir,elx,0
+@Quest
+Bark Scroll,bks,0
+deciphered Bark Scroll,bkd,0
+scroll of self resurrect,xyz,0
+jade figurine,j34,0
+gold bird,g34,0
+Maguffin(ice),ice,0
+Scroll of Malah,tr2,0
+lamesen'stome,bbb,0
+Horadric Cube,box,0
+Scroll of Horadric Quest Info,tr1,0
+Mephisto Soul Stone,mss,0
+Book of Skill,ass,0
+Decoy Gidbinn,d33,0
+The Gidbinn,g33,0
+Horadric Malus,hdm,0
+Hell Forge Hammer,hfh,0
+Horadric Staff,hst,0
+Shaft of the Horadric Staff,msf,0
+Khalim's Flail,qf1,0
+Khalim's Will,qf2,0
+Wirt's Leg,leg,0
+Khalim Eye,qey,0
+Khalim Heart,qhr,0
+Khalim Brain,qbr,0
+@Quests V1.11
+Key of Terror,pk1,0
+Key of Hate,pk2,0
+Key of Destruction,pk3,0
+Diablo's Horn,dhn,0
+Baal's Eye,bey,0
+Mephisto's Brain,mbr,0
+Standard of Heroes,std,0
+Burning Essence of Terror,bet,0
+Twisted Essence of Suffering,tes,0
+Charged Essence of Hatred,ceh,0
+Festering Essence of Destruction,fed,0
+Token of Absolution,toa,0
+@Runes
+El Rune,r01,0
+Eld Rune,r02,0
+Tir Rune,r03,0
+Nef Rune,r04,0
+Eth Rune,r05,0
+Ith Rune,r06,0
+Tal Rune,r07,0
+Ral Rune,r08,0
+Ort Rune,r09,0
+Thul Rune,r10,0
+Amn Rune,r11,0
+Sol Rune,r12,0
+Shael Rune,r13,0
+Dol Rune,r14,0
+Hel Rune,r15,0
+Io Rune,r16,0
+Lum Rune,r17,0
+Ko Rune,r18,0
+Fal Rune,r19,0
+Lem Rune,r20,0
+Pul Rune,r21,0
+Um Rune,r22,0
+Mal Rune,r23,0
+Ist Rune,r24,0
+Gul Rune,r25,0
+Vex Rune,r26,0
+Ohm Rune,r27,0
+Lo Rune,r28,0
+Sur Rune,r29,0
+Ber Rune,r30,0
+Jah Rune,r31,0
+Cham Rune,r32,0
+Zod Rune,r33,0
+Tor Rune,r34,0
+Xer Rune,r35,0
+!Weapons
+@Amazon Weapons
+Stag Bow,am1,1
+Ashwood Bow,am6,2
+Matriarchal Bow,amb,3
+Reflex Bow,am2,1
+Ceremonial Bow,am7,2
+Grand Matron Bow,amc,3
+Maiden Spear,am3,1
+Ceremonial Spear,am8,2
+Matriarchal Spear,amd,3
+Maiden Pike,am4,1
+Ceremonial Pike,am9,2
+Matriarchal Pike,ame,3
+Maiden Javelin,am5,1
+Ceremonial Javalin,ama,2
+Matriarchal Javalin,amf,3
+@Assassin Katars
+Katar,ktr,1
+Quhab,9ar,2
+Suwayyah,7ar,3
+Wrist Blade,wrb,1
+Wrist Spike,9wb,2
+Wrist Sword,7wb,3
+Hatchet Hands,axf,1
+Fascia,9xf,2
+War Fist,7xf,3
+Cestus,ces,1
+Hand Scythe,9cs,2
+Battle Cestus,7cs,3
+Claws,clw,1
+Greater Claws,9lw,2
+Feral Claws,7lw,3
+Blade Talons,btl,1
+Greater Talons,9tw,2
+Runic Talons,7tw,3
+Scissors Katar,skr,1
+Scissors Quhab,9qr,2
+Scissors Suwayyah,7qr,3
+@Axes
+Hand Axe,hax,1
+Hatchet,9ha,2
+Tomahawk,7ha,3
+Axe,axe,1
+Cleaver,9ax,2
+Small Crescent,7ax,3
+Double Axe,2ax,1
+Twin Axe,92a,2
+Ettin Axe,72a,3
+Military Pick,mpi,1
+Crowbill,9mp,2
+War Spike,7mp,3
+War Axe,wax,1
+Naga,9wa,2
+Berserker Axe,7wa,3
+Large Axe,lax,1
+Military Axe,9la,2
+Feral Axe,7la,3
+Broad Axe,bax,1
+Bearded Axe,9ba,2
+Silver Edged Ax,7ba,3
+Battle Axe,btx,1
+Tabar,9bt,2
+Decapitator,7bt,3
+Great Axe,gax,1
+Gothic Axe,9ga,2
+Champion Axe,7ga,3
+Giant Axe,gix,1
+Ancient Axe,9gi,2
+Glorious Axe,7gi,3
+@Bows
+Short Bow,sbw,1
+Edge Bow,8sb,2
+Spider Bow,6sb,3
+Hunter's Bow,hbw,1
+Razor Bow,8hb,2
+Blade Bow,6hb,3
+Long Bow,lbw,1
+Cedar Bow,8lb,2
+Shadow Bow,6lb,3
+Composite Bow,cbw,1
+Double Bow,8cb,2
+Great Bow,6cb,3
+Short Battle Bow,sbb,1
+Short Siege Bow,8s8,2
+Diamond Bow,6s7,3
+Long Battle Bow,lbb,1
+Long Siege Bow,8l8,2
+Crusader Bow,6l7,3
+Short War Bow,swb,1
+Rune Bow,8sw,2
+Ward Bow,6sw,3
+Long War Bow,lwb,1
+Gothic Bow,8lw,2
+Hydra Bow,6lw,3
+@Crossbows
+Light Crossbow,lxb,1
+Arbalest,8lx,2
+Pellet Bow,6lx,3
+Crossbow,mxb,1
+Siege Crossbow,8mx,2
+Gorgon Crossbow,6mx,3
+Heavy Crossbow,hxb,1
+Ballista,8hx,2
+Colossus Crossbow,6hx,3
+Repeating Crossbow,rxb,1
+Chu-Ko-Nu,8rx,2
+Demon Crossbow,6rx,3
+@Daggers
+Dagger,dgr,1
+Poignard,9dg,2
+Bone Knife,7dg,3
+Dirk,dir,1
+Rondel,9di,2
+Mithral Point,7di,3
+Kriss,kri,1
+Cinquedeas,9kr,2
+Fanged Knife,7kr,3
+Blade,bld,1
+Stilleto,9bl,2
+Legend Spike,7bl,3
+@Javelins
+Javelin,jav,1
+War Javelin,9ja,2
+Hyperion Javeln,7ja,3
+Pilum,pil,1
+Great Pilum,9pi,2
+Stygian Pilum,7pi,3
+Short Spear,ssp,1
+Simbilan,9s9,2
+Balrog Spear,7s7,3
+Glaive,glv,1
+Spiculum,9gl,2
+Ghost Glaive,7gl,3
+Throwing Spear,tsp,1
+Harpoon,9ts,2
+Winged Harpoon,7ts,3
+@Maces
+Club,clb,1
+Cudgel,9cl,2
+Truncheon,7cl,3
+Spiked Club,spc,1
+Barbed Club,9sp,2
+Tyrant Club,7sp,3
+Mace,mac,1
+Flanged Mace,9ma,2
+Reinforced Mace,7ma,3
+Morning Star,mst,1
+Jagged Star,9mt,2
+Devil Star,7mt,3
+Flail,fla,1
+Knout,9fl,2
+Scourge,7fl,3
+War Hammer,whm,1
+Battle Hammer,9wh,2
+Legendary Mallt,7wh,3
+Maul,mau,1
+War Club,9m9,2
+Ogre Maul,7m7,3
+Great Maul,gma,1
+Martelde Fer,9gm,2
+Thunder Maul,7gm,3
+@Polearms
+Bardiche,bar,1
+Lochaber Axe,9b7,2
+Ogre Axe,7o7,3
+Voulge,vou,1
+Bill,9vo,2
+Colossus Voulge,7vo,3
+Scythe,scy,1
+Battle Scythe,9s8,2
+Thresher,7s8,3
+Poleaxe,pax,1
+Partizan,9pa,2
+Cryptic Axe,7pa,3
+Halberd,hal,1
+Bec-de-Corbin,9h9,2
+Great Poleaxe,7h7,3
+War Scythe,wsc,1
+Grim Scythe,9wc,2
+Giant Thresher,7wc,3
+@Scepters
+Scepter,scp,1
+Rune Scepter,9sc,2
+Mighty Scepter,7sc,3
+Grand Scepter,gsc,1
+Holy Water Sprinkler,9qs,2
+Seraph Rod,7qs,3
+War Scepter,wsp,1
+Divine Scepter,9ws,2
+Caduceus,7ws,3
+@Sorceress Orbs
+Eagle Orb,ob1,1
+Glowing Orb,ob6,2
+Heavenly Stone,obb,3
+Sacred Globe,ob2,1
+Crystalline Globe,ob7,2
+Eldritch Orb,obc,3
+Smoked Sphere,ob3,1
+Cloudy Sphere,ob8,2
+Demon Heart,obd,3
+Clasped Orb,ob4,1
+Sparkling Ball,ob9,2
+Vortex Orb,obe,3
+Dragon Stone,ob5,1
+Swirling Crystal,oba,2
+Dimensional Shard,obf,3
+@Spears
+Spear,spr,1
+War Spear,9sr,2
+Hyperion Spear,7sr,3
+Trident,tri,1
+Fuscina,9tr,2
+Stygian Pike,7tr,3
+Brandistock,brn,1
+War Fork,9br,2
+Mancatcher,7br,3
+Spetum,spt,1
+Yari,9st,2
+Ghost Spear,7st,3
+Pike,pik,1
+Lance,9p9,2
+War Pike,7p7,3
+@Staves
+Short Staff,sst,1
+Jo Staff,8ss,2
+Walking Stick,6ss,3
+Long Staff,lst,1
+Quarterstaff,8ls,2
+Stalagmite,6ls,3
+Gnarled Staff,cst,1
+Cedar Staff,8cs,2
+Elder Staff,6cs,3
+Battle Staff,bst,1
+Gothic Staff,8bs,2
+Shillelagh,6bs,3
+War Staff,wst,1
+Rune Staff,8ws,2
+Archon Staff,6ws,3
+@Swords
+Short Swrod,ssd,1
+Gladius,9ss,2
+Falcata,7ss,3
+Scimitar,scm,1
+Cutlass,9sm,2
+Ataghan,7sm,3
+Saber,sbr,1
+Shamshir,9sb,2
+Elegant Blade,7sb,3
+Falchion,flc,1
+Tulwar,9fc,2
+Hydra Edge,7fc,3
+Crystal Sword,crs,1
+Dimensional Blade,9cr,2
+Phase Blade,7cr,3
+Broad Sword,bsd,1
+Battle Sword,9bs,2
+Conquest Sword,7bs,3
+Long Sword,lsd,1
+Rune Sword,9ls,2
+Cryptic Sword,7ls,3
+War Sword,wsd,1
+Ancient Sword,9wd,2
+Mythical Sword,7wd,3
+Two-handed Swrd,2hs,1
+Espadon,92h,2
+Legend Sword,72h,3
+Claymore,clm,1
+Dacian Falx,9cm,2
+Highland Blade,7cm,3
+Giant Sword,gis,1
+Tusk Sword,9gs,2
+Balrog Blade,7gs,3
+Bastard Sword,bsw,1
+Gothic Sword,9b9,2
+Champion Sword,7b7,3
+Flamberge,flb,1
+Zweihander,9fb,2
+Colossal Sword,7fb,3
+Great Sword,gsd,1
+Executioner Sword,9gd,2
+Colossus Blade,7gd,3
+@Throwing
+Throwing Knife,tkf,1
+Battle Dart,9tk,2
+Flying Knife,7tk,3
+Throwing Axe,tax,1
+Francisca,9ta,2
+Flying Axe,7ta,3
+Strangling Gas Potion,gpl,1
+Choking Gas Potion,gpm,2
+Rancid Gas Potion,gps,3
+Fulminating Potion,opl,1
+Exploding Potion,opm,2
+Oil Potion,ops,3
+Balanced Knife,bkf,1
+War Dart,9bk,2
+Winged Knife,7bk,3
+Balanced Axe,bal,1
+Hurlbat,9b8,2
+Winged Axe,7b8,3
+@Wands
+Wand,wnd,1
+Burnt Wand,9wn,2
+Polished Wand,7wn,3
+Yew Wand,ywn,1
+Petrified Wand,9yw,2
+Ghost Wand,7yw,3
+Bone Wand,bwn,1
+Tomb Wand,9bw,2
+Lich Wand,7bw,3
+Grim Wand,gwn,1
+Grave Wand,9gw,2
+Unearthed Wand,7gw,3

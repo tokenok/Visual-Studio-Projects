@@ -1,0 +1,707 @@
+The Gnasher|hax 
+Deathspade|axe 
+Bladebone|2ax 
+Mindrend|mpi 
+Rakescar|wax 
+Fechmars Axe|lax 
+Goreshovel|bax 
+The Chieftan|btx 
+Brainhew|gax 
+The Humongous|gix 
+Iros Torch|wnd 
+Maelstromwrath|ywn 
+Gravenspine|bwn 
+Umes Lament|gwn 
+Felloak|clb 
+Knell Striker|scp 
+Rusthandle|gsc 
+Stormeye|wsp 
+Stoutnail|spc 
+Crushflange|mac 
+Bloodrise|mst 
+The Generals Tan Do Li Ga|fla 
+Ironstone|whm 
+Bonesob|mau 
+Steeldriver|gma 
+Rixots Keen|ssd 
+Blood Crescent|scm 
+Krintizs Skewer|sbr 
+Gleamscythe|flc 
+Azurewrath|crs 
+Griswolds Edge|bsd 
+Hellplague|lsd 
+Culwens Point|wsd 
+Shadowfang|2hs 
+Soulflay|clm 
+Kinemils Awl|gis 
+Blacktongue|bsw 
+Ripsaw|flb 
+The Patriarch|gsd 
+Gull|dgr 
+The Diggler|dir 
+The Jade Tan Do|kri 
+Irices Shard|bld 
+The Dragon Chang|spr 
+Razortine|tri 
+Bloodthief|brn 
+Lance of Yaggai|spt 
+The Tannr Gorerod|pik 
+Dimoaks Hew|bar 
+Steelgoad|vou 
+Soul Harvest|scy 
+The Battlebranch|pax 
+Woestave|hal 
+The Grim Reaper|wsc 
+Bane Ash|sst 
+Serpent Lord|lst 
+Lazarus Spire|cst 
+The Salamander|bst 
+The Iron Jang Bong|wst 
+Pluckeye|sbw 
+Witherstring|hbw 
+Rimeraven|lbw 
+Piercerib|cbw 
+Pullspite|sbb 
+Wizendraw|lbb 
+Hellclap|swb 
+Blastbark|lwb 
+Leadcrow|lxb 
+Ichorsting|mxb 
+Hellcast|hxb 
+Doomspittle|rxb 
+War Bonnet|cap 
+Tarnhelm|skp 
+Coif of Glory|hlm 
+Duskdeep|fhl 
+Wormskull|bhm 
+Howltusk|ghm 
+Undead Crown|crn 
+The Face of Horror|msk 
+Greyform|qui 
+Blinkbats Form|lea 
+The Centurion|hla 
+Twitchthroe|stu 
+Darkglow|rng 
+Hawkmail|scl 
+Sparking Mail|chn 
+Venomsward|brs 
+Iceblink|spl 
+Boneflesh|plt 
+Rockfleece|fld 
+Rattlecage|gth 
+Goldskin|ful 
+Victors Silk|aar 
+Heavenly Garb|ltp 
+Pelta Lunata|buc 
+Umbral Disk|sml 
+Stormguild|lrg 
+Wall of the Eyeless|bsh 
+Swordback Hold|spk 
+Steelclash|kit 
+Bverrit Keep|tow 
+The Ward|gts 
+The Hand of Broc|lgl 
+Bloodfist|vgl 
+Chance Guards|mgl 
+Magefist|tgl 
+Frostburn|hgl 
+Hotspur|lbt 
+Gorefoot|vbt 
+Treads of Cthon|mbt 
+Goblin Toe|tbt 
+Tearhaunch|hbt 
+Lenyms Cord|lbl 
+Snakecord|vbl 
+Nightsmoke|mbl 
+Goldwrap|tbl 
+Bladebuckle|hbl 
+Nokozan Relic|amu 
+The Eye of Etlich|amu 
+The Mahim-Oak Curio|amu 
+Nagelring|rin 
+Manald Heal|rin 
+The Stone of Jordan|rin 
+Amulet of the Viper|vip 
+Staff of Kings|msf 
+Horadric Staff|hst 
+Hell Forge Hammer|hfh 
+KhalimFlail|qf1 
+SuperKhalimFlail|qf2 
+Coldkill|9ha 
+Butcher's Pupil|9ax 
+Islestrike|92a 
+Pompe's Wrath|9mp 
+Guardian Naga|9wa 
+Warlord's Trust|9la 
+Spellsteel|9ba 
+Stormrider|9bt 
+Boneslayer Blade|9ga 
+The Minataur|9gi 
+Suicide Branch|9wn 
+Carin Shard|9yw 
+Arm of King Leoric|9bw 
+Blackhand Key|9gw 
+Dark Clan Crusher|9cl 
+Zakarum's Hand|9sc 
+The Fetid Sprinkler|9qs 
+Hand of Blessed Light|9ws 
+Fleshrender|9sp 
+Sureshrill Frost|9ma 
+Moonfall|9mt 
+Baezil's Vortex|9fl 
+Earthshaker|9wh 
+Bloodtree Stump|9m9 
+The Gavel of Pain|9gm 
+Bloodletter|9ss 
+Coldsteel Eye|9sm 
+Hexfire|9sb 
+Blade of Ali Baba|9fc 
+Ginther's Rift|9cr 
+Headstriker|9bs 
+Plague Bearer|9ls 
+The Atlantian|9wd 
+Crainte Vomir|92h 
+Bing Sz Wang|9cm 
+The Vile Husk|9gs 
+Cloudcrack|9b9 
+Todesfaelle Flamme|9fb 
+Swordguard|9gd 
+Spineripper|9dg 
+Heart Carver|9di 
+Blackbog's Sharp|9kr 
+Stormspike|9bl 
+The Impaler|9sr 
+Kelpie Snare|9tr 
+Soulfeast Tine|9br 
+Hone Sundan|9st 
+Spire of Honor|9p9 
+The Meat Scraper|9b7 
+Blackleach Blade|9vo 
+Athena's Wrath|9s8 
+Pierre Tombale Couant|9pa 
+Husoldal Evo|9h9 
+Grim's Burning Dead|9wc 
+Razorswitch|8ss 
+Ribcracker|8ls 
+Chromatic Ire|8cs 
+Warpspear|8bs 
+Skullcollector|8ws 
+Skystrike|8sb 
+Riphook|8hb 
+Kuko Shakaku|8lb 
+Endlesshail|8cb 
+Whichwild String|8s8 
+Cliffkiller|8l8 
+Magewrath|8sw 
+Godstrike Arch|8lw 
+Langer Briser|8lx 
+Pus Spiter|8mx 
+Buriza-Do Kyanon|8hx 
+Demon Machine|8rx 
+Armor|    
+Peasent Crown|xap 
+Rockstopper|xkp 
+Stealskull|xlm 
+Darksight Helm|xhl 
+Valkiry Wing|xhm 
+Crown of Thieves|xrn 
+Blackhorn's Face|xsk 
+Vampiregaze|xh9 
+The Spirit Shroud|xui 
+Skin of the Vipermagi|xea 
+Skin of the Flayerd One|xla 
+Ironpelt|xtu 
+Spiritforge|xng 
+Crow Caw|xcl 
+Shaftstop|xhn 
+Duriel's Shell|xrs 
+Skullder's Ire|xpl 
+Guardian Angel|xlt 
+Toothrow|xld 
+Atma's Wail|xth 
+Black Hades|xul 
+Corpsemourn|xar 
+Que-Hegan's Wisdon|xtp 
+Visceratuant|xuc 
+Mosers Blessed Circle|xml 
+Stormchaser|xrg 
+Tiamat's Rebuke|xit 
+Kerke's Sanctuary|xow 
+Radimant's Sphere|xts 
+Lidless Wall|xsh 
+Lance Guard|xpk 
+Venom Grip|xlg 
+Gravepalm|xvg 
+Ghoulhide|xmg 
+Lavagout|xtg 
+Hellmouth|xhg 
+Infernostride|xlb 
+Waterwalk|xvb 
+Silkweave|xmb 
+Wartraveler|xtb 
+Gorerider|xhb 
+String of Ears|zlb 
+Razortail|zvb 
+Gloomstrap|zmb 
+Snowclash|ztb 
+Thudergod's Vigor|zhb 
+Elite Uniques|    
+Harlequin Crest|uap 
+Veil of Steel|uhm 
+The Gladiator's Bane|utu 
+Arkaine's Valor|upl 
+Blackoak Shield|uml 
+Stormshield|uit 
+Hellslayer|7bt 
+Messerschmidt's Reaver|7ga 
+Baranar's Star|7mt 
+Schaefer's Hammer|7wh 
+The Cranium Basher|7gm 
+Lightsabre|7cr 
+Doombringer|7b7 
+The Grandfather|7gd 
+Wizardspike|7dg 
+Constricting Ring|rin 
+Stormspire|7wc 
+Eaglehorn|6l7 
+Windforce|6lw 
+Rings|    
+Bul Katho's Wedding Band|rin 
+The Cat's Eye|amu 
+The Rising Sun|amu 
+Crescent Moon|amu 
+Mara's Kaleidoscope|amu 
+Atma's Scarab|amu 
+Dwarf Star|rin 
+Raven Frost|rin 
+Highlord's Wrath|amu 
+Saracen's Chance|amu 
+Class Specific|    
+Arreat's Face|baa 
+Homunculus|nea 
+Titan's Revenge|ama 
+Lycander's Aim|am7 
+Lycander's Flank|am9 
+The Oculus|oba 
+Herald of Zakarum|pa9 
+Cutthroat1|9tw 
+Jalal's Mane|dra 
+The Scalper|9ta 
+Bloodmoon|7sb 
+Djinnslayer|7sm 
+Deathbit|9tk 
+Warshrike|7bk 
+Gutsiphon|6rx 
+Razoredge|7ha 
+Gore Ripper|    
+Demonlimb|7sp 
+Steelshade|ulm 
+Tomb Reaver|7pa 
+Deaths's Web|7gw 
+Nature's Peace|rin 
+Azurewrath|7cr 
+Seraph's Hymn|amu 
+Zakarum's Salvation|    
+Fleshripper|7kr 
+Odium|utp 
+Horizon's Tornado|7fl 
+Stone Crusher|7wh 
+Jadetalon|7wb 
+Shadowdancer|uhb 
+Cerebus|drb 
+Tyrael's Might|uar 
+Souldrain|umg 
+Runemaster|72a 
+Deathcleaver|7wa 
+Executioner's Justice|7gi 
+Stoneraven|amd 
+Leviathan|uld 
+Larzuk's Champion|    
+Wisp|rin 
+Gargoyle's Bite|7ts 
+Lacerator|7b8 
+Mang Song's Lesson|6ws 
+Viperfork|7br 
+Ethereal Edge|7ba 
+Demonhorn's Edge|bad 
+The Reaper's Toll|7s8 
+Spiritkeeper|drd 
+Hellrack|6hx 
+Alma Negra|pac 
+Darkforge Spawn|nef 
+Widowmaker|6sw 
+Bloodraven's Charge|amb 
+Ghostflame|7bl 
+Shadowkiller|7cs 
+Gimmershred|7ta 
+Griffon's Eye|ci3 
+Windhammer|7m7 
+Thunderstroke|amf 
+Giantmaimer|    
+Demon's Arch|7s7 
+Boneflame|nee 
+Steelpillar|7p7 
+Nightwing's Veil|uhm 
+Crown of Ages|urn 
+Andariel's Visage|usk 
+Darkfear|ulm 
+Dragonscale|pae 
+Steel Carapice|uul 
+Medusa's Gaze|uow 
+Ravenlore|dre 
+Boneshade|7bw 
+Nethercrow|    
+Flamebellow|7gs 
+Fathom|obf 
+Wolfhowl|bac 
+Spirit Ward|uts 
+Kira's Guardian|ci2 
+Ormus' Robes|uui 
+Gheed's Fortune|cm3 
+Stormlash|7fl 
+Halaberd's Reign|bae 
+Warriv's Warder|    
+Spike Thorn|upk 
+Dracul's Grasp|uvg 
+Frostwind|7ls 
+Templar's Might|uar 
+Eschuta's temper|obc 
+Firelizard's Talons|7lw 
+Sandstorm Trek|uvb 
+Marrowwalk|umb 
+Heaven's Light|7sc 
+Merman's Speed|ulb 
+Arachnid Mesh|ulc 
+Nosferatu's Coil|uvc 
+Metalgrid|amu 
+Verdugo's Hearty Cord|umc 
+Sigurd's Staunch|    
+Carrion Wind|rin 
+Giantskull|uh9 
+Ironward|7ws 
+Annihilus|cm1 
+Arioc's Needle|7sr 
+Cranebeak|7mp 
+Nord's Tenderizer|7cl 
+Earthshifter|7gm 
+Wraithflight|7gl 
+Bonehew|7o7 
+Ondal's Wisdom|6cs 
+The Reedeemer|7sc 
+Headhunter's Glory|ush 
+Steelrend|uhg 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Rainbow Facet|jew 
+Hellfire Torch|cm2 
+Arcane Essence|cm1 
+Valkiry Wing|xhm 
+Wraith Brand|tbt 
+Viper Trample|mbt 
+Storm Circlet|amu 
+Storm Hide|amu 
+Armageddon Slippers|amu 
+Lucky Dice|cm4 
+Frostmourne|rnbl
+King's Jewel of Blazing|jew 
+Flavie's Bullseye|aqv3
+Flavie's Bullseye 2|cqv3
+Short Circuit|shci
+Knarst Amulet|knam
+Knarst's Ribcage|knrc
+The Husk of Kaalut|huka
+Ssshaa's Primordial Fang|sfan
+Acid Injector|acij
+Treads of Valusia|trva
+The Shrieking Lich|shrl
+Dragon's Bulwark|drbu
+Jewel of the Dragonslayer|jedr
+Purifying Flame|pufl
+Othuyeg's Eyeball|otey
+Puzzle Amulet 1|pam1
+Puzzle Amulet 2|pam2
+Puzzle Amulet 3|pam3
+Puzzle Amulet 4|pam4
+Key to Rlyeh|kery
+Cthulhu Amulet|ctam
+Frostfire|frbo
+Trickster's Mischief|trms
+Moon of R'lyeh|ctpe
+Goka Uln|goul
+Heaven's Fury|hefu
+Gae Bolg|gabo
+Blue Glow|eff1
+Baal Shield|eff2
+Red Shock|eff3
+Dark Tyrael Wings|eff4
+Big Shock|eff5
+Valkyrie Glow|eff6
+Green Glow|eff7
+Small Shock|eff8
+Noob Saibot|eff9
+Pacman|ef10
+Pikachu|ef11
+Meph|ef12
+Frozen Solid|ef13
+Cache of Rlyeh|cct1
+Altar Amulet|pam5
+Cow Queen Amulet|cow1
+Dead King Amulet|pam6
+Squelch|ef14
+Abyss Sphere|aby1
+Abyss Sphere|aby2
+Abyss Sphere|aby3
+Abyss Sphere|aby4
+Abyss Sphere|aby5
+Abyss Sphere|aby6
+Abyss Sphere|aby7
+Book of the Abyss|aby8
+Belial's Tome|aby9
+Scroll of Faster Cast Rate|enc1
+Scroll of Faster Run Walk|enc2
+Scroll of Faster Hit Recovery|enc3
+Scroll of IAS|enc4
+Scroll of Attack Rating|enc5
+Scroll of Maximum Life|enc6
+Scroll of Maximum Mana|enc7
+Scroll of Ease|enc8
+Scroll of Thawing|enc9
+Scroll of Fire Damage|en10
+Scroll of Cold Damage|en11
+Scroll of Lightning Damage|en12
+Scroll of Poison Damage|en13
+Scroll of Trap Damage|en14
+Scroll of Strength|en15
+Scroll of Crushing Blow|en16
+Scroll of Deadly Strike|en17
+Scroll of Open Wounds|en18
+Scroll of Luck|en19
+Scroll of Enlightenment|en20
+Scroll of the Amazon|en21
+Scroll of the Assassin|en22
+Scroll of the Barbarian|en23
+Scroll of the Druid|en24
+Scroll of the Necromancer|en25
+Scroll of the Paladin|en26
+Scroll of the Sorceress|en27
+Scroll of Skill|en28
+Scroll of Damage Reduction|en29
+Scroll of Blood|en30
+Scroll of the Valkyrie|en31
+Scroll of the Golems|en32
+Scroll of Massive Life|en33
+Scroll of Massive Mana|en34
+Scroll of Frostfire|en35
+Scroll of the Old One|en36
+Scroll of Cleaving|en37
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Candy Bar|hac1
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Spooky Ghost|hac2
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Jackolantern|hac3
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Candy Corn|hac4
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+Infernal Pearl|inpe
+The Horseman's Head|pmkn
+The Horseman's Head|pmkn
+The Horseman's Head|pmkn
+Eldruin|anbl
+Scourgelord's Girdle|lic1
+Crown of the High Heavens|tyr1
+The Plaguebringer|lic2
+Divinity|tyr2
+Heaven's Champion|tyr3
+Death's Advance|lic3
+Frozen Wings|ef15
+Angel Wings|ef16
+Demon Wings|ef17
+Iridescent Wings|ef18
+Crucible Admission Level 1|cru1
+Crucible Admission Level 2|cru2
+Crucible Admission Level 3|cru3
+Crucible Admission Level 4|cru4
+Crucible Admission Level 5|cru5
+Crucible Admission Level 6|cru6
+Crucible Admission Level 7|cru7
+Crucible Admission Level 8|cru8
+Crucible Admission Level 9|cru9
+Crucible Admission Level 10|cr10
+Crucible Admission Level 11|cr11
+Crucible Admission Level 12|cr12
+Crucible Admission Level 13|cr13
+Crucible Admission Level 14|cr14
+Crucible Admission Level 15|cr15
+Crucible Admission Level 16|cr16
+Crucible Admission Level 17|cr17
+Crucible Admission Level 18|cr18
+Crucible Admission Level 19|cr19
+Crucible Admission Level 20|cr20
+Flaming Pearl|chi1
+Buckshot|chi2
+The Twins Anger|twi1
+Hysteria|twi2
+Devil's Bargain|twi3
+The Dark Wanderer|cai1
+Elder of Tristram|cai2
+Horadric Jewel|cai3
+Horadric Jewel|cai3
+Horadric Jewel|cai3
+Horadric Jewel|cai3
+Horadric Jewel|cai3
+Scroll of Magic Damage|en38
+Scroll of the Horadrim|en39
+Thunderfury|uld1
+Khalim's Hope|uld2
+Nephalem's Birthright|uld3
+Emblem of the Edyrem|uld4
+Conquerer of Crucible|ef19
+Warped|ef20
+Infernal Pearl|inpe
+Warmonger|tra1
+Trag-Oul's True Guise|tra2
+Sanctuary's Balance|tra3
+Corrupted Lightsabre|cto1
+Corrupted Stormshield|cto2
+Corrupted Harlequin Crest|cto3
+Short Circlet|spe1
+Skull of the Unclean|spe2
+Buster Sword|spe3
+The Oculus Ring|spe4
+Alkor's Shrunken Head|spe5
+Scroll of Fire Pierce|en40
+Scroll of Cold Pierce|en41
+Scroll of Lightning Pierce|en42
+Scroll of Poison Pierce|en43
+Scroll of Magic Pierce|en44
+Scroll of Physical Pierce|en45
+Horadric Jewel|cai3
+Scroll of Mortality|en46
+Lazarus' Leathers|ulg 
+Scroll of Paradox|en47
+Dark Matter|ef21
+High Voltage|utb 
+Beach Ball|ef22
+Exploding Cow|ef23
+Disco Maelstrom|ef24
+Cainnado|ef25
+Candy Bar|hac1
+Spooky Ghost|hac2
+Jackolantern|hac3
+Candy Corn|hac4
+Leoric's Folly|spe6
+Crown of the Skeleton King|spe7
+The Butcher's Cleaver|spe8
+Touch of Death|spe9
+Diablo's Rebirth|sp10
+Neo Annihilus|sp11
+Flame Horizon|sp12
+Death's Fervor|7gw 
+Divine Retribution|urn 
+Arkaine's Wrath|upl 
+Titan's Grip|uhg 
+Bane of the Underworld|ush 
+Spear of Zeus|amf 
+Meshif's Travelers|uvb 
+Wizard's Ire|uvg 
+Relic of the Ancients|umc 
+Raise Santa|ef26
+Guts Throw|ef27
+Snowy Vengeance|ef28
+Snow Effect|ef29
+Elf Slippers|sp13
+North Pole Marker|sp14
+Rudolph's Nose|sp15
+Azmodan's Shell|sp16
+Band of Sin|sp17
+Heart of Hell|sp18
+The Deadly Sin|sp19

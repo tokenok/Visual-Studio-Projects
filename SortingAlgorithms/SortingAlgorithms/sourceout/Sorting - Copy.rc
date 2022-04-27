@@ -1,0 +1,202 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include  "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include  ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG DIALOGEX 0, 0, 500, 300
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_APPWINDOW
+CAPTION "Sorting Algorithm Visualizer"
+FONT 8, "MS  Shell  Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Run All",BTN_RUN_ALL,458,279,35,14
+    PUSHBUTTON      "Add",BTN_ADD,458,239,35,14
+    PUSHBUTTON      "Remove",BTN_REMOVE,458,258,35,14
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 293, 146
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Sorting Algorithm:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,5,58,8
+    COMBOBOX        CB_ALGORITHMS,5,14,116,175,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Visualization Type:",IDC_STATIC,6,36,60,8
+    COMBOBOX        CB_VISUALIZATION_TYPE,5,44,116,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Color Mode:",IDC_STATIC,5,59,40,8
+    COMBOBOX        CB_COLOR_MODE,5,67,116,104,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Initialization Options:",IDC_STATIC,180,5,106,112
+    LTEXT           "Values:",IDC_STATIC,185,16,24,8
+    CONTROL         "Regular",RDO_REGULAR,"Button",BS_AUTORADIOBUTTON,183,24,41,10
+    CONTROL         "Few Unique",RDO_FEW_UNIQUE,"Button",BS_AUTORADIOBUTTON,183,34,53,10
+    CONTROL         "Very Few Unique",RDO_VERY_FEW_UNIQUE,"Button",BS_AUTORADIOBUTTON,183,43,70,10
+    CONTROL         "Random",RDO_VALUE_RANDOM,"Button",BS_AUTORADIOBUTTON,248,24,42,10
+	CONTROL         "Normal", RDO_NORMAL, "Button", BS_AUTORADIOBUTTON, 248, 34, 38, 10
+    LTEXT           "Ordering:",IDC_STATIC,183,52,32,8
+    CONTROL         "Random",RDO_ORDER_RANDOM,"Button",BS_AUTORADIOBUTTON,183,62,42,10
+    CONTROL         "Near Sorted",RDO_NEAR_SORTED,"Button",BS_AUTORADIOBUTTON,183,72,55,10
+    CONTROL         "Reversed",RDO_REVERSED,"Button",BS_AUTORADIOBUTTON,183,82,47,10
+    CONTROL         "Near Sorted and Reversed",RDO_NEAR_SORTED_REVERSED,
+                    "Button",BS_AUTORADIOBUTTON,183,92,101,10
+    CONTROL         "Sorted",RDO_SORTED,"Button",BS_AUTORADIOBUTTON,183,102,37,10
+    GROUPBOX        "Draw Options",IDC_STATIC,2,27,122,88
+    CONTROL         "Accesses",CBTN_ACCESSES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,83,45,10
+    CONTROL         "Comparisons",CBTN_COMPARISONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,93,57,10
+    CONTROL         "Assignments",CBTN_ASSIGNMENTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,103,56,10
+    CONTROL         "Pre Swap",CBTN_PRE_SWAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,71,83,46,10
+    CONTROL         "Post Swap",CBTN_POST_SWAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,71,93,49,10
+    CONTROL         "Sound",CBTN_SOUND,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,128,127,36,10
+    CONTROL         "Fast Draw",CBTN_FAST_DRAW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,29,49,10
+    LTEXT           "Draw Speed:",IDC_STATIC,128,40,42,8
+    EDITTEXT        EDC_DRAW_SPEED_FACTOR,128,49,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Sleep Time(ms):",IDC_STATIC,128,62,52,8
+    EDITTEXT        EDC_SLEEP_TIME,128,71,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "# of Elements:",IDC_STATIC,126,4,48,8
+    EDITTEXT        EDC_SIZE,126,14,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Runtime",CBTN_RUNTIME,"Button",BS_AUTO3STATE | WS_TABSTOP,127,105,42,10
+    CONTROL         "Complexity",CBTN_COMPLEXITY,"Button",BS_AUTO3STATE | WS_TABSTOP,127,85,51,10
+    CONTROL         "Counts",CBTN_COUNTS,"Button",BS_AUTO3STATE | WS_TABSTOP,127,95,39,10
+    LTEXT           "Instrument:",IDC_STATIC,7,117,39,8
+    COMBOBOX        CB_INSTRUMENTS,5,126,116,117,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Min",IDC_STATIC,225,117,12,8
+    EDITTEXT        EDC_MIN_FREQ,219,125,19,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Max",IDC_STATIC,241,117,14,8
+    EDITTEXT        EDC_MAX_FREQ,239,125,19,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Velocity",IDC_STATIC,168,117,26,8
+    EDITTEXT        EDC_ON_VELOCITY,169,125,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Release",IDC_STATIC,193,117,26,8
+    EDITTEXT        EDC_OFF_VELOCITY,194,125,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Duration",IDC_STATIC,260,117,28,8
+    EDITTEXT        EDC_NOTE_DURATION,262,125,23,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 493
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 293
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 286
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_OPTIONS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

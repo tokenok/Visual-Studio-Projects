@@ -1,0 +1,196 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include  "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include  ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG DIALOGEX 0, 0, 500, 300
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_APPWINDOW
+CAPTION "Sorting Algorithm Visualizer"
+FONT 8, "MS  Shell  Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Run All",BTN_RUN_ALL,458,279,35,14
+    PUSHBUTTON      "Add",BTN_ADD,458,239,35,14
+    PUSHBUTTON      "Remove",BTN_REMOVE,458,258,35,14
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 189, 220
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Sorting Algorithm:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,3,58,8
+    COMBOBOX        CB_ALGORITHMS,5,12,122,215,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Visualization Type:",IDC_STATIC,11,74,60,8
+    COMBOBOX        CB_VISUALIZATION_TYPE,11,83,101,137,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Color Mode:",IDC_STATIC,10,97,40,8
+    COMBOBOX        CB_COLOR_MODE,11,106,101,104,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Initialization Options:",IDC_STATIC,7,27,173,37
+    LTEXT           "Values:",IDC_STATIC,11,36,24,8
+    LTEXT           "Ordering:",IDC_STATIC,95,36,32,8
+    GROUPBOX        "Draw Options:",IDC_STATIC,7,65,174,88
+    CONTROL         "Accesses",CBTN_ACCESSES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,121,45,10
+    CONTROL         "Comparisons",CBTN_COMPARISONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,131,57,10
+    CONTROL         "Assignments",CBTN_ASSIGNMENTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,141,56,10
+    CONTROL         "Pre Swap",CBTN_PRE_SWAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,67,121,46,10
+    CONTROL         "Post Swap",CBTN_POST_SWAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,67,131,49,10
+    CONTROL         "Sound",CBTN_SOUND,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,136,173,36,10
+    CONTROL         "Fast Draw",CBTN_FAST_DRAW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,78,49,10,WS_EX_RIGHT
+    LTEXT           "Speed:",IDC_STATIC,116,93,24,8
+    EDITTEXT        EDC_DRAW_SPEED_FACTOR,151,91,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Delay(ms):",IDC_STATIC,116,106,36,8
+    EDITTEXT        EDC_SLEEP_TIME,151,105,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "# of Elements:",IDC_STATIC,129,2,48,8
+    EDITTEXT        EDC_SIZE,131,12,51,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Runtime",CBTN_RUNTIME,"Button",BS_AUTO3STATE | WS_TABSTOP,127,140,42,10
+    CONTROL         "Complexity",CBTN_COMPLEXITY,"Button",BS_AUTO3STATE | WS_TABSTOP,127,120,51,10
+    CONTROL         "Counts",CBTN_COUNTS,"Button",BS_AUTO3STATE | WS_TABSTOP,127,130,39,10
+    LTEXT           "Instrument:",IDC_STATIC,15,163,39,8
+    COMBOBOX        CB_INSTRUMENTS,13,172,116,117,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Min",IDC_STATIC,79,185,12,8
+    EDITTEXT        EDC_MIN_FREQ,73,193,19,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Max",IDC_STATIC,99,185,14,8
+    EDITTEXT        EDC_MAX_FREQ,97,193,19,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Velocity",IDC_STATIC,13,185,26,8
+    EDITTEXT        EDC_ON_VELOCITY,15,193,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Release",IDC_STATIC,44,185,26,8
+    EDITTEXT        EDC_OFF_VELOCITY,44,193,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Duration",IDC_STATIC,123,185,28,8
+    EDITTEXT        EDC_NOTE_DURATION,125,193,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Sound Options:",IDC_STATIC,7,154,173,59
+    COMBOBOX        CB_INIT_VALUES,11,46,81,178,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        CB_INIT_ORDER,95,46,82,176,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TABLEVIEW DIALOGEX 0, 0, 593, 336
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Sort Results"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",LV_SORT_TABLE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,579,322
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 493
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 293
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 213
+    END
+
+    IDD_TABLEVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 586
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 329
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_OPTIONS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_TABLEVIEW AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+
+
+
+
+
+
