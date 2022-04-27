@@ -13,66 +13,155 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Sorts">
+      <UniqueIdentifier>{c0c6b899-e4ab-4020-abcc-a9ba45263267}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mergesort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="visualizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="heapsort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="quicksort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="insertionsort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="selectionsort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Benchmark.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bubblesort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="timsort.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="mergesort.h">
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="trace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="visualizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="heapsort.h">
+    <ClInclude Include="sorting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="quicksort.h">
+    <ClInclude Include="RtMidi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="insertionsort.h">
+    <ClInclude Include="sounds.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="selectionsort.h">
+    <ClInclude Include="customtrackbar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Benchmark.h">
+    <ClInclude Include="chart.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="table.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="initializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sourceout\RunPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="badsorts.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="binarytreesort.h">
+      <Filter>Header Files\Sorts</Filter>
     </ClInclude>
     <ClInclude Include="bubblesort.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="countingsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="cyclesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="dropmergesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="gnomesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="grailsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="gravitysort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="heapsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="insertionsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="mergeinsertionsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="mergesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="sourceout\patiencesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="pdqsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="pigeonholesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="poplarsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="quicksort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="radixsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="regionssort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="selectionsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="skasort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="smoothsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="softheapsort.h">
+      <Filter>Header Files\Sorts</Filter>
     </ClInclude>
     <ClInclude Include="timsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="vergesort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="weakheapsort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="wikisort.h">
+      <Filter>Header Files\Sorts</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="visualizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RtMidi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="customtrackbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Sorting.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

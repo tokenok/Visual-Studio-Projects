@@ -644,6 +644,7 @@ BOOL CALLBACK Game::GameProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPar
 			if (!packs.size()) {
 				MessageBox(NULL, L"Unable to load levels", L"Error", MB_OK | MB_ICONWARNING);
 				EndDialog(hwnd, 1);
+				return false;
 			}
 			
 			if (packs.size() > 1) {
@@ -887,7 +888,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 
 											if (!sq.move_checked) {
 												board->LevelGrid[r][c].move_checked = true;
-												if (!board->MovePiece(sq.id, MOVE_CLOCKWISE, {c, r}, false)) {
+												if (!board->MovePiece(sq.id, MOVE_CLOCKWISE, {(LONG)c, (LONG)r}, false)) {
 													pcol = RGB(50, 50, 50);
 												}
 											}
@@ -931,7 +932,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 
 											if (!sq.move_checked) {
 												board->LevelGrid[r][c].move_checked = true;
-												if (!board->MovePiece(sq.id, MOVE_COUNTERCLOCKWISE, {c, r}, false)) {
+												if (!board->MovePiece(sq.id, MOVE_COUNTERCLOCKWISE, {(LONG)c, (LONG)r}, false)) {
 													pcol = RGB(50, 50, 50);
 												}
 											}
@@ -976,7 +977,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 											COLORREF pcol = 0;
 											if (!sq.move_checked) {
 												board->LevelGrid[r][c].move_checked = true;
-												if (!board->MovePiece(sq.id, MOVE_UP, {c, r}, false)) {
+												if (!board->MovePiece(sq.id, MOVE_UP, {(LONG)c, (LONG)r}, false)) {
 													bcol = RGB(50, 50, 50);
 													pcol = bcol;
 												}
@@ -1013,7 +1014,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 											COLORREF pcol = 0;
 											if (!sq.move_checked){
 												board->LevelGrid[r][c].move_checked = true;
-												if (!board->MovePiece(sq.id, MOVE_LEFT, {c, r}, false)) {
+												if (!board->MovePiece(sq.id, MOVE_LEFT, {(LONG)c, (LONG)r}, false)) {
 													bcol = RGB(50, 50, 50);
 													pcol = bcol;
 												}
@@ -1050,7 +1051,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 											COLORREF pcol = 0;
 											if (!sq.move_checked) {
 												board->LevelGrid[r][c].move_checked = true;
-												if (!board->MovePiece(sq.id, MOVE_DOWN, {c, r}, false)) {
+												if (!board->MovePiece(sq.id, MOVE_DOWN, {(LONG)c, (LONG)r}, false)) {
 													bcol = RGB(50, 50, 50);
 													pcol = bcol;
 												}
@@ -1087,7 +1088,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 											COLORREF pcol = 0;
 											if (!sq.move_checked) {
 												board->LevelGrid[r][c].move_checked = true;
-												if (!board->MovePiece(sq.id, MOVE_RIGHT, {c, r}, false)) {
+												if (!board->MovePiece(sq.id, MOVE_RIGHT, {(LONG)c, (LONG)r}, false)) {
 													bcol = RGB(50, 50, 50);
 													pcol = bcol;
 												}
@@ -1492,7 +1493,7 @@ BOOL CALLBACK Game::GameDisplayProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 				int w = rc.right / board->width;
 				for (UINT r = 0; r < board->LevelGrid.size(); r++) {
 					for (UINT c = 0; c < board->LevelGrid[r].size(); c++) {
-						board->LevelGrid[r][c].rc = {c * w, r * h, (c + 1) * w, (r + 1) * h};
+						board->LevelGrid[r][c].rc = {(LONG)(c * w), (LONG)(r * h), (LONG)((c + 1) * w), (LONG)((r + 1) * h)};
 					}
 				}
 			}

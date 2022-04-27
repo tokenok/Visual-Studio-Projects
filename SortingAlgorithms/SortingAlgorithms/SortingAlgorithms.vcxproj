@@ -17,6 +17,67 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Win32|Win32">
+      <Configuration>Win32</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win32|x64">
+      <Configuration>Win32</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="badsorts.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="binarytreesort.h" />
+    <ClInclude Include="bubblesort.h" />
+    <ClInclude Include="chart.h" />
+    <ClInclude Include="countingsort.h" />
+    <ClInclude Include="customtrackbar.h" />
+    <ClInclude Include="cyclesort.h" />
+    <ClInclude Include="dropmergesort.h" />
+    <ClInclude Include="gnomesort.h" />
+    <ClInclude Include="grailsort.h" />
+    <ClInclude Include="gravitysort.h" />
+    <ClInclude Include="heapsort.h" />
+    <ClInclude Include="initializer.h" />
+    <ClInclude Include="insertionsort.h" />
+    <ClInclude Include="mergeinsertionsort.h" />
+    <ClInclude Include="mergesort.h" />
+    <ClInclude Include="pdqsort.h" />
+    <ClInclude Include="pigeonholesort.h" />
+    <ClInclude Include="poplarsort.h" />
+    <ClInclude Include="quicksort.h" />
+    <ClInclude Include="radixsort.h" />
+    <ClInclude Include="regionssort.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="RtMidi.h" />
+    <ClInclude Include="selectionsort.h" />
+    <ClInclude Include="skasort.h" />
+    <ClInclude Include="smoothsort.h" />
+    <ClInclude Include="softheapsort.h" />
+    <ClInclude Include="sorting.h" />
+    <ClInclude Include="sounds.h" />
+    <ClInclude Include="sourceout\patiencesort.h" />
+    <ClInclude Include="sourceout\RunPool.h" />
+    <ClInclude Include="table.h" />
+    <ClInclude Include="timsort.h" />
+    <ClInclude Include="trace.h" />
+    <ClInclude Include="vergesort.h" />
+    <ClInclude Include="visualizer.h" />
+    <ClInclude Include="weakheapsort.h" />
+    <ClInclude Include="wikisort.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="customtrackbar.cpp" />
+    <ClCompile Include="RtMidi.cpp" />
+    <ClCompile Include="sounds.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="trace.cpp" />
+    <ClCompile Include="visualizer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Sorting.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -29,14 +90,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -50,6 +111,13 @@
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Win32|Win32'">
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Win32|x64'">
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -69,14 +137,31 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\boost_1_72_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\boost_1_72_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\boost_1_72_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\boost_1_72_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win32|Win32'">
+    <IncludePath>C:\boost_1_72_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\boost_1_72_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_SILENCE_CXX17_TEMPORARY_BUFFER_DEPRECATION_WARNING;__WINDOWS_MM__;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -94,10 +179,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_SILENCE_CXX17_TEMPORARY_BUFFER_DEPRECATION_WARNING;__WINDOWS_MM__;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -114,29 +203,16 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Benchmark.cpp" />
-    <ClCompile Include="bubblesort.cpp" />
-    <ClCompile Include="heapsort.cpp" />
-    <ClCompile Include="insertionsort.cpp" />
-    <ClCompile Include="mergesort.cpp" />
-    <ClCompile Include="quicksort.cpp" />
-    <ClCompile Include="selectionsort.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="timsort.cpp" />
-    <ClCompile Include="visualizer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Benchmark.h" />
-    <ClInclude Include="bubblesort.h" />
-    <ClInclude Include="heapsort.h" />
-    <ClInclude Include="insertionsort.h" />
-    <ClInclude Include="mergesort.h" />
-    <ClInclude Include="quicksort.h" />
-    <ClInclude Include="selectionsort.h" />
-    <ClInclude Include="timsort.h" />
-    <ClInclude Include="visualizer.h" />
-  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win32|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_SILENCE_CXX17_TEMPORARY_BUFFER_DEPRECATION_WARNING;__WINDOWS_MM__;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

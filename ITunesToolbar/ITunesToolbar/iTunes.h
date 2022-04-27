@@ -7,12 +7,15 @@
 #include <vector>
 #include <iostream>
 
+#define VOL_CHANGE_INCREMENT 1
+#define VOL_CHANGE_INCREMENT_LARGE 5
+
 void init_itunes_com();
 void Iplaypause();
 void Inext();
 void Iprev();
-void Ivolu();
-void Ivold();
+void Ivolu(int change = VOL_CHANGE_INCREMENT);
+void Ivold(int change = VOL_CHANGE_INCREMENT);
 long Igetvol();
 void Isetvol(long vol);
 std::string Igetcursong();
@@ -20,6 +23,7 @@ std::string Igetcurartist();
 void Imaximize();
 bool Iisminimized();
 bool Iisplay();
+void Igetsongprogress(long* progress, long* total_time);
 void Icleanup();
 
 class CCoInitialize {

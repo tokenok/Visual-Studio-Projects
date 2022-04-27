@@ -74,6 +74,27 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR args, int
 		return 0;
 	}
 
+	CONSOLE_ON();
+
+	std::string filename = "jj.bmp";
+	int x, y;
+	BYTE* buf = bmp_to_array(filename, x, y);
+
+	for (int i = 0; i < y; i++) {
+		cout << i << '\n';
+		for (int j = 0; j < x * 3; j += 3) {
+			
+			int pos = i * x + j;
+			buf[pos] = 255 - buf[pos];
+			buf[pos + 1] = 255 - buf[pos + 1];
+			buf[pos + 2] = 255 - buf[pos + 2];
+		}
+	}
+
+	array_to_bmp("newfile.bmp", buf, x, y);
+
+	return 0;
+
 	ifstream filein;
 	filein.open("config.txt");
 	if (!filein.is_open()) {

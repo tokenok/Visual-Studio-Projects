@@ -3164,6 +3164,41 @@ ull Problem_67() {
 	return tri[0][0];
 }
 
+ull Problem_71() {
+	//TODO problem 71
+	ull ret;
+
+	POINT s{0,1}, e{3,7};
+	std::list<POINT> fracs = { s, e };
+	
+	int d = 1;
+	while (d < 1000000) {
+		POINT c;
+		for (auto it = fracs.begin(); it != fracs.end() && it != std::prev(fracs.end()); ) {
+			auto l = it;
+			auto r = ++it;
+			
+			POINT c = {(*l).x + (*r).x, (*l).y + (*r).y};
+			d = d < c.y ? c.y : d;
+
+			if (c.y <= 1000000)
+				fracs.insert(r, c);
+		}
+
+		cout << d << '\n';
+		/*	for (auto a : fracs) {
+			cout << a.x << "/" << a.y << ",";
+		}
+		cout << '\n';
+		_getch();*/
+	}
+
+	auto p = *std::prev(std::prev(fracs.end()));
+	cout << p.x << " " << p.y;
+	return p.x;
+	//return ret;
+}
+
 ull Problem_76() {
 	ull answer = 0;
 
@@ -3705,7 +3740,7 @@ ull Problem_BarnsleyFern() {
 }
 
 int main() {	
-	SOLVE(Problem_BarnsleyFern)
+	SOLVE(Problem_71)
 
 	_getch();
 	return 0;

@@ -59,19 +59,19 @@ void Iprev(){
 		iITunes->PreviousTrack();
 	else{ std::cout << "failed" << '\n'; }
 }
-void Ivolu(){
+void Ivolu(int change){
 	long vol;
 	if (ihRes == S_OK && iITunes){
 		iITunes->get_SoundVolume(&vol);
-		iITunes->put_SoundVolume(vol + 5);
+		iITunes->put_SoundVolume(vol + change);
 	}
 	else{ std::cout << "failed" << '\n'; }
 }
-void Ivold(){
+void Ivold(int change){
 	long vol;
 	if (ihRes == S_OK && iITunes){
 		iITunes->get_SoundVolume(&vol);
-		iITunes->put_SoundVolume(vol - 5);
+		iITunes->put_SoundVolume(vol - change);
 	}
 	else{ std::cout << "failed" << '\n'; }
 }
@@ -141,6 +141,15 @@ bool Iisplay() {
 		return ps == ITPlayerStatePlaying;
 	}
 	return false;
+}
+
+void Igetsongprogress(long* progress, long* total_time) {
+	if (ihRes == S_OK && iITunes) {
+		CComPtr<IITTrack> iITrack;
+		iITunes->get_CurrentTrack(&iITrack);
+		iITrack->get_Finish(total_time);
+		iITunes->get_PlayerPosition(progress);
+	}
 }
 
 void Icleanup() {

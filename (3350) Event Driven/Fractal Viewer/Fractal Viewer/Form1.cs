@@ -74,6 +74,46 @@ namespace Fractal_Viewer {
 		[DllImport("user32.dll")]
 		static extern bool SystemParametersInfo(uint uiAction, uint uiParam, ref RECT pvParam, uint fWinIni);
 
+		static class DisableConsoleQuickEdit {
+
+			const uint ENABLE_QUICK_EDIT = 0x0040;
+
+			// STD_INPUT_HANDLE (DWORD): -10 is the standard input device.
+			const int STD_INPUT_HANDLE = -10;
+
+			[DllImport("kernel32.dll", SetLastError = true)]
+			static extern IntPtr GetStdHandle(int nStdHandle);
+
+			[DllImport("kernel32.dll")]
+			static extern bool GetConsoleMode(IntPtr hConsoleHandle, out uint lpMode);
+
+			[DllImport("kernel32.dll")]
+			static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint dwMode);
+
+			internal static bool Go() {
+
+				IntPtr consoleHandle = GetStdHandle(STD_INPUT_HANDLE);
+
+				// get current console mode
+				uint consoleMode;
+				if (!GetConsoleMode(consoleHandle, out consoleMode)) {
+					// ERROR: Unable to get console mode.
+					return false;
+				}
+
+				// Clear the quick edit bit in the mode flags
+				consoleMode &= ~ENABLE_QUICK_EDIT;
+
+				// set the new mode
+				if (!SetConsoleMode(consoleHandle, consoleMode)) {
+					// ERROR: Unable to set console mode
+					return false;
+				}
+
+				return true;
+			}
+		}
+
 		#endregion
 
 		#region SetWindowsHookEx import
@@ -276,10 +316,13 @@ namespace Fractal_Viewer {
 			cfi.cbSize = (uint)Marshal.SizeOf(cfi);
 			GetCurrentConsoleFontEx(outcon, false, ref cfi);
 
-		//	cfi.dwFontSize.X = 4; cfi.dwFontSize.Y = 6;
-			cfi.dwFontSize.X = 8; cfi.dwFontSize.Y = 12;
+			//	cfi.dwFontSize.X = 4; cfi.dwFontSize.Y = 6;
+			//	cfi.dwFontSize.X = 8; cfi.dwFontSize.Y = 12;
+			cfi.dwFontSize.X = 20; cfi.dwFontSize.Y = 30;
 
-			SetCurrentConsoleFontEx(outcon, false, ref cfi);
+            SetCurrentConsoleFontEx(outcon, false, ref cfi);
+
+			DisableConsoleQuickEdit.Go();
 
 			int w = rcd.right - (2 * cfi.dwFontSize.X);
 			int h = rcd.bottom - 30 - (2 * cfi.dwFontSize.Y);

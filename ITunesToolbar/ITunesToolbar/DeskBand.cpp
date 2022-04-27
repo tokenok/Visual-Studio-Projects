@@ -117,7 +117,7 @@ class SongInfo {
 		brotateArtist = rcclient.right - szArtist.cx - 10 <= 0;
 		rcArtist.left = !brotateArtist ? (rcclient.right - szArtist.cx) / 2 : 0;
 		rcArtist.right = rcArtist.left + szArtist.cx;
-		rcArtist.top = 5;
+		rcArtist.top = 11;
 		rcArtist.bottom = rcArtist.top + szArtist.cy;
 		bArtistPart2 = false;
 		rcArtist2 = {0,0,0,0};
@@ -606,6 +606,7 @@ void HandleHeadphoneJackStateChange() {
 LRESULT CALLBACK StaticProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
 	switch (message) {
 		case WM_CREATE: {
+			_tzset();
 			break;
 		}
 		case WM_NCPAINT:
@@ -624,11 +625,19 @@ LRESULT CALLBACK StaticProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
 			HBRUSH backbrush = CreateSolidBrush(RGB(10, 10, 10));
 			FillRect(hDCmem, &rcclient, backbrush);
 
+			int volume = Igetvol();
+
+			long song_progress, song_total_time;
+			Igetsongprogress(&song_progress, &song_total_time);
+			
+			auto t = std::time(nullptr);
+			auto tm = *std::localtime(&t);
+
 			if (!Iisplay()) {
 				SetTextColor(hDCmem, RGB(0, 127, 255));
 				SetBkColor(hDCmem, RGB(10, 10, 10));
 
-				DeleteObject(SelectObject(hDCmem, font));
+				DeleteObject(SelectObject(hDCmem, font_rainbow));
 
 				ExtTextOut(hDCmem, songinfo.rcArtist.left, songinfo.rcArtist.top, ETO_CLIPPED, &songinfo.rcArtist, STW(songinfo.artist), songinfo.artist.size(), NULL);
 				ExtTextOut(hDCmem, songinfo.rcSong.left, songinfo.rcSong.top, ETO_CLIPPED, &songinfo.rcSong, STW(songinfo.song), songinfo.song.size(), NULL);
@@ -637,6 +646,66 @@ LRESULT CALLBACK StaticProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
 					ExtTextOut(hDCmem, songinfo.rcArtist2.left, songinfo.rcArtist2.top, ETO_CLIPPED, &songinfo.rcArtist2, STW(songinfo.artist), songinfo.artist.size(), NULL);
 				if (songinfo.bSongPart2)
 					ExtTextOut(hDCmem, songinfo.rcSong2.left, songinfo.rcSong2.top, ETO_CLIPPED, &songinfo.rcSong2, STW(songinfo.song), songinfo.song.size(), NULL);
+
+				//draw date and time
+				HFONT dt_font = CreateFont(11, 0, 0, 0, FW_EXTRABOLD, 0, 0, 0, 0, 0, 0, NONANTIALIASED_QUALITY, 0, L"Arial");
+				HFONT oldfont = (HFONT)SelectObject(hDCmem, dt_font);
+				SIZE sz;
+				//draw date
+				std::wstring ws_date(80, '\0');
+				ws_date.resize(wcsftime(&ws_date[0], ws_date.size(), L"%m/%d (%a)", &tm));	//%#x - long date
+				GetTextExtentPoint32(hDCmem, ws_date.c_str(), ws_date.size(), &sz);
+				RECT rcdate;
+				rcdate.left = 5;
+				rcdate.top = 0;
+				rcdate.right = rcdate.left + sz.cx;
+				rcdate.bottom = rcdate.bottom + sz.cy;
+				ExtTextOut(hDCmem, 5, 0, ETO_CLIPPED, &rcdate, ws_date.c_str(), ws_date.size(), NULL);
+				//draw time
+				std::wstring ws_time(80, '\0');
+				ws_time.resize(wcsftime(&ws_time[0], ws_time.size(), L"%I:%M %p", &tm)); //%a - short weekday							
+				GetTextExtentPoint32(hDCmem, ws_time.c_str(), ws_time.size(), &sz);	
+				RECT rctime;
+				rctime.left = rcclient.right - sz.cx - 5;
+				rctime.top = 0;
+				rctime.right = rctime.left + sz.cx;
+				rctime.bottom = rctime.top + sz.cy;
+				ExtTextOut(hDCmem, rctime.left, rctime.top, ETO_CLIPPED, &rctime, ws_time.c_str(), ws_time.size(), NULL);				
+				SelectObject(hDCmem, oldfont);
+				DeleteFont(dt_font);
+
+				//draw progress bar
+				RECT rcprogress = {rcclient.left, rcclient.bottom - 2, (int)((double)(song_progress * rcclient.right) / (double)song_total_time), rcclient.bottom};
+				HBRUSH progress_brush = CreateSolidBrush(RGB(0, 127, 255));
+				FillRect(hDCmem, &rcprogress, progress_brush);
+				DeleteBrush(progress_brush);
+				//draw progress text
+				HFONT progress_font = CreateFont(11, 0, 0, 0, FW_EXTRABOLD, 0, 0, 0, 0, 0, 0, NONANTIALIASED_QUALITY, 0, L"Arial");
+				oldfont = (HFONT)SelectObject(hDCmem, progress_font);
+				std::string sprogress = milliseconds_to_hms(song_progress * 1000) + "/" + milliseconds_to_hms(song_total_time * 1000);
+				std::wstring ws_progress(sprogress.begin(), sprogress.end());
+				GetTextExtentPoint32(hDCmem, ws_progress.c_str(), ws_progress.size(), &sz);
+				RECT rcprogresstext;
+				rcprogresstext.left = 5;
+				rcprogresstext.top = rcclient.bottom - 13;
+				rcprogresstext.right = rcprogresstext.left + sz.cx;
+				rcprogresstext.bottom = rcprogresstext.top + sz.cy;
+				ExtTextOut(hDCmem, rcprogresstext.left, rcprogresstext.top, ETO_CLIPPED, &rcprogresstext, ws_progress.c_str(), ws_progress.size(), NULL);
+				//draw volume
+				std::wstring ws_vol = int_to_wstr(volume) + L"%";
+				GetTextExtentPoint32(hDCmem, ws_vol.c_str(), ws_vol.size(), &sz);
+				RECT rcvol;
+				rcvol.left = rcclient.right - sz.cx - 5;
+				rcvol.top = rcclient.bottom - 13;
+				rcvol.right = rcvol.left + sz.cx;
+				rcvol.bottom = rcvol.top + sz.cy;
+				ExtTextOut(hDCmem, rcvol.left, rcvol.top, ETO_CLIPPED, &rcvol, ws_vol.c_str(), ws_vol.size(), NULL);
+
+				SelectObject(hDCmem, oldfont);
+				DeleteFont(progress_font);
+
+				
+				
 			}
 			else {
 				auto draw_songinfo_text_back = [](int w, int h, int contrast) {
@@ -697,34 +766,111 @@ LRESULT CALLBACK StaticProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
 					return bitmap;
 				};
 
+				auto draw_rainbow_text = [](HDC hdc, HFONT font, const std::wstring& text, int x, int y, COLORREF backcol, UINT rainbow_start = 0, COLORREF transparent = 0) {
+					HDC hdcMem = CreateCompatibleDC(0);
+
+					DeleteObject(SelectObject(hdcMem, font));
+
+					SIZE sz;
+					GetTextExtentPoint32(hdcMem, text.c_str(), text.size(), &sz);
+					RECT rctext = {0, 0, sz.cx, sz.cy};
+
+					int text_width = rctext.right - rctext.left;
+					int text_height = rctext.bottom - rctext.top;
+
+					//draw rainbow background
+					HBITMAP bmp_back = CreateBitmap(text_width, text_height, 1, 32, NULL);
+					HBITMAP old_bmp_back = SelectBitmap(hdcMem, bmp_back);
+					double step = 360.0 / (double)text_width;
+					RECT rc = {0, 0, 0, text_height};
+					for (int i = 0; i < text_width; i++) {
+						rc.left = i;
+						rc.right = (i + 1);
+						double hue = (double)((int)((i + rainbow_start) * step) % 361);
+					//	COLORREF col = HSVtoRGB(hue, 1.0, 1.0);
+						COLORREF col = COLOR::rgb(g_info_colors[(i + rainbow_start) % g_info_colors.size()]);
+						HBRUSH brush = CreateSolidBrush(col);
+						FillRect(hdcMem, &rc, brush);
+						DeleteObject(brush);
+					}
+					bmp_back = SelectBitmap(hdcMem, old_bmp_back);
+					HBITMAPBlitToHdc(hdc, bmp_back, x, y, text_width, text_height);
+
+					//get text bitmap
+					HBITMAP bmp_text = CreateBitmap(text_width, text_height, 1, 32, NULL);
+					SetTextColor(hdcMem, transparent);
+					SetBkColor(hdcMem, backcol);
+					HBITMAP old_bmp_text = SelectBitmap(hdcMem, bmp_text);
+					ExtTextOut(hdcMem, 0, 0, ETO_CLIPPED, &rctext, text.c_str(), text.size(), NULL);
+					bmp_text = SelectBitmap(hdcMem, old_bmp_text);
+					TransparentBlitToHdc(hdc, bmp_text, x, y, rctext.right - rctext.left, rctext.bottom - rctext.top, transparent);
+
+					//cleanup
+					DeleteObject(bmp_back);
+					DeleteObject(bmp_text);
+
+					DeleteDC(hdcMem);
+				};
+
 				int height = getRectHeight(songinfo.rcArtist);
 
+				//draw artist
 				HBITMAP bmpartist_back = draw_songinfo_text_back(rcclient.right, height, 0);
 				HBITMAPBlitToHdc(hDCmem, bmpartist_back, 0, songinfo.rcArtist.top, rcclient.right, height);
 				HBITMAP bmpartist = draw_songinfo_text(songinfo.getArtistWidth(), height, songinfo.artist, songinfo.bArtistPart2);
-
 				RECT rclart = {0, songinfo.rcArtist.top, songinfo.rcArtist.left, songinfo.rcArtist.bottom};
 				FillRect(hDCmem, &rclart, backbrush);
 				if (!songinfo.bArtistPart2) {
 					RECT rcrart = {songinfo.rcArtist.right, songinfo.rcArtist.top, rcclient.right, songinfo.rcArtist.bottom};
 					FillRect(hDCmem, &rcrart, backbrush);
 				}
-
 				TransparentBlitToHdc(hDCmem, bmpartist, songinfo.rcArtist.left, songinfo.rcArtist.top, songinfo.getArtistWidth(), height, RGB(0, 0, 0));
 
+				//draw song
 				HBITMAP bmpsong_back = draw_songinfo_text_back(rcclient.right, height, 80);
 				HBITMAPBlitToHdc(hDCmem, bmpsong_back, 0, songinfo.rcSong.top, rcclient.right, height);
 				HBITMAP bmpsong = draw_songinfo_text(songinfo.getSongWidth(), height, songinfo.song, songinfo.bSongPart2);
-
 				RECT rclsong = {0, songinfo.rcSong.top, songinfo.rcSong.left, songinfo.rcSong.bottom};
 				FillRect(hDCmem, &rclsong, backbrush);
 				if (!songinfo.bSongPart2) {
 					RECT rcrsong = {songinfo.rcSong.right, songinfo.rcSong.top, rcclient.right, songinfo.rcSong.bottom};
 					FillRect(hDCmem, &rcrsong, backbrush);
 				}
-
 				TransparentBlitToHdc(hDCmem, bmpsong, songinfo.rcSong.left, songinfo.rcSong.top, songinfo.getSongWidth(), height, RGB(0, 0, 0));
 
+				SIZE sz;
+
+				//draw progress bar
+				HBITMAP bmp_progress = draw_songinfo_text_back(rcclient.right, 2, 0);
+				HBITMAPBlitToHdc(hDCmem, bmp_progress, 0, rcclient.bottom - 2, (int)((double)(song_progress * rcclient.right) / (double)song_total_time), 2);
+				HFONT progress_font = CreateFont(11, 0, 0, 0, FW_EXTRABOLD, 0, 0, 0, 0, 0, 0, NONANTIALIASED_QUALITY, 0, L"Arial");
+				HFONT oldfont = (HFONT)SelectObject(hDCmem, progress_font);
+				std::string sprogress = milliseconds_to_hms(song_progress * 1000) + "/" + milliseconds_to_hms(song_total_time * 1000);
+				std::wstring ws_progress(sprogress.begin(), sprogress.end());
+				draw_rainbow_text(hDCmem, progress_font, ws_progress, 5, rcclient.bottom - 13, RGB(10, 10, 10));
+				//draw volume
+				std::wstring ws_vol = int_to_wstr(volume) + L"%";
+				GetTextExtentPoint32(hDCmem, ws_vol.c_str(), ws_vol.size(), &sz);
+				draw_rainbow_text(hDCmem, progress_font, ws_vol, rcclient.right - sz.cx - 5, rcclient.bottom - 13, RGB(10, 10, 10));
+				SelectObject(hDCmem, oldfont);
+				DeleteFont(progress_font);
+
+				//draw date and time
+				HFONT dt_font = CreateFont(11, 0, 0, 0, FW_EXTRABOLD, 0, 0, 0, 0, 0, 0, NONANTIALIASED_QUALITY, 0, L"Arial");
+				//draw date
+				std::wstring ws_date(80, '\0');
+				ws_date.resize(wcsftime(&ws_date[0], ws_date.size(), L"%m/%d (%a)", &tm));	//%#x - long date //%A, %B %d, %Y
+				draw_rainbow_text(hDCmem, dt_font, ws_date, 5, 0, RGB(10, 10, 10));
+				//draw time
+				std::wstring ws_time(80, '\0');
+				ws_time.resize(wcsftime(&ws_time[0], ws_time.size(), L"%I:%M %p", &tm));				
+				oldfont = (HFONT)SelectObject(hDCmem, dt_font);
+				GetTextExtentPoint32(hDCmem, ws_time.c_str(), ws_time.size(), &sz);
+				SelectObject(hDCmem, oldfont);
+				draw_rainbow_text(hDCmem, dt_font, ws_time, rcclient.right - sz.cx - 5, 0, RGB(10, 10, 10), rcclient.right - sz.cx - 10);
+				DeleteFont(dt_font);
+
+				DeleteObject(bmp_progress);
 				DeleteObject(bmpsong);
 				DeleteObject(bmpartist);
 				DeleteObject(bmpsong_back);
@@ -780,11 +926,11 @@ void DisplaySongInfo() {
 		wc.style = NULL;
 		RegisterClassEx(&wc);
 
-		g_songinfo = CreateWindowEx(WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE, L"CurrentSongClassName", L"", WS_VISIBLE, 0, 0, 200, 46, NULL, NULL, NULL, NULL);
+		g_songinfo = CreateWindowEx(WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE, L"CurrentSongClassName", L"", WS_VISIBLE, 0, 0, 200, 50, NULL, NULL, NULL, NULL);
 		SetWindowLong(g_songinfo, GWL_STYLE, 0);
 	}
 
-	if (Iisplay()) {
+	//if (Iisplay()) {
 		songinfo.artist = Igetcurartist();
 		songinfo.song = Igetcursong();
 		RECT clientrc = getclientrect(g_songinfo);
@@ -806,14 +952,17 @@ void DisplaySongInfo() {
 		SetTimer(g_songinfo, TIMER_SONGINFO_ROTATE_DELAY, 1000, TimerProc);
 
 		SetTimer(g_db->getHWND(), TIMER_DESKBAND_RAINBOW_ROTATE, 100, TimerProc);
-	}
+	/*}
 	else {
 		ShowWindow(g_songinfo, SW_HIDE);
-	}
+	}*/
 }
 
 HRESULT CiTunesEventHandler::OnSoundVolumeChangedEvent() {
 	CTB_VOLUME.redraw_newval(Igetvol(), false);
+
+	DisplaySongInfo();
+
 	return S_OK;
 }
 
@@ -968,11 +1117,15 @@ LRESULT CALLBACK CDeskBand::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 					break;
 				}
 				case IDC_BTN_VOLU: {
-					Ivolu();
+					Ivolu(lParam);
 					break;
 				}
 				case IDC_BTN_VOLD: {
-					Ivold();
+					Ivold(lParam);
+					break;
+				}
+				case IDC_BTN_SHOW_PLAYING: {
+					DisplaySongInfo();
 					break;
 				}
 			}
@@ -1015,58 +1168,78 @@ LRESULT CALLBACK CDeskBand::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPAR
 	
 	return DefWindowProc(hwnd, message, wParam, lParam);
 }
+
+int GetKeyFromKBDLLHOOKSTRUCT(const KBDLLHOOKSTRUCT& key) {
+	int ret = key.vkCode;
+
+	wchar_t name[0x100] = {0};
+	DWORD lp = 1;
+	lp += key.scanCode << 16;
+	lp += key.flags << 24;
+	GetKeyNameText(lp, (LPTSTR)name, 255);
+	string sname = wstr_to_str((wstring)name);
+	if ((GetKeyState(VK_MENU) & 0x8000) != 0) {
+		ret += 256;
+		sname.insert(0, "ALT+");
+	}
+	if ((GetKeyState(VK_SHIFT) & 0x8000) != 0) {
+		ret += 256 * 4;
+		sname.insert(0, "SHIFT+");
+	}
+	if ((GetKeyState(VK_CONTROL) & 0x8000) != 0) {
+		ret += 256 * 2;
+		sname.insert(0, "CTRL+");
+	}
+	if ((GetKeyState(VK_LWIN) & 0x8000) != 0) {
+		ret += 256 * 8;
+		sname.insert(0, "LEFT WINDOWKEY+");
+	}
+	if ((GetKeyState(VK_RWIN) & 0x8000) != 0) {
+		ret += 256 * 8;
+		sname.insert(0, "RIGHT WINDOWKEY+");
+	}
+
+	return ret;
+}
+
 LRESULT CALLBACK kbhookProc(int code, WPARAM wParam, LPARAM lParam) {
 	KBDLLHOOKSTRUCT key = *((KBDLLHOOKSTRUCT*)lParam);
 	if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
+
+		int keyCode = GetKeyFromKBDLLHOOKSTRUCT(key);
 #pragma region virtual keycode processing	
-		wchar_t name[0x100] = {0};
-		DWORD lp = 1;
-		lp += key.scanCode << 16;
-		lp += key.flags << 24;
-		GetKeyNameText(lp, (LPTSTR)name, 255);
-		string sname = wstr_to_str((wstring)name);
-		if ((GetKeyState(VK_MENU) & 0x8000) != 0) {
-			key.vkCode += 256;
-			sname.insert(0, "ALT+");
-		}
-		if ((GetKeyState(VK_SHIFT) & 0x8000) != 0) {
-			key.vkCode += 256 * 4;
-			sname.insert(0, "SHIFT+");
-		}
-		if ((GetKeyState(VK_CONTROL) & 0x8000) != 0) {
-			key.vkCode += 256 * 2;
-			sname.insert(0, "CTRL+");
-		}
-		if ((GetKeyState(VK_LWIN) & 0x8000) != 0) {
-			key.vkCode += 256 * 8;
-			sname.insert(0, "LEFT WINDOWKEY+");
-		}
-		if ((GetKeyState(VK_RWIN) & 0x8000) != 0) {
-			key.vkCode += 256 * 8;
-			sname.insert(0, "RIGHT WINDOWKEY+");
-		}
+		
 		enum {
 			ALT = 256,
 			CTRL = 512,
 			SHIFT = 1024
 		};
 #pragma endregion	
-		if (VK_F9 == key.vkCode) {
+		if (VK_F9 == keyCode) {
 			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_PLAY, 0), NULL);
 		}
-		else if (SHIFT + VK_F10 == key.vkCode) {
+		else if (SHIFT + VK_F10 == keyCode) {
 			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_NEXT, 0), NULL);
 		}
-		else if (SHIFT + VK_F11 == key.vkCode) {
+		else if (SHIFT + VK_F11 == keyCode) {
 			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_PREV, 0), NULL);
 		}
-		else if (SHIFT + VK_DOWN == key.vkCode) {
-			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_VOLD, 0), NULL);
+		else if (SHIFT + VK_DOWN == keyCode) {
+			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_VOLD, 0), VOL_CHANGE_INCREMENT);
 		}
-		else if (SHIFT + VK_UP == key.vkCode) {
-			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_VOLU, 0), NULL);
+		else if (SHIFT + VK_UP == keyCode) {
+			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_VOLU, 0), VOL_CHANGE_INCREMENT);
+		}
+		else if (SHIFT + CTRL + VK_DOWN == keyCode) {
+			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_VOLD, 0), VOL_CHANGE_INCREMENT_LARGE);
+		}
+		else if (SHIFT + CTRL + VK_UP == keyCode) {
+			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_VOLU, 0), VOL_CHANGE_INCREMENT_LARGE);
+		}
+		else if (VK_F10 == keyCode) {
+			PostMessage(g_db->getHWND(), WM_COMMAND, MAKEWPARAM(IDC_BTN_SHOW_PLAYING, 0), NULL);
 		}
 	}
-	return CallNextHookEx(kbhook, code, wParam, lParam);
+	return CallNextHookEx(NULL, code, wParam, lParam);
 }
 
